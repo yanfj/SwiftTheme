@@ -10,7 +10,8 @@ import UIKit
 
 extension UIView:
     ThemeBackgroundColorProtocol,
-    ThemeTintColorProtocol
+    ThemeTintColorProtocol,
+    ThemeAlphaProtocol
 {}
 extension UILabel:
     ThemeTextColorProtocol,
@@ -65,6 +66,7 @@ extension UIButton:
 {}
 
 protocol ThemeBackgroundColorProtocol               { var theme_backgroundColor: ThemePicker? { get set } }
+protocol ThemeAlphaProtocol                         { var theme_alpha: ThemePicker? { get set } }
 protocol ThemeTintColorProtocol                     { var theme_tintColor: ThemePicker? { get set } }
 protocol ThemeBarTintColorProtocol                  { var theme_barTintColor: ThemePicker? { get set } }
 protocol ThemeTextColorProtocol                     { var theme_textColor: ThemePicker? { get set } }
@@ -88,6 +90,12 @@ extension ThemeBackgroundColorProtocol where Self: UIView {
     var theme_backgroundColor: ThemePicker? {
         get { return getThemePicker(self, &AssociationKey.backgroundColor) }
         set { setThemePicker(self, &AssociationKey.backgroundColor, "setBackgroundColor:", newValue!) }
+    }
+}
+extension ThemeAlphaProtocol where Self: UIView {
+    var theme_alpha: ThemePicker? {
+        get { return getThemePicker(self, &AssociationKey.alpha) }
+        set { setThemePicker(self, &AssociationKey.alpha, "setAlpha:", newValue!)}
     }
 }
 extension ThemeTintColorProtocol where Self: UIView {
@@ -237,4 +245,5 @@ private struct AssociationKey {
     static var imageWithState                : UInt8 = 16
     static var backgroundImageWithState      : UInt8 = 17
     static var titleColorWithState           : UInt8 = 18
+    static var alpha                         : UInt8 = 19
 }
