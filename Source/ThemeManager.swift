@@ -54,12 +54,21 @@ public class ThemeManager: NSObject {
         return currentTheme?.valueForKeyPath(keyPath) as? String
     }
     
-    class func colorForKeyPath(keyPath: String) -> UIColor {
-        return UIColor(rgba: stringForKeyPath(keyPath) ?? "")
+    class func colorForKeyPath(keyPath: String) -> UIColor? {
+        guard let rgba = stringForKeyPath(keyPath) else {
+            print("WARNING: Not found color key path: \(keyPath)")
+            return nil
+        }
+        guard let color = try? UIColor(rgba_throws: rgba) else {
+            print("WARNING: Not found color rgba: \(rgba)")
+            return nil
+        }
+        return color
     }
     
     class func imageForKeyPath(keyPath: String) -> UIImage? {
         guard let imageName = stringForKeyPath(keyPath) else {
+            print("WARNING: Not found image key path: \(keyPath)")
             return nil
         }
         if let filePath = currentThemePath?.URL?.URLByAppendingPathComponent(imageName).path {
@@ -76,6 +85,7 @@ public class ThemePicker: NSObject, NSCopying {
     public typealias ValueType = () -> AnyObject?
     
     var value: ValueType
+    var state: UIControlState?
     
     required public init(v: ValueType) {
         value = v
@@ -85,12 +95,24 @@ public class ThemePicker: NSObject, NSCopying {
         self.init(v: { return ThemeManager.colorForKeyPath(colorKeyPath) })
     }
     
+    convenience init(colorKeyPath: String, state: UIControlState) {
+        self.init(v: { return ThemeManager.colorForKeyPath(colorKeyPath) })
+        self.state = state
+    }
+    
     convenience init(imageKeyPath: String) {
         self.init(v: { return ThemeManager.imageForKeyPath(imageKeyPath) })
     }
     
+    convenience init(imageKeyPath: String, state: UIControlState) {
+        self.init(v: { return ThemeManager.imageForKeyPath(imageKeyPath) })
+        self.state = state
+    }
+    
     public func copyWithZone(zone: NSZone) -> AnyObject {
-        return self.dynamicType.init(v: value)
+        let copy = self.dynamicType.init(v: value)
+        copy.state = state
+        return copy
     }
     
 }

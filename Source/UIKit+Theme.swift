@@ -55,6 +55,14 @@ extension UIPageControl:
     ThemePageIndicatorTintColorProtocol,
     ThemeCurrentPageIndicatorTintColorProtocol
 {}
+extension UIImageView:
+    ThemeImageProtocol
+{}
+extension UIButton:
+    ThemeImageWithStateProtocol,
+    ThemeBackgroundImageWithStateProtocol,
+    ThemeTitleColorWithStateProtocol
+{}
 
 protocol ThemeBackgroundColorProtocol               { var theme_backgroundColor: ThemePicker? { get set } }
 protocol ThemeTintColorProtocol                     { var theme_tintColor: ThemePicker? { get set } }
@@ -72,117 +80,141 @@ protocol ThemeTrackTintColorProtocol                { var theme_trackTintColor: 
 protocol ThemePageIndicatorTintColorProtocol        { var theme_pageIndicatorTintColor: ThemePicker? { get set } }
 protocol ThemeCurrentPageIndicatorTintColorProtocol { var theme_currentPageIndicatorTintColor: ThemePicker? { get set } }
 protocol ThemeImageProtocol                         { var theme_image: ThemePicker? { get set } }
-protocol ThemeImageForStateProtocol                 { func theme_setImage(theme: ThemePicker, forState: UIControlState) }
-protocol ThemeBackgroundImageForStateProtocol       { func theme_setBackgroundImage(theme: ThemePicker, forState: UIControlState) }
-protocol ThemeTitleColorForStateProtocol            { func theme_setTitleColor(theme: ThemePicker, forState: UIControlState) }
+protocol ThemeImageWithStateProtocol                { var theme_imageWithState: ThemePicker? { get set } }
+protocol ThemeBackgroundImageWithStateProtocol      { var theme_backgroundImageWithState: ThemePicker? { get set } }
+protocol ThemeTitleColorWithStateProtocol           { var theme_titleColorWithState: ThemePicker? { get set } }
 
 extension ThemeBackgroundColorProtocol where Self: UIView {
     var theme_backgroundColor: ThemePicker? {
-        get { return getTheme(self, key: &AssociationKey.backgroundColor) }
-        set { setTheme(self, key: &AssociationKey.backgroundColor, selector: "setBackgroundColor:", theme: newValue!) }
+        get { return getThemePicker(self, &AssociationKey.backgroundColor) }
+        set { setThemePicker(self, &AssociationKey.backgroundColor, "setBackgroundColor:", newValue!) }
     }
 }
 extension ThemeTintColorProtocol where Self: UIView {
     var theme_tintColor: ThemePicker? {
-        get { return getTheme(self, key: &AssociationKey.tintColor) }
-        set { setTheme(self, key: &AssociationKey.tintColor, selector: "setTintColor:", theme: newValue!) }
+        get { return getThemePicker(self, &AssociationKey.tintColor) }
+        set { setThemePicker(self, &AssociationKey.tintColor, "setTintColor:", newValue!) }
     }
 }
 extension ThemeBarTintColorProtocol where Self: UIView {
     var theme_barTintColor: ThemePicker? {
-        get { return getTheme(self, key: &AssociationKey.barTintColor) }
-        set { setTheme(self, key: &AssociationKey.barTintColor, selector: "setBarTintColor:", theme: newValue!) }
+        get { return getThemePicker(self, &AssociationKey.barTintColor) }
+        set { setThemePicker(self, &AssociationKey.barTintColor, "setBarTintColor:", newValue!) }
     }
 }
 extension ThemeTextColorProtocol where Self: UIView {
     var theme_textColor: ThemePicker? {
-        get { return getTheme(self, key: &AssociationKey.textColor) }
-        set { setTheme(self, key: &AssociationKey.textColor, selector: "setTextColor:", theme: newValue!) }
+        get { return getThemePicker(self, &AssociationKey.textColor) }
+        set { setThemePicker(self, &AssociationKey.textColor, "setTextColor:", newValue!) }
     }
 }
 extension ThemeHighlightedTextColorProtocol where Self: UIView {
     var theme_highlightedTextColor: ThemePicker? {
-        get { return getTheme(self, key: &AssociationKey.highlightedTextColor) }
-        set { setTheme(self, key: &AssociationKey.highlightedTextColor, selector: "setHighlightedTextColor:", theme: newValue!) }
+        get { return getThemePicker(self, &AssociationKey.highlightedTextColor) }
+        set { setThemePicker(self, &AssociationKey.highlightedTextColor, "setHighlightedTextColor:", newValue!) }
     }
 }
 extension ThemeShadowColorProtocol where Self: UIView {
     var theme_shadowColor: ThemePicker? {
-        get { return getTheme(self, key: &AssociationKey.shadowColor) }
-        set { setTheme(self, key: &AssociationKey.shadowColor, selector: "setShadowColor:", theme: newValue!) }
+        get { return getThemePicker(self, &AssociationKey.shadowColor) }
+        set { setThemePicker(self, &AssociationKey.shadowColor, "setShadowColor:", newValue!) }
     }
 }
 extension ThemeSeparatorColorProtocol where Self: UIView {
     var theme_separatorColor: ThemePicker? {
-        get { return getTheme(self, key: &AssociationKey.textColor) }
-        set { setTheme(self, key: &AssociationKey.textColor, selector: "setTextColor:", theme: newValue!) }
+        get { return getThemePicker(self, &AssociationKey.textColor) }
+        set { setThemePicker(self, &AssociationKey.textColor, "setTextColor:", newValue!) }
     }
 }
 extension ThemeOnTintColorProtocol where Self: UIView {
     var theme_onTintColor: ThemePicker? {
-        get { return getTheme(self, key: &AssociationKey.onTintColor) }
-        set { setTheme(self, key: &AssociationKey.onTintColor, selector: "setOnTintColor:", theme: newValue!) }
+        get { return getThemePicker(self, &AssociationKey.onTintColor) }
+        set { setThemePicker(self, &AssociationKey.onTintColor, "setOnTintColor:", newValue!) }
     }
 }
 extension ThemeThumbTintColorProtocol where Self: UIView {
     var theme_thumbTintColor: ThemePicker? {
-        get { return getTheme(self, key: &AssociationKey.thumbTintColor) }
-        set { setTheme(self, key: &AssociationKey.thumbTintColor, selector: "setThumbTintColor:", theme: newValue!) }
+        get { return getThemePicker(self, &AssociationKey.thumbTintColor) }
+        set { setThemePicker(self, &AssociationKey.thumbTintColor, "setThumbTintColor:", newValue!) }
     }
 }
 extension ThemeMinimumTrackTintColorProtocol where Self: UIView {
     var theme_minimumTrackTintColor: ThemePicker? {
-        get { return getTheme(self, key: &AssociationKey.minimumTrackTintColor) }
-        set { setTheme(self, key: &AssociationKey.minimumTrackTintColor, selector: "setMinimumTrackTintColor:", theme: newValue!) }
+        get { return getThemePicker(self, &AssociationKey.minimumTrackTintColor) }
+        set { setThemePicker(self, &AssociationKey.minimumTrackTintColor, "setMinimumTrackTintColor:", newValue!) }
     }
 }
 extension ThemeMaximumTrackTintColorProtocol where Self: UIView {
     var theme_maximumTrackTintColor: ThemePicker? {
-        get { return getTheme(self, key: &AssociationKey.maximumTrackTintColor) }
-        set { setTheme(self, key: &AssociationKey.maximumTrackTintColor, selector: "setMaximumTrackTintColor:", theme: newValue!) }
+        get { return getThemePicker(self, &AssociationKey.maximumTrackTintColor) }
+        set { setThemePicker(self, &AssociationKey.maximumTrackTintColor, "setMaximumTrackTintColor:", newValue!) }
     }
 }
 extension ThemeProgressTintColorProtocol where Self: UIView {
     var theme_progressTintColor: ThemePicker? {
-        get { return getTheme(self, key: &AssociationKey.progressTintColor) }
-        set { setTheme(self, key: &AssociationKey.progressTintColor, selector: "setProgressTintColor:", theme: newValue!) }
+        get { return getThemePicker(self, &AssociationKey.progressTintColor) }
+        set { setThemePicker(self, &AssociationKey.progressTintColor, "setProgressTintColor:", newValue!) }
     }
 }
 extension ThemeTrackTintColorProtocol where Self: UIView {
     var theme_trackTintColor: ThemePicker? {
-        get { return getTheme(self, key: &AssociationKey.trackTintColor) }
-        set { setTheme(self, key: &AssociationKey.trackTintColor, selector: "setTrackTintColor:", theme: newValue!) }
+        get { return getThemePicker(self, &AssociationKey.trackTintColor) }
+        set { setThemePicker(self, &AssociationKey.trackTintColor, "setTrackTintColor:", newValue!) }
     }
 }
 extension ThemePageIndicatorTintColorProtocol where Self: UIView {
     var theme_pageIndicatorTintColor: ThemePicker? {
-        get { return getTheme(self, key: &AssociationKey.pageIndicatorTintColor) }
-        set { setTheme(self, key: &AssociationKey.pageIndicatorTintColor, selector: "setPageIndicatorTintColor:", theme: newValue!) }
+        get { return getThemePicker(self, &AssociationKey.pageIndicatorTintColor) }
+        set { setThemePicker(self, &AssociationKey.pageIndicatorTintColor, "setPageIndicatorTintColor:", newValue!) }
     }
 }
 extension ThemeCurrentPageIndicatorTintColorProtocol where Self: UIView {
     var theme_currentPageIndicatorTintColor: ThemePicker? {
-        get { return getTheme(self, key: &AssociationKey.currentPageIndicatorTintColor) }
-        set { setTheme(self, key: &AssociationKey.currentPageIndicatorTintColor, selector: "setCurrentPageIndicatorTintColor:", theme: newValue!) }
+        get { return getThemePicker(self, &AssociationKey.currentPageIndicatorTintColor) }
+        set { setThemePicker(self, &AssociationKey.currentPageIndicatorTintColor, "setCurrentPageIndicatorTintColor:", newValue!) }
+    }
+}
+extension ThemeImageProtocol where Self: UIView {
+    var theme_image: ThemePicker? {
+        get { return getThemePicker(self, &AssociationKey.image) }
+        set { setThemePicker(self, &AssociationKey.image, "setImage:", newValue!) }
+    }
+}
+extension ThemeImageWithStateProtocol where Self: UIView {
+    var theme_imageWithState: ThemePicker? {
+        get { return getThemePicker(self, &AssociationKey.imageWithState) }
+        set { setThemePicker(self, &AssociationKey.imageWithState, "setImage:forState:", newValue!) }
+    }
+}
+extension ThemeBackgroundImageWithStateProtocol where Self: UIView {
+    var theme_backgroundImageWithState: ThemePicker? {
+        get { return getThemePicker(self, &AssociationKey.backgroundImageWithState) }
+        set { setThemePicker(self, &AssociationKey.backgroundImageWithState, "setBackgroundImage:forState:", newValue!) }
+    }
+}
+extension ThemeTitleColorWithStateProtocol where Self: UIView {
+    var theme_titleColorWithState: ThemePicker? {
+        get { return getThemePicker(self, &AssociationKey.titleColorWithState) }
+        set { setThemePicker(self, &AssociationKey.titleColorWithState, "setTitleColor:forState:", newValue!) }
     }
 }
 
-private func getTheme(
-    view: UIView,
-    key: UnsafePointer<Void>
+private func getThemePicker(
+      view: UIView,
+    _ key: UnsafePointer<Void>
 ) -> ThemePicker? {
     return objc_getAssociatedObject(view, key) as? ThemePicker
 }
 
-private func setTheme(
-    view : UIView,
-    key : UnsafePointer<Void>,
-    selector : String,
-    theme : ThemePicker
+private func setThemePicker(
+      view : UIView,
+    _ key : UnsafePointer<Void>,
+    _ selector : String,
+    _ themePicker : ThemePicker
 ) {
-    objc_setAssociatedObject(view, key, theme, .OBJC_ASSOCIATION_COPY_NONATOMIC)
-    view.performSelector(Selector(selector), withObject: theme.value())
-    view.themePickers[selector] = theme
+    objc_setAssociatedObject(view, key, themePicker, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+    view.performThemePicker(selector, themePicker: themePicker)
+    view.themePickers[selector] = themePicker
 }
 
 private struct AssociationKey {
@@ -201,4 +233,8 @@ private struct AssociationKey {
     static var trackTintColor                : UInt8 = 12
     static var pageIndicatorTintColor        : UInt8 = 13
     static var currentPageIndicatorTintColor : UInt8 = 14
+    static var image                         : UInt8 = 15
+    static var imageWithState                : UInt8 = 16
+    static var backgroundImageWithState      : UInt8 = 17
+    static var titleColorWithState           : UInt8 = 18
 }

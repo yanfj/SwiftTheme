@@ -27,6 +27,23 @@ extension UIView {
         }
     }
     
+    func performThemePicker(selector: String, themePicker: ThemePicker) {
+        let sel = Selector(selector)
+        guard respondsToSelector(sel)         else { return }
+        guard let value = themePicker.value() else { return }
+        guard let state = themePicker.state   else {
+            performSelector(sel, withObject: themePicker.value())
+            return
+        }
+        
+        typealias setValueForControlStateIMP = @convention(c) (UIView, Selector, AnyObject, UIControlState) -> Void
+        
+        let methodSignature = self.methodForSelector(sel)
+        let callback = unsafeBitCast(methodSignature, setValueForControlStateIMP.self)
+        
+        callback(self, sel, value, state)
+    }
+    
     private func setupThemeNotification() {
         if #available(iOS 9.0, *) {
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateTheme", name: ThemeUpdateNotification, object: nil)
@@ -38,7 +55,7 @@ extension UIView {
     @objc private func updateTheme() {
         themePickers.forEach { selector, themePicker in
             UIView.animateWithDuration(ThemeAnimationDuration) {
-                self.performSelector(Selector(selector), withObject: themePicker.value())
+                self.performThemePicker(selector, themePicker: themePicker)
             }
         }
     }
