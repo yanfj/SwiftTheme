@@ -14,25 +14,26 @@ extension UIView {
     
     public var themePickers: ThemePickers {
         get {
-            if let value = objc_getAssociatedObject(self, &themesAssociationKey) as? ThemePickers {
-                return value
+            if let themePickers = objc_getAssociatedObject(self, &themesPickersKey) as? ThemePickers {
+                return themePickers
             }
-            let value = ThemePickers()
-            objc_setAssociatedObject(self, &themesAssociationKey, value, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            setupThemeNotification()
-            return value
+            let initValue = ThemePickers()
+            objc_setAssociatedObject(self, &themesPickersKey, initValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            return initValue
         }
         set {
-            objc_setAssociatedObject(self, &themesAssociationKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &themesPickersKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            removeThemeNotification()
+            if newValue.isEmpty == false { setupThemeNotification() }
         }
     }
     
-    func performThemePicker(selector: String, themePicker: ThemePicker) {
+    func performThemePicker(selector: String, picker: ThemePicker?) {
         let sel = Selector(selector)
-        guard respondsToSelector(sel)         else { return }
-        guard let value = themePicker.value() else { return }
-        guard let state = themePicker.state   else {
-            performSelector(sel, withObject: themePicker.value())
+        guard respondsToSelector(sel)     else { return }
+        guard let value = picker?.value() else { return }
+        guard let statePicker = picker as? ThemeStatePicker else {
+            performSelector(sel, withObject: value)
             return
         }
         
@@ -41,7 +42,7 @@ extension UIView {
         let methodSignature = self.methodForSelector(sel)
         let callback = unsafeBitCast(methodSignature, setValueForControlStateIMP.self)
         
-        callback(self, sel, value, state)
+        statePicker.values.forEach { callback(self, sel, $1.value()!, UIControlState(rawValue: $0)) }
     }
     
     private func setupThemeNotification() {
@@ -52,14 +53,18 @@ extension UIView {
         }
     }
     
+    private func removeThemeNotification() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: ThemeUpdateNotification, object: nil)
+    }
+    
     @objc private func updateTheme() {
-        themePickers.forEach { selector, themePicker in
-            UIView.animateWithDuration(ThemeAnimationDuration) {
-                self.performThemePicker(selector, themePicker: themePicker)
+        themePickers.forEach { selector, picker in
+            UIView.animateWithDuration(ThemeManager.animationDuration) {
+                self.performThemePicker(selector, picker: picker)
             }
         }
     }
     
 }
 
-private var themesAssociationKey = ""
+private var themesPickersKey = ""

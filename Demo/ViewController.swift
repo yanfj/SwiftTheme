@@ -13,11 +13,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.theme_backgroundColor = ThemePicker(colorKeyPath: "Global.backgroundColor")
+        view.theme_backgroundColor = ThemeColorPicker(keyPath: "Global.backgroundColor")
         
-        var button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
         button.setTitle("这是标题", forState: .Normal)
-        button.theme_titleColorWithState = ThemePicker(colorKeyPath: "ViewController.buttonTitleNormalColor", state: .Normal)
+        button.setTitle("这是标题高亮", forState: .Highlighted)
+        button.theme_setTitleColor(ThemeColorPicker(keyPath: "ViewController.buttonTitleNormalColor"), forState: .Normal)
+        button.theme_setTitleColor(ThemeColorPicker(keyPath: "ViewController.buttonTitleHighlightedColor"), forState: .Highlighted)
         view.addSubview(button)
     }
     

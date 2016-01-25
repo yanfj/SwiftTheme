@@ -8,7 +8,6 @@
 
 import UIKit
 
-let ThemeAnimationDuration  = 0.3
 let ThemeUpdateNotification = "ThemeUpdateNotification"
 
 enum ThemePath {
@@ -34,6 +33,8 @@ enum ThemePath {
 }
 
 public class ThemeManager: NSObject {
+    
+    static var animationDuration = 0.3
     
     private(set) static var currentTheme     : NSDictionary?
     private(set) static var currentThemePath : ThemePath?
@@ -85,34 +86,47 @@ public class ThemePicker: NSObject, NSCopying {
     public typealias ValueType = () -> AnyObject?
     
     var value: ValueType
-    var state: UIControlState?
     
     required public init(v: ValueType) {
         value = v
     }
     
-    convenience init(colorKeyPath: String) {
-        self.init(v: { return ThemeManager.colorForKeyPath(colorKeyPath) })
-    }
-    
-    convenience init(colorKeyPath: String, state: UIControlState) {
-        self.init(v: { return ThemeManager.colorForKeyPath(colorKeyPath) })
-        self.state = state
-    }
-    
-    convenience init(imageKeyPath: String) {
-        self.init(v: { return ThemeManager.imageForKeyPath(imageKeyPath) })
-    }
-    
-    convenience init(imageKeyPath: String, state: UIControlState) {
-        self.init(v: { return ThemeManager.imageForKeyPath(imageKeyPath) })
-        self.state = state
-    }
-    
     public func copyWithZone(zone: NSZone) -> AnyObject {
-        let copy = self.dynamicType.init(v: value)
-        copy.state = state
-        return copy
+        return self.dynamicType.init(v: value)
+    }
+    
+}
+
+public class ThemeColorPicker: ThemePicker {
+    
+    convenience init(keyPath: String) {
+        self.init(v: { return ThemeManager.colorForKeyPath(keyPath) })
+    }
+    
+}
+
+public class ThemeImagePicker: ThemePicker {
+    
+    convenience init(keyPath: String) {
+        self.init(v: { return ThemeManager.imageForKeyPath(keyPath) })
+    }
+    
+}
+
+public class ThemeStatePicker: ThemePicker {
+    
+    public typealias ValuesType = [UInt: ThemePicker]
+    
+    var values = ValuesType()
+    
+    convenience init(picker: ThemePicker, withState state: UIControlState) {
+        self.init(v: { return 0 } )
+        self.setPicker(picker, forState: state)
+    }
+    
+    func setPicker(picker: ThemePicker, forState state: UIControlState) -> Self {
+        values[state.rawValue] = picker
+        return self
     }
     
 }

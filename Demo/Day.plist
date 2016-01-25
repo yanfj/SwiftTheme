@@ -21,6 +21,8 @@
 		<string>#000</string>
 		<key>buttonTitleNormalColor</key>
 		<string>#000</string>
+		<key>buttonTitleHighlightedColor</key>
+		<string>#BFA</string>
 		<key>backImage</key>
 		<string>back</string>
 	</dict>

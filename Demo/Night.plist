@@ -21,6 +21,8 @@
 		<string>#FFF</string>
 		<key>buttonTitleNormalColor</key>
 		<string>#FFF</string>
+		<key>buttonTitleHighlightedColor</key>
+		<string>#FBB</string>
 	</dict>
 </dict>
 </plist>
