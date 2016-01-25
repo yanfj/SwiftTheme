@@ -48,6 +48,7 @@ public class ThemeManager: NSObject {
     class func setTheme(dict: NSDictionary, path: ThemePath) {
         currentTheme = dict
         currentThemePath = path
+        setupPromiseKeyPath()
         NSNotificationCenter.defaultCenter().postNotificationName(ThemeUpdateNotification, object: nil)
     }
     
@@ -76,6 +77,18 @@ public class ThemeManager: NSObject {
             return UIImage(contentsOfFile: filePath)
         } else {
             return UIImage(named: imageName)
+        }
+    }
+    
+    private class func setupPromiseKeyPath() {
+        if let statusBarStyle = stringForKeyPath("UIStatusBarStyle") {
+            switch statusBarStyle {
+            case "UIStatusBarStyleDefault":
+                UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: true)
+            case "UIStatusBarStyleLightContent":
+                UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: true)
+            default: break
+            }
         }
     }
     
