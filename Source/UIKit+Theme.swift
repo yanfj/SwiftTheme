@@ -65,27 +65,27 @@ extension UIButton:
     ThemeTitleColorWithStateProtocol
 {}
 
-protocol ThemeAlphaProtocol                         { var theme_alpha: ThemeNumberPicker? { get set } }
-protocol ThemeBackgroundColorProtocol               { var theme_backgroundColor: ThemeColorPicker? { get set } }
-protocol ThemeTintColorProtocol                     { var theme_tintColor: ThemeColorPicker? { get set } }
-protocol ThemeBarTintColorProtocol                  { var theme_barTintColor: ThemeColorPicker? { get set } }
-protocol ThemeTextColorProtocol                     { var theme_textColor: ThemeColorPicker? { get set } }
-protocol ThemeHighlightedTextColorProtocol          { var theme_highlightedTextColor: ThemeColorPicker? { get set } }
-protocol ThemeShadowColorProtocol                   { var theme_shadowColor: ThemeColorPicker? { get set } }
-protocol ThemeSeparatorColorProtocol                { var theme_separatorColor: ThemeColorPicker? { get set } }
-protocol ThemeOnTintColorProtocol                   { var theme_onTintColor: ThemeColorPicker? { get set } }
-protocol ThemeThumbTintColorProtocol                { var theme_thumbTintColor: ThemeColorPicker? { get set } }
-protocol ThemeMinimumTrackTintColorProtocol         { var theme_minimumTrackTintColor: ThemeColorPicker? { get set } }
-protocol ThemeMaximumTrackTintColorProtocol         { var theme_maximumTrackTintColor: ThemeColorPicker? { get set } }
-protocol ThemeProgressTintColorProtocol             { var theme_progressTintColor: ThemeColorPicker? { get set } }
-protocol ThemeTrackTintColorProtocol                { var theme_trackTintColor: ThemeColorPicker? { get set } }
-protocol ThemePageIndicatorTintColorProtocol        { var theme_pageIndicatorTintColor: ThemeColorPicker? { get set } }
-protocol ThemeCurrentPageIndicatorTintColorProtocol { var theme_currentPageIndicatorTintColor: ThemeColorPicker? { get set } }
-protocol ThemeImageProtocol                         { var theme_image: ThemeImagePicker? { get set } }
+protocol ThemeAlphaProtocol                         :class { var theme_alpha: ThemeNumberPicker? { get set } }
+protocol ThemeBackgroundColorProtocol               :class { var theme_backgroundColor: ThemeColorPicker? { get set } }
+protocol ThemeTintColorProtocol                     :class { var theme_tintColor: ThemeColorPicker? { get set } }
+protocol ThemeBarTintColorProtocol                  :class { var theme_barTintColor: ThemeColorPicker? { get set } }
+protocol ThemeTextColorProtocol                     :class { var theme_textColor: ThemeColorPicker? { get set } }
+protocol ThemeHighlightedTextColorProtocol          :class { var theme_highlightedTextColor: ThemeColorPicker? { get set } }
+protocol ThemeShadowColorProtocol                   :class { var theme_shadowColor: ThemeColorPicker? { get set } }
+protocol ThemeSeparatorColorProtocol                :class { var theme_separatorColor: ThemeColorPicker? { get set } }
+protocol ThemeOnTintColorProtocol                   :class { var theme_onTintColor: ThemeColorPicker? { get set } }
+protocol ThemeThumbTintColorProtocol                :class { var theme_thumbTintColor: ThemeColorPicker? { get set } }
+protocol ThemeMinimumTrackTintColorProtocol         :class { var theme_minimumTrackTintColor: ThemeColorPicker? { get set } }
+protocol ThemeMaximumTrackTintColorProtocol         :class { var theme_maximumTrackTintColor: ThemeColorPicker? { get set } }
+protocol ThemeProgressTintColorProtocol             :class { var theme_progressTintColor: ThemeColorPicker? { get set } }
+protocol ThemeTrackTintColorProtocol                :class { var theme_trackTintColor: ThemeColorPicker? { get set } }
+protocol ThemePageIndicatorTintColorProtocol        :class { var theme_pageIndicatorTintColor: ThemeColorPicker? { get set } }
+protocol ThemeCurrentPageIndicatorTintColorProtocol :class { var theme_currentPageIndicatorTintColor: ThemeColorPicker? { get set } }
+protocol ThemeImageProtocol                         :class { var theme_image: ThemeImagePicker? { get set } }
 
-protocol ThemeImageWithStateProtocol               { func theme_setImage(picker: ThemeImagePicker, forState state: UIControlState) }
-protocol ThemeBackgroundImageWithStateProtocol     { func theme_setBackgroundImage(picker: ThemeImagePicker, forState state: UIControlState) }
-protocol ThemeTitleColorWithStateProtocol          { func theme_setTitleColor(picker: ThemeColorPicker, forState state: UIControlState) }
+protocol ThemeImageWithStateProtocol                :class { func theme_setImage(picker: ThemeImagePicker, forState state: UIControlState) }
+protocol ThemeBackgroundImageWithStateProtocol      :class { func theme_setBackgroundImage(picker: ThemeImagePicker, forState state: UIControlState) }
+protocol ThemeTitleColorWithStateProtocol           :class { func theme_setTitleColor(picker: ThemeColorPicker, forState state: UIControlState) }
 
 extension ThemeAlphaProtocol where Self: UIView {
     var theme_alpha: ThemeNumberPicker? {
