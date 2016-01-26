@@ -65,7 +65,7 @@ extension UIButton:
     ThemeTitleColorWithStateProtocol
 {}
 
-protocol ThemeAlphaProtocol                         { var theme_alpha: ThemePicker? { get set } }
+protocol ThemeAlphaProtocol                         { var theme_alpha: ThemeNumberPicker? { get set } }
 protocol ThemeBackgroundColorProtocol               { var theme_backgroundColor: ThemeColorPicker? { get set } }
 protocol ThemeTintColorProtocol                     { var theme_tintColor: ThemeColorPicker? { get set } }
 protocol ThemeBarTintColorProtocol                  { var theme_barTintColor: ThemeColorPicker? { get set } }
@@ -88,8 +88,8 @@ protocol ThemeBackgroundImageWithStateProtocol     { func theme_setBackgroundIma
 protocol ThemeTitleColorWithStateProtocol          { func theme_setTitleColor(picker: ThemeColorPicker, forState state: UIControlState) }
 
 extension ThemeAlphaProtocol where Self: UIView {
-    var theme_alpha: ThemePicker? {
-        get { return getThemePicker(self, "setAlpha:") }
+    var theme_alpha: ThemeNumberPicker? {
+        get { return getThemeFloatPicker(self, "setAlpha:") }
         set { setThemePicker(self, "setAlpha:", newValue, nil)}
     }
 }
@@ -208,6 +208,7 @@ extension ThemeTitleColorWithStateProtocol where Self: UIView {
 
 private func getThemeColorPicker(view: UIView, _ selector : String) -> ThemeColorPicker? { return getThemePicker(view, selector) as? ThemeColorPicker }
 private func getThemeImagePicker(view: UIView, _ selector : String) -> ThemeImagePicker? { return getThemePicker(view, selector) as? ThemeImagePicker }
+private func getThemeFloatPicker(view: UIView, _ selector : String) -> ThemeNumberPicker? { return getThemePicker(view, selector) as? ThemeNumberPicker }
 private func getThemePicker(view: UIView, _ selector : String) -> ThemePicker? { return view.themePickers[selector] }
 
 private func setThemePicker(

@@ -24,10 +24,8 @@ enum ThemePath {
     
     func plistPathByName(name: String) -> String? {
         switch self {
-        case .MainBundle:
-            return NSBundle.mainBundle().pathForResource(name, ofType: "plist")
-        case .Sandbox(let path):
-            return NSURL(string: name + ".plist", relativeToURL: path)?.path
+        case .MainBundle:        return NSBundle.mainBundle().pathForResource(name, ofType: "plist")
+        case .Sandbox(let path): return NSURL(string: name + ".plist", relativeToURL: path)?.path
         }
     }
 }
@@ -52,34 +50,6 @@ public class ThemeManager: NSObject {
         NSNotificationCenter.defaultCenter().postNotificationName(ThemeUpdateNotification, object: nil)
     }
     
-    class func stringForKeyPath(keyPath: String) -> String? {
-        return currentTheme?.valueForKeyPath(keyPath) as? String
-    }
-    
-    class func colorForKeyPath(keyPath: String) -> UIColor? {
-        guard let rgba = stringForKeyPath(keyPath) else {
-            print("WARNING: Not found color key path: \(keyPath)")
-            return nil
-        }
-        guard let color = try? UIColor(rgba_throws: rgba) else {
-            print("WARNING: Not found color rgba: \(rgba)")
-            return nil
-        }
-        return color
-    }
-    
-    class func imageForKeyPath(keyPath: String) -> UIImage? {
-        guard let imageName = stringForKeyPath(keyPath) else {
-            print("WARNING: Not found image key path: \(keyPath)")
-            return nil
-        }
-        if let filePath = currentThemePath?.URL?.URLByAppendingPathComponent(imageName).path {
-            return UIImage(contentsOfFile: filePath)
-        } else {
-            return UIImage(named: imageName)
-        }
-    }
-    
     private class func setupPromiseKeyPath() {
         if let statusBarStyle = stringForKeyPath("UIStatusBarStyle") {
             switch statusBarStyle {
@@ -94,52 +64,48 @@ public class ThemeManager: NSObject {
     
 }
 
-public class ThemePicker: NSObject, NSCopying {
+extension ThemeManager {
     
-    public typealias ValueType = () -> AnyObject?
-    
-    var value: ValueType
-    
-    required public init(v: ValueType) {
-        value = v
+    class func stringForKeyPath(keyPath: String) -> String? {
+        guard let string = currentTheme?.valueForKeyPath(keyPath) as? String else {
+            print("WARNING: Not found string key path: \(keyPath)")
+            return nil
+        }
+        return string
     }
     
-    public func copyWithZone(zone: NSZone) -> AnyObject {
-        return self.dynamicType.init(v: value)
+    class func numberForKeyPath(keyPath: String) -> NSNumber? {
+        guard let number = currentTheme?.valueForKeyPath(keyPath) as? NSNumber else {
+            print("WARNING: Not found number key path: \(keyPath)")
+            return nil
+        }
+        return number
     }
     
-}
-
-public class ThemeColorPicker: ThemePicker {
-    
-    convenience init(keyPath: String) {
-        self.init(v: { return ThemeManager.colorForKeyPath(keyPath) })
+    class func colorForKeyPath(keyPath: String) -> UIColor? {
+        guard let rgba = stringForKeyPath(keyPath) else { return nil }
+        guard let color = try? UIColor(rgba_throws: rgba) else {
+            print("WARNING: Not found color rgba: \(rgba)")
+            return nil
+        }
+        return color
     }
     
-}
-
-public class ThemeImagePicker: ThemePicker {
-    
-    convenience init(keyPath: String) {
-        self.init(v: { return ThemeManager.imageForKeyPath(keyPath) })
-    }
-    
-}
-
-public class ThemeStatePicker: ThemePicker {
-    
-    public typealias ValuesType = [UInt: ThemePicker]
-    
-    var values = ValuesType()
-    
-    convenience init(picker: ThemePicker, withState state: UIControlState) {
-        self.init(v: { return 0 } )
-        self.setPicker(picker, forState: state)
-    }
-    
-    func setPicker(picker: ThemePicker, forState state: UIControlState) -> Self {
-        values[state.rawValue] = picker
-        return self
+    class func imageForKeyPath(keyPath: String) -> UIImage? {
+        guard let imageName = stringForKeyPath(keyPath) else { return nil }
+        if let filePath = currentThemePath?.URL?.URLByAppendingPathComponent(imageName).path {
+            guard let image = UIImage(contentsOfFile: filePath) else {
+                print("WARNING: Not found image at file path: \(filePath)")
+                return nil
+            }
+            return image
+        } else {
+            guard let image = UIImage(named: imageName) else {
+                print("WARNING: Not found image name at main bundle: \(imageName)")
+                return nil
+            }
+            return image
+        }
     }
     
 }

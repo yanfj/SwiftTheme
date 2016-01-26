@@ -9,17 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var button: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.theme_backgroundColor = ThemeColorPicker(keyPath: "Global.backgroundColor")
         
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
+        button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
         button.setTitle("这是标题", forState: .Normal)
         button.setTitle("这是标题高亮", forState: .Highlighted)
         button.theme_setTitleColor(ThemeColorPicker(keyPath: "ViewController.buttonTitleNormalColor"), forState: .Normal)
         button.theme_setTitleColor(ThemeColorPicker(keyPath: "ViewController.buttonTitleHighlightedColor"), forState: .Highlighted)
+        button.theme_alpha = ThemeNumberPicker(keyPath: "ViewController.buttonAlpha")
         view.addSubview(button)
     }
     

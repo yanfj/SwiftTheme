@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		187C0D1E1C562AC00000FA89 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C0D1D1C562AC00000FA89 /* ThemePicker.swift */; };
+		187C0D1F1C562AC00000FA89 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C0D1D1C562AC00000FA89 /* ThemePicker.swift */; };
 		18D642B11C53613400DADEC5 /* SwiftTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 18D642B01C53613400DADEC5 /* SwiftTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		18D642BF1C53615300DADEC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642BE1C53615300DADEC5 /* AppDelegate.swift */; };
 		18D642C11C53615300DADEC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642C01C53615300DADEC5 /* ViewController.swift */; };
@@ -26,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		187C0D1D1C562AC00000FA89 /* ThemePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
 		18D642AD1C53613400DADEC5 /* SwiftTheme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftTheme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D642B01C53613400DADEC5 /* SwiftTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftTheme.h; sourceTree = "<group>"; };
 		18D642B21C53613400DADEC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				18D642E01C53638200DADEC5 /* ThemeManager.swift */,
+				187C0D1D1C562AC00000FA89 /* ThemePicker.swift */,
 				18D642E11C53638200DADEC5 /* UIColorExtension.swift */,
 				18D642E21C53638200DADEC5 /* UIKit+Theme.swift */,
 				18D642E31C53638200DADEC5 /* UIKit+Themes.swift */,
@@ -240,6 +244,7 @@
 				18D642EA1C53638200DADEC5 /* UIKit+Themes.swift in Sources */,
 				18D642E41C53638200DADEC5 /* ThemeManager.swift in Sources */,
 				18D642E61C53638200DADEC5 /* UIColorExtension.swift in Sources */,
+				187C0D1E1C562AC00000FA89 /* ThemePicker.swift in Sources */,
 				18D642E81C53638200DADEC5 /* UIKit+Theme.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +255,7 @@
 			files = (
 				18D642E91C53638200DADEC5 /* UIKit+Theme.swift in Sources */,
 				18D642C11C53615300DADEC5 /* ViewController.swift in Sources */,
+				187C0D1F1C562AC00000FA89 /* ThemePicker.swift in Sources */,
 				18D642EB1C53638200DADEC5 /* UIKit+Themes.swift in Sources */,
 				18D642BF1C53615300DADEC5 /* AppDelegate.swift in Sources */,
 				18D642E51C53638200DADEC5 /* ThemeManager.swift in Sources */,

@@ -21,6 +21,8 @@
 	<dict>
 		<key>labelTextColor</key>
 		<string>#000</string>
+		<key>buttonAlpha</key>
+		<integer>1</integer>
 		<key>buttonTitleNormalColor</key>
 		<string>#000</string>
 		<key>buttonTitleHighlightedColor</key>

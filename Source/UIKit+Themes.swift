@@ -32,17 +32,22 @@ extension UIView {
         let sel = Selector(selector)
         guard respondsToSelector(sel)     else { return }
         guard let value = picker?.value() else { return }
-        guard let statePicker = picker as? ThemeStatePicker else {
-            performSelector(sel, withObject: value)
+        
+        if picker is ThemeNumberPicker {
+            let methodSignature = self.methodForSelector(sel)
+            let setFloat = unsafeBitCast(methodSignature, setCGFloatValueIMP.self)
+            setFloat(self, sel, CGFloat(value as! NSNumber))
             return
         }
         
-        typealias setValueForControlStateIMP = @convention(c) (UIView, Selector, AnyObject, UIControlState) -> Void
+        if let statePicker = picker as? ThemeStatePicker {
+            let methodSignature = self.methodForSelector(sel)
+            let setState = unsafeBitCast(methodSignature, setValueForStateIMP.self)
+            statePicker.values.forEach { setState(self, sel, $1.value()!, UIControlState(rawValue: $0)) }
+            return
+        }
         
-        let methodSignature = self.methodForSelector(sel)
-        let callback = unsafeBitCast(methodSignature, setValueForControlStateIMP.self)
-        
-        statePicker.values.forEach { callback(self, sel, $1.value()!, UIControlState(rawValue: $0)) }
+        performSelector(sel, withObject: value)
     }
     
     private func setupThemeNotification() {
@@ -64,6 +69,9 @@ extension UIView {
             }
         }
     }
+    
+    private typealias setCGFloatValueIMP  = @convention(c) (UIView, Selector, CGFloat) -> Void
+    private typealias setValueForStateIMP = @convention(c) (UIView, Selector, AnyObject, UIControlState) -> Void
     
 }
 
