@@ -65,131 +65,112 @@ extension UIButton:
     ThemeTitleColorWithStateProtocol
 {}
 
-@objc protocol ThemeAlphaProtocol                         { optional var theme_alpha: ThemeNumberPicker? { get set } }
-@objc protocol ThemeBackgroundColorProtocol               { optional var theme_backgroundColor: ThemeColorPicker? { get set } }
-@objc protocol ThemeTintColorProtocol                     { optional var theme_tintColor: ThemeColorPicker? { get set } }
-@objc protocol ThemeBarTintColorProtocol                  { optional var theme_barTintColor: ThemeColorPicker? { get set } }
-@objc protocol ThemeTextColorProtocol                     { optional var theme_textColor: ThemeColorPicker? { get set } }
-@objc protocol ThemeHighlightedTextColorProtocol          { optional var theme_highlightedTextColor: ThemeColorPicker? { get set } }
-@objc protocol ThemeShadowColorProtocol                   { optional var theme_shadowColor: ThemeColorPicker? { get set } }
-@objc protocol ThemeSeparatorColorProtocol                { optional var theme_separatorColor: ThemeColorPicker? { get set } }
-@objc protocol ThemeOnTintColorProtocol                   { optional var theme_onTintColor: ThemeColorPicker? { get set } }
-@objc protocol ThemeThumbTintColorProtocol                { optional var theme_thumbTintColor: ThemeColorPicker? { get set } }
-@objc protocol ThemeMinimumTrackTintColorProtocol         { optional var theme_minimumTrackTintColor: ThemeColorPicker? { get set } }
-@objc protocol ThemeMaximumTrackTintColorProtocol         { optional var theme_maximumTrackTintColor: ThemeColorPicker? { get set } }
-@objc protocol ThemeProgressTintColorProtocol             { optional var theme_progressTintColor: ThemeColorPicker? { get set } }
-@objc protocol ThemeTrackTintColorProtocol                { optional var theme_trackTintColor: ThemeColorPicker? { get set } }
-@objc protocol ThemePageIndicatorTintColorProtocol        { optional var theme_pageIndicatorTintColor: ThemeColorPicker? { get set } }
-@objc protocol ThemeCurrentPageIndicatorTintColorProtocol { optional var theme_currentPageIndicatorTintColor: ThemeColorPicker? { get set } }
-@objc protocol ThemeImageProtocol                         { optional var theme_image: ThemeImagePicker? { get set } }
-
+@objc protocol ThemeAlphaProtocol                         { optional func theme_setAlpha(picker: ThemeNumberPicker) }
+@objc protocol ThemeBackgroundColorProtocol               { optional func theme_setBackgroundColor(picker: ThemeColorPicker) }
+@objc protocol ThemeTintColorProtocol                     { optional func theme_setTintColor(picker: ThemeColorPicker) }
+@objc protocol ThemeBarTintColorProtocol                  { optional func theme_setBarTintColor(picker: ThemeColorPicker) }
+@objc protocol ThemeTextColorProtocol                     { optional func theme_setTextColor(picker: ThemeColorPicker) }
+@objc protocol ThemeHighlightedTextColorProtocol          { optional func theme_setHighlightedTextColor(picker: ThemeColorPicker) }
+@objc protocol ThemeShadowColorProtocol                   { optional func theme_setShadowColor(picker: ThemeColorPicker) }
+@objc protocol ThemeSeparatorColorProtocol                { optional func theme_setSeparatorColor(picker: ThemeColorPicker) }
+@objc protocol ThemeOnTintColorProtocol                   { optional func theme_setOnTintColor(picker: ThemeColorPicker) }
+@objc protocol ThemeThumbTintColorProtocol                { optional func theme_setThumbTintColor(picker: ThemeColorPicker) }
+@objc protocol ThemeMinimumTrackTintColorProtocol         { optional func theme_setMinimumTrackTintColor(picker: ThemeColorPicker) }
+@objc protocol ThemeMaximumTrackTintColorProtocol         { optional func theme_setMaximumTrackTintColor(picker: ThemeColorPicker) }
+@objc protocol ThemeProgressTintColorProtocol             { optional func theme_setProgressTintColor(picker: ThemeColorPicker) }
+@objc protocol ThemeTrackTintColorProtocol                { optional func theme_setTrackTintColor(picker: ThemeColorPicker) }
+@objc protocol ThemePageIndicatorTintColorProtocol        { optional func theme_setPageIndicatorTintColor(picker: ThemeColorPicker) }
+@objc protocol ThemeCurrentPageIndicatorTintColorProtocol { optional func theme_setCurrentPageIndicatorTintColor(picker: ThemeColorPicker) }
+@objc protocol ThemeImageProtocol                         { optional func theme_setImage(picker: ThemeImagePicker) }
 @objc protocol ThemeImageWithStateProtocol                { optional func theme_setImage(picker: ThemeImagePicker, forState state: UIControlState) }
 @objc protocol ThemeBackgroundImageWithStateProtocol      { optional func theme_setBackgroundImage(picker: ThemeImagePicker, forState state: UIControlState) }
 @objc protocol ThemeTitleColorWithStateProtocol           { optional func theme_setTitleColor(picker: ThemeColorPicker, forState state: UIControlState) }
 
 extension ThemeAlphaProtocol where Self: UIView {
-    var theme_alpha: ThemeNumberPicker? {
-        get { return getThemeFloatPicker(self, "setAlpha:") }
-        set { setThemePicker(self, "setAlpha:", newValue, nil)}
+    func theme_setAlpha(picker: ThemeNumberPicker) {
+        setThemePicker(self, "setAlpha:", picker, nil)
     }
 }
 extension ThemeBackgroundColorProtocol where Self: UIView {
-    var theme_backgroundColor: ThemeColorPicker? {
-        get { return getThemeColorPicker(self, "setBackgroundColor:") }
-        set { setThemePicker(self, "setBackgroundColor:", newValue, nil) }
+    func theme_setBackgroundColor(picker: ThemeColorPicker) {
+        setThemePicker(self, "setBackgroundColor:", picker, nil)
     }
 }
 extension ThemeTintColorProtocol where Self: UIView {
-    var theme_tintColor: ThemeColorPicker? {
-        get { return getThemeColorPicker(self, "setTintColor:") }
-        set { setThemePicker(self, "setTintColor:", newValue, nil) }
+    func theme_setTintColor(picker: ThemeColorPicker) {
+        setThemePicker(self, "setTintColor:", picker, nil)
     }
 }
 extension ThemeBarTintColorProtocol where Self: UIView {
-    var theme_barTintColor: ThemeColorPicker? {
-        get { return getThemeColorPicker(self, "setBarTintColor:") }
-        set { setThemePicker(self, "setBarTintColor:", newValue, nil) }
+    func theme_setBarTintColor(picker: ThemeColorPicker) {
+        setThemePicker(self, "setBarTintColor:", picker, nil)
     }
 }
 extension ThemeTextColorProtocol where Self: UIView {
-    var theme_textColor: ThemeColorPicker? {
-        get { return getThemeColorPicker(self, "setTextColor:") }
-        set { setThemePicker(self, "setTextColor:", newValue, nil) }
+    func theme_setTextColor(picker: ThemeColorPicker) {
+        setThemePicker(self, "setTextColor:", picker, nil)
     }
 }
 extension ThemeHighlightedTextColorProtocol where Self: UIView {
-    var theme_highlightedTextColor: ThemeColorPicker? {
-        get { return getThemeColorPicker(self, "setHighlightedTextColor:") }
-        set { setThemePicker(self, "setHighlightedTextColor:", newValue, nil) }
+    func theme_setHighlightedTextColor(picker: ThemeColorPicker) {
+        setThemePicker(self, "setHighlightedTextColor:", picker, nil)
     }
 }
 extension ThemeShadowColorProtocol where Self: UIView {
-    var theme_shadowColor: ThemeColorPicker? {
-        get { return getThemeColorPicker(self, "setShadowColor:") }
-        set { setThemePicker(self, "setShadowColor:", newValue, nil) }
+    func theme_setShadowColor(picker: ThemeColorPicker) {
+        setThemePicker(self, "setShadowColor:", picker, nil)
     }
 }
 extension ThemeSeparatorColorProtocol where Self: UIView {
-    var theme_separatorColor: ThemeColorPicker? {
-        get { return getThemeColorPicker(self, "setSeparatorColor:") }
-        set { setThemePicker(self, "setSeparatorColor:", newValue, nil) }
+    func theme_setSeparatorColor(picker: ThemeColorPicker) {
+        setThemePicker(self, "setSeparatorColor:", picker, nil)
     }
 }
 extension ThemeOnTintColorProtocol where Self: UIView {
-    var theme_onTintColor: ThemeColorPicker? {
-        get { return getThemeColorPicker(self, "setOnTintColor:") }
-        set { setThemePicker(self, "setOnTintColor:", newValue, nil) }
+    func theme_setOnTintColor(picker: ThemeColorPicker) {
+        setThemePicker(self, "setOnTintColor:", picker, nil)
     }
 }
 extension ThemeThumbTintColorProtocol where Self: UIView {
-    var theme_thumbTintColor: ThemeColorPicker? {
-        get { return getThemeColorPicker(self, "setThumbTintColor:") }
-        set { setThemePicker(self, "setThumbTintColor:", newValue, nil) }
+    func theme_setThumbTintColor(picker: ThemeColorPicker) {
+        setThemePicker(self, "setThumbTintColor:", picker, nil)
     }
 }
 extension ThemeMinimumTrackTintColorProtocol where Self: UIView {
-    var theme_minimumTrackTintColor: ThemeColorPicker? {
-        get { return getThemeColorPicker(self, "setMinimumTrackTintColor:") }
-        set { setThemePicker(self, "setMinimumTrackTintColor:", newValue, nil) }
+    func theme_setMinimumTrackTintColor(picker: ThemeColorPicker) {
+        setThemePicker(self, "setMinimumTrackTintColor:", picker, nil)
     }
 }
 extension ThemeMaximumTrackTintColorProtocol where Self: UIView {
-    var theme_maximumTrackTintColor: ThemeColorPicker? {
-        get { return getThemeColorPicker(self, "setMaximumTrackTintColor:") }
-        set { setThemePicker(self, "setMaximumTrackTintColor:", newValue, nil) }
+    func theme_setMaximumTrackTintColor(picker: ThemeColorPicker) {
+        setThemePicker(self, "setMaximumTrackTintColor:", picker, nil)
     }
 }
 extension ThemeProgressTintColorProtocol where Self: UIView {
-    var theme_progressTintColor: ThemeColorPicker? {
-        get { return getThemeColorPicker(self, "setProgressTintColor:") }
-        set { setThemePicker(self, "setProgressTintColor:", newValue, nil) }
+    func theme_setProgressTintColor(picker: ThemeColorPicker) {
+        setThemePicker(self, "setProgressTintColor:", picker, nil)
     }
 }
 extension ThemeTrackTintColorProtocol where Self: UIView {
-    var theme_trackTintColor: ThemeColorPicker? {
-        get { return getThemeColorPicker(self, "setTrackTintColor:") }
-        set { setThemePicker(self, "setTrackTintColor:", newValue, nil) }
+    func theme_setTrackTintColor(picker: ThemeColorPicker) {
+        setThemePicker(self, "setTrackTintColor:", picker, nil)
     }
 }
 extension ThemePageIndicatorTintColorProtocol where Self: UIView {
-    var theme_pageIndicatorTintColor: ThemeColorPicker? {
-        get { return getThemeColorPicker(self, "setPageIndicatorTintColor:") }
-        set { setThemePicker(self, "setPageIndicatorTintColor:", newValue, nil) }
+    func theme_setPageIndicatorTintColor(picker: ThemeColorPicker) {
+        setThemePicker(self, "setPageIndicatorTintColor:", picker, nil)
     }
 }
 extension ThemeCurrentPageIndicatorTintColorProtocol where Self: UIView {
-    var theme_currentPageIndicatorTintColor: ThemeColorPicker? {
-        get { return getThemeColorPicker(self, "setCurrentPageIndicatorTintColor:") }
-        set { setThemePicker(self, "setCurrentPageIndicatorTintColor:", newValue, nil) }
+    func theme_setCurrentPageIndicatorTintColor(picker: ThemeColorPicker) {
+        setThemePicker(self, "setCurrentPageIndicatorTintColor:", picker, nil)
     }
 }
 extension ThemeImageProtocol where Self: UIView {
-    var theme_image: ThemeImagePicker? {
-        get { return getThemeImagePicker(self, "setImage:") }
-        set { setThemePicker(self, "setImage:", newValue, nil) }
+    func theme_setImage(picker: ThemeImagePicker) {
+        setThemePicker(self, "setImage:", picker, nil)
     }
 }
-
 extension ThemeImageWithStateProtocol where Self: UIView {
     func theme_setImage(picker: ThemeImagePicker, forState state: UIControlState) {
         setThemePicker(self, "setImage:forState:", picker, state)
@@ -205,11 +186,6 @@ extension ThemeTitleColorWithStateProtocol where Self: UIView {
         setThemePicker(self, "setTitleColor:forState:", picker, state)
     }
 }
-
-private func getThemeColorPicker(view: UIView, _ selector : String) -> ThemeColorPicker? { return getThemePicker(view, selector) as? ThemeColorPicker }
-private func getThemeImagePicker(view: UIView, _ selector : String) -> ThemeImagePicker? { return getThemePicker(view, selector) as? ThemeImagePicker }
-private func getThemeFloatPicker(view: UIView, _ selector : String) -> ThemeNumberPicker? { return getThemePicker(view, selector) as? ThemeNumberPicker }
-private func getThemePicker(view: UIView, _ selector : String) -> ThemePicker? { return view.themePickers[selector] }
 
 private func setThemePicker(
       view : UIView,
