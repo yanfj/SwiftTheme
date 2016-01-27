@@ -10,113 +10,136 @@ import UIKit
 
 extension UIView
 {
-    func theme_setAlpha(picker: ThemeCGFloatPicker) {
-        setThemePicker(self, "setAlpha:", picker, nil)
+    var theme_alpha: ThemeCGFloatPicker? {
+        get { return getThemePicker(self, "setAlpha:") as? ThemeCGFloatPicker }
+        set { setThemePicker(self, "setAlpha:", newValue, nil) }
     }
-    func theme_setBackgroundColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setBackgroundColor:", picker, nil)
+    var theme_backgroundColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setBackgroundColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setBackgroundColor:", newValue, nil) }
     }
-    func theme_setTintColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setTintColor:", picker, nil)
+    var theme_tintColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setTintColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setTintColor:", newValue, nil) }
     }
 }
 extension UILabel
 {
-    func theme_setTextColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setTextColor:", picker, nil)
+    var theme_textColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setTextColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setTextColor:", newValue, nil) }
     }
-    func theme_setHighlightedTextColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setHighlightedTextColor:", picker, nil)
+    var theme_highlightedTextColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setHighlightedTextColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setHighlightedTextColor:", newValue, nil) }
     }
-    func theme_setShadowColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setShadowColor:", picker, nil)
+    var theme_shadowColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setShadowColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setShadowColor:", newValue, nil) }
     }
 }
 extension UINavigationBar
 {
-    func theme_setBarTintColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setBarTintColor:", picker, nil)
+    var theme_barTintColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setBarTintColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setBarTintColor:", newValue, nil) }
     }
 }
 extension UITabBar
 {
-    func theme_setBarTintColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setBarTintColor:", picker, nil)
+    var theme_barTintColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setBarTintColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setBarTintColor:", newValue, nil) }
     }
 }
 extension UITableView
 {
-    func theme_setSeparatorColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setSeparatorColor:", picker, nil)
+    var theme_separatorColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setSeparatorColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setSeparatorColor:", newValue, nil) }
     }
 }
 extension UITextField
 {
-    func theme_setTextColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setTextColor:", picker, nil)
+    var theme_textColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setTextColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setTextColor:", newValue, nil) }
     }
 }
 extension UITextView
 {
-    func theme_setTextColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setTextColor:", picker, nil)
+    var theme_textColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setTextColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setTextColor:", newValue, nil) }
     }
 }
 extension UIToolbar
 {
-    func theme_setBarTintColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setBarTintColor:", picker, nil)
+    var theme_barTintColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setBarTintColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setBarTintColor:", newValue, nil) }
     }
 }
 extension UISwitch
 {
-    func theme_setOnTintColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setOnTintColor:", picker, nil)
+    var theme_onTintColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setOnTintColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setOnTintColor:", newValue, nil) }
     }
-    func theme_setThumbTintColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setThumbTintColor:", picker, nil)
+    var theme_thumbTintColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setThumbTintColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setThumbTintColor:", newValue, nil) }
     }
 }
 extension UISlider
 {
-    func theme_setThumbTintColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setThumbTintColor:", picker, nil)
+    var theme_thumbTintColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setThumbTintColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setThumbTintColor:", newValue, nil) }
     }
-    func theme_setMinimumTrackTintColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setMinimumTrackTintColor:", picker, nil)
+    var theme_minimumTrackTintColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setMinimumTrackTintColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setMinimumTrackTintColor:", newValue, nil) }
     }
-    func theme_setMaximumTrackTintColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setMaximumTrackTintColor:", picker, nil)
+    var theme_maximumTrackTintColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setMaximumTrackTintColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setMaximumTrackTintColor:", newValue, nil) }
     }
 }
 extension UISearchBar
 {
-    func theme_setBarTintColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setBarTintColor:", picker, nil)
+    var theme_barTintColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setBarTintColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setBarTintColor:", newValue, nil) }
     }
 }
 extension UIProgressView
 {
-    func theme_setProgressTintColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setProgressTintColor:", picker, nil)
+    var theme_progressTintColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setProgressTintColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setProgressTintColor:", newValue, nil) }
     }
-    func theme_setTrackTintColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setTrackTintColor:", picker, nil)
+    var theme_trackTintColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setTrackTintColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setTrackTintColor:", newValue, nil) }
     }
 }
 extension UIPageControl
 {
-    func theme_setPageIndicatorTintColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setPageIndicatorTintColor:", picker, nil)
+    var theme_pageIndicatorTintColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setPageIndicatorTintColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setPageIndicatorTintColor:", newValue, nil) }
     }
-    func theme_setCurrentPageIndicatorTintColor(picker: ThemeColorPicker) {
-        setThemePicker(self, "setCurrentPageIndicatorTintColor:", picker, nil)
+    var theme_currentPageIndicatorTintColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setCurrentPageIndicatorTintColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setCurrentPageIndicatorTintColor:", newValue, nil) }
     }
 }
 extension UIImageView
 {
-    func theme_setImage(picker: ThemeImagePicker) {
-        setThemePicker(self, "setImage:", picker, nil)
+    var theme_image: ThemeImagePicker? {
+        get { return getThemePicker(self, "setImage:") as? ThemeImagePicker }
+        set { setThemePicker(self, "setImage:", newValue, nil) }
     }
 }
 extension UIButton
@@ -133,28 +156,42 @@ extension UIButton
 }
 extension CALayer
 {
-    func theme_setBorderColor(picker: ThemeCGColorPicker) {
-        setThemePicker(self, "setBorderColor:", picker, nil)
+    var theme_borderColor: ThemeCGColorPicker? {
+        get { return getThemePicker(self, "setBorderColor:") as? ThemeCGColorPicker }
+        set { setThemePicker(self, "setBorderColor:", newValue, nil) }
     }
-    func theme_setShadowColor(picker: ThemeCGColorPicker) {
-        setThemePicker(self, "setShadowColor:", picker, nil)
+    var theme_shadowColor: ThemeCGColorPicker? {
+        get { return getThemePicker(self, "setShadowColor:") as? ThemeCGColorPicker }
+        set { setThemePicker(self, "setShadowColor:", newValue, nil) }
     }
 }
 
+private func getThemePicker(
+    object : NSObject,
+    _ selector : String
+    ) -> ThemePicker? {
+        return object.themePickers[selector]
+}
+
 private func setThemePicker(
-      view : NSObject,
+    object : NSObject,
     _ selector : String,
-var _ picker : ThemePicker?,
-    _ state: UIControlState?
-) {
-    if let state = state {
-        if let statePicker = view.themePickers[selector] as? ThemeStatePicker {
-            picker = statePicker.setPicker(picker!, forState: state)
-        } else {
-            picker = ThemeStatePicker(picker: picker!, withState: state)
+    var _ picker : ThemePicker?,
+    _ state : UIControlState?
+    ) {
+        guard picker != nil else {
+            object.themePickers[selector] = nil
+            return
         }
-    }
-    
-    view.themePickers[selector] = picker
-    view.performThemePicker(selector, picker: picker)
+        
+        if let state = state {
+            if let statePicker = object.themePickers[selector] as? ThemeStatePicker {
+                picker = statePicker.setPicker(picker!, forState: state)
+            } else {
+                picker = ThemeStatePicker(picker: picker!, withState: state)
+            }
+        }
+        
+        object.themePickers[selector] = picker
+        object.performThemePicker(selector, picker: picker)
 }
