@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView
 {
-    func theme_setAlpha(picker: ThemeNumberPicker) {
+    func theme_setAlpha(picker: ThemeCGFloatPicker) {
         setThemePicker(self, "setAlpha:", picker, nil)
     }
     func theme_setBackgroundColor(picker: ThemeColorPicker) {
@@ -131,9 +131,18 @@ extension UIButton
         setThemePicker(self, "setTitleColor:forState:", picker, state)
     }
 }
+extension CALayer
+{
+    func theme_setBorderColor(picker: ThemeCGColorPicker) {
+        setThemePicker(self, "setBorderColor:", picker, nil)
+    }
+    func theme_setShadowColor(picker: ThemeCGColorPicker) {
+        setThemePicker(self, "setShadowColor:", picker, nil)
+    }
+}
 
 private func setThemePicker(
-      view : UIView,
+      view : NSObject,
     _ selector : String,
 var _ picker : ThemePicker?,
     _ state: UIControlState?

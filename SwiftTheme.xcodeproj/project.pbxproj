@@ -23,8 +23,8 @@
 		18D642E71C53638200DADEC5 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E11C53638200DADEC5 /* UIColorExtension.swift */; };
 		18D642E81C53638200DADEC5 /* UIKit+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E21C53638200DADEC5 /* UIKit+Theme.swift */; };
 		18D642E91C53638200DADEC5 /* UIKit+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E21C53638200DADEC5 /* UIKit+Theme.swift */; };
-		18D642EA1C53638200DADEC5 /* UIKit+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E31C53638200DADEC5 /* UIKit+Themes.swift */; };
-		18D642EB1C53638200DADEC5 /* UIKit+Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E31C53638200DADEC5 /* UIKit+Themes.swift */; };
+		18D642EA1C53638200DADEC5 /* NSObject+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E31C53638200DADEC5 /* NSObject+Theme.swift */; };
+		18D642EB1C53638200DADEC5 /* NSObject+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E31C53638200DADEC5 /* NSObject+Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +44,7 @@
 		18D642E01C53638200DADEC5 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		18D642E11C53638200DADEC5 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		18D642E21C53638200DADEC5 /* UIKit+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Theme.swift"; sourceTree = "<group>"; };
-		18D642E31C53638200DADEC5 /* UIKit+Themes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Themes.swift"; sourceTree = "<group>"; };
+		18D642E31C53638200DADEC5 /* NSObject+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Theme.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +123,7 @@
 				187C0D1D1C562AC00000FA89 /* ThemePicker.swift */,
 				18D642E11C53638200DADEC5 /* UIColorExtension.swift */,
 				18D642E21C53638200DADEC5 /* UIKit+Theme.swift */,
-				18D642E31C53638200DADEC5 /* UIKit+Themes.swift */,
+				18D642E31C53638200DADEC5 /* NSObject+Theme.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -241,7 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18D642EA1C53638200DADEC5 /* UIKit+Themes.swift in Sources */,
+				18D642EA1C53638200DADEC5 /* NSObject+Theme.swift in Sources */,
 				18D642E41C53638200DADEC5 /* ThemeManager.swift in Sources */,
 				18D642E61C53638200DADEC5 /* UIColorExtension.swift in Sources */,
 				187C0D1E1C562AC00000FA89 /* ThemePicker.swift in Sources */,
@@ -256,7 +256,7 @@
 				18D642E91C53638200DADEC5 /* UIKit+Theme.swift in Sources */,
 				18D642C11C53615300DADEC5 /* ViewController.swift in Sources */,
 				187C0D1F1C562AC00000FA89 /* ThemePicker.swift in Sources */,
-				18D642EB1C53638200DADEC5 /* UIKit+Themes.swift in Sources */,
+				18D642EB1C53638200DADEC5 /* NSObject+Theme.swift in Sources */,
 				18D642BF1C53615300DADEC5 /* AppDelegate.swift in Sources */,
 				18D642E51C53638200DADEC5 /* ThemeManager.swift in Sources */,
 				18D642E71C53638200DADEC5 /* UIColorExtension.swift in Sources */,

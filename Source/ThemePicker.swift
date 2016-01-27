@@ -40,14 +40,6 @@ public class ThemeImagePicker: ThemePicker {
     
 }
 
-public class ThemeNumberPicker: ThemePicker {
-    
-    convenience init(keyPath: String) {
-        self.init(v: { return ThemeManager.numberForKeyPath(keyPath) })
-    }
-    
-}
-
 public class ThemeStatePicker: ThemePicker {
     
     public typealias ValuesType = [UInt: ThemePicker]
@@ -62,6 +54,27 @@ public class ThemeStatePicker: ThemePicker {
     func setPicker(picker: ThemePicker, forState state: UIControlState) -> Self {
         values[state.rawValue] = picker
         return self
+    }
+    
+}
+
+public class ThemeCGFloatPicker: ThemePicker {
+    
+    convenience init(keyPath: String) {
+        self.init(v: {
+            guard let number = ThemeManager.numberForKeyPath(keyPath) else {
+                return nil
+            }
+            return CGFloat(number)
+        })
+    }
+    
+}
+
+public class ThemeCGColorPicker: ThemePicker {
+    
+    convenience init(keyPath: String) {
+        self.init(v: { return ThemeManager.colorForKeyPath(keyPath)?.CGColor })
     }
     
 }

@@ -1,5 +1,5 @@
 //
-//  UIKit+Themes.swift
+//  NSObject+Theme.swift
 //  SwiftTheme
 //
 //  Created by Gesen on 16/1/22.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIView {
+extension NSObject {
     
     public typealias ThemePickers = [String: ThemePicker]
     
@@ -30,25 +30,35 @@ extension UIView {
     
     func performThemePicker(selector: String, picker: ThemePicker?) {
         let sel = Selector(selector)
+        let methodSignature = self.methodForSelector(sel)
         guard respondsToSelector(sel)     else { return }
         guard let value = picker?.value() else { return }
         
-        if picker is ThemeNumberPicker {
-            let methodSignature = self.methodForSelector(sel)
-            let setFloat = unsafeBitCast(methodSignature, setCGFloatValueIMP.self)
-            setFloat(self, sel, CGFloat(value as! NSNumber))
-            return
-        }
-        
         if let statePicker = picker as? ThemeStatePicker {
-            let methodSignature = self.methodForSelector(sel)
             let setState = unsafeBitCast(methodSignature, setValueForStateIMP.self)
             statePicker.values.forEach { setState(self, sel, $1.value()!, UIControlState(rawValue: $0)) }
-            return
         }
         
-        performSelector(sel, withObject: value)
+        else if picker is ThemeCGFloatPicker {
+            let setCGFloat = unsafeBitCast(methodSignature, setCGFloatValueIMP.self)
+            setCGFloat(self, sel, value as! CGFloat)
+        }
+        
+        else if picker is ThemeCGColorPicker {
+            let setCGColor = unsafeBitCast(methodSignature, setCGColorValueIMP.self)
+            setCGColor(self, sel, value as! CGColor)
+        }
+        
+        else { performSelector(sel, withObject: value) }
     }
+    
+    private typealias setCGColorValueIMP  = @convention(c) (NSObject, Selector, CGColor) -> Void
+    private typealias setCGFloatValueIMP  = @convention(c) (NSObject, Selector, CGFloat) -> Void
+    private typealias setValueForStateIMP = @convention(c) (NSObject, Selector, AnyObject, UIControlState) -> Void
+    
+}
+
+extension NSObject {
     
     private func setupThemeNotification() {
         if #available(iOS 9.0, *) {
@@ -69,9 +79,6 @@ extension UIView {
             }
         }
     }
-    
-    private typealias setCGFloatValueIMP  = @convention(c) (UIView, Selector, CGFloat) -> Void
-    private typealias setValueForStateIMP = @convention(c) (UIView, Selector, AnyObject, UIControlState) -> Void
     
 }
 

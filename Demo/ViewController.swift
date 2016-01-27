@@ -20,7 +20,9 @@ class ViewController: UIViewController {
         button.setTitle("这是标题高亮", forState: .Highlighted)
         button.theme_setTitleColor(ThemeColorPicker(keyPath: "ViewController.buttonTitleNormalColor"), forState: .Normal)
         button.theme_setTitleColor(ThemeColorPicker(keyPath: "ViewController.buttonTitleHighlightedColor"), forState: .Highlighted)
-        button.theme_setAlpha(ThemeNumberPicker(keyPath: "ViewController.buttonAlpha"))
+        button.theme_setAlpha(ThemeCGFloatPicker(keyPath: "ViewController.buttonAlpha"))
+        button.layer.borderWidth = 1
+        button.layer.theme_setBorderColor(ThemeCGColorPicker(keyPath: "ViewController.buttonTitleHighlightedColor"))
         view.addSubview(button)
     }
     
