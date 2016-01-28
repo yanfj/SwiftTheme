@@ -38,6 +38,11 @@ extension NSObject {
             let setState = unsafeBitCast(methodSignature, setValueForStateIMP.self)
             statePicker.values.forEach { setState(self, sel, $1.value()!, UIControlState(rawValue: $0)) }
         }
+            
+        else if let statusBarStylePicker = picker as? ThemeStatusBarStylePicker {
+            let setStatusBarStyle = unsafeBitCast(methodSignature, setStatusBarStyleValueIMP.self)
+            setStatusBarStyle(self, sel, statusBarStylePicker.style, statusBarStylePicker.animated)
+        }
         
         else if picker is ThemeCGFloatPicker {
             let setCGFloat = unsafeBitCast(methodSignature, setCGFloatValueIMP.self)
@@ -52,9 +57,10 @@ extension NSObject {
         else { performSelector(sel, withObject: value) }
     }
     
-    private typealias setCGColorValueIMP  = @convention(c) (NSObject, Selector, CGColor) -> Void
-    private typealias setCGFloatValueIMP  = @convention(c) (NSObject, Selector, CGFloat) -> Void
-    private typealias setValueForStateIMP = @convention(c) (NSObject, Selector, AnyObject, UIControlState) -> Void
+    private typealias setCGColorValueIMP        = @convention(c) (NSObject, Selector, CGColor) -> Void
+    private typealias setCGFloatValueIMP        = @convention(c) (NSObject, Selector, CGFloat) -> Void
+    private typealias setValueForStateIMP       = @convention(c) (NSObject, Selector, AnyObject, UIControlState) -> Void
+    private typealias setStatusBarStyleValueIMP = @convention(c) (NSObject, Selector, UIStatusBarStyle, Bool) -> Void
     
 }
 

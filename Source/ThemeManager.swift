@@ -34,8 +34,14 @@ public class ThemeManager: NSObject {
     
     static var animationDuration = 0.3
     
-    private(set) static var currentTheme     : NSDictionary?
-    private(set) static var currentThemePath : ThemePath?
+    private(set) static var currentTheme      : NSDictionary?
+    private(set) static var currentThemePath  : ThemePath?
+    private(set) static var currentThemeIndex : Int = 0
+    
+    class func setTheme(index: Int) {
+        currentThemeIndex = index
+        NSNotificationCenter.defaultCenter().postNotificationName(ThemeUpdateNotification, object: nil)
+    }
     
     class func setTheme(plistName: String, path: ThemePath) {
         guard let plistPath = path.plistPathByName(plistName)         else { return }

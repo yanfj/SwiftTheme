@@ -13,16 +13,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.theme_setBackgroundColor(ThemeColorPicker(keyPath: "Global.backgroundColor"))
+//        view.theme_setBackgroundColor(ThemeColorPicker(keyPath: "Global.backgroundColor"))
+        view.theme_backgroundColor = ThemeColorPicker(colors:"","")
         
+        UIApplication.sharedApplication().theme_setStatusBarStyle(ThemeStatusBarStylePicker(style: .De, animated: <#T##Bool#>))
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
         button.setTitle("这是标题", forState: .Normal)
         button.setTitle("这是标题高亮", forState: .Highlighted)
         button.theme_setTitleColor(ThemeColorPicker(keyPath: "ViewController.buttonTitleNormalColor"), forState: .Normal)
         button.theme_setTitleColor(ThemeColorPicker(keyPath: "ViewController.buttonTitleHighlightedColor"), forState: .Highlighted)
-        button.theme_setAlpha(ThemeCGFloatPicker(keyPath: "ViewController.buttonAlpha"))
-        button.layer.borderWidth = 1
-        button.layer.theme_setBorderColor(ThemeCGColorPicker(keyPath: "ViewController.buttonTitleHighlightedColor"))
+        button.theme_setTitleColor(ThemeColorPicker(colors: "", ""), forState: .Highlighted)
+        button.theme_setTitleColor(ThemeColorPicker(colors: "", ""), forState: .Default)
+//        button.theme_setAlpha(ThemeCGFloatPicker(keyPath: "ViewController.buttonAlpha"))
+//        button.layer.borderWidth = 1
+//        button.layer.theme_setBorderColor(ThemeCGColorPicker(keyPath: "ViewController.buttonTitleHighlightedColor"))
         view.addSubview(button)
     }
     

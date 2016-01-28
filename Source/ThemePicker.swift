@@ -29,7 +29,11 @@ public class ThemeColorPicker: ThemePicker {
     convenience init(keyPath: String) {
         self.init(v: { return ThemeManager.colorForKeyPath(keyPath) })
     }
-    
+
+    convenience init(colors: String...) {
+        self.init(v: {  })
+    }
+
     class func pickerWithKeyPath(keyPath: String) -> ThemeColorPicker {
         return ThemeColorPicker(keyPath: keyPath)
     }
@@ -54,7 +58,7 @@ public class ThemeStatePicker: ThemePicker {
     var values = ValuesType()
     
     convenience init(picker: ThemePicker, withState state: UIControlState) {
-        self.init(v: { return 0 } )
+        self.init(v: { return 0 })
         self.setPicker(picker, forState: state)
     }
     
@@ -66,6 +70,39 @@ public class ThemeStatePicker: ThemePicker {
         values[state.rawValue] = picker
         return self
     }
+}
+
+public class ThemeStatusBarStylePicker: ThemePicker {
+    
+    var style  = UIStatusBarStyle.Default
+    var styles = [UIStatusBarStyle]()
+    
+    var animated = true
+    
+    convenience init(styles: UIStatusBarStyle...) {
+        self.init(v: {
+            if ThemeManager.currentThemeIndex > styles.count - 1 || ThemeManager.currentThemeIndex < 0 {
+                return nil
+            }
+            self.style = styles[ThemeManager.currentThemeIndex]
+            
+            return 0 })
+        self.styles = styles
+    }
+
+    convenience init(keyPath: String) {
+        self.init(v: { [unowned self] in
+            if let statusBarStyle = ThemeManager.stringForKeyPath(keyPath) {
+                switch statusBarStyle {
+                case "UIStatusBarStyleDefault"      : self.style = .Default
+                case "UIStatusBarStyleLightContent" : self.style = .LightContent
+                default: break
+                }
+            }
+            return 0
+        })
+    }
+    
 }
 
 public class ThemeCGFloatPicker: ThemePicker {
