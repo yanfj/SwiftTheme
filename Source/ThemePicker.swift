@@ -26,16 +26,22 @@ public class ThemePicker: NSObject, NSCopying {
 
 public class ThemeColorPicker: ThemePicker {
     
+    var colors = [String]()
+    
     convenience init(keyPath: String) {
         self.init(v: { return ThemeManager.colorForKeyPath(keyPath) })
     }
 
     convenience init(colors: String...) {
-        self.init(v: {  })
+        self.init(v: { return ThemeManager.colorForArray(colors) })
     }
-
+    
     class func pickerWithKeyPath(keyPath: String) -> ThemeColorPicker {
         return ThemeColorPicker(keyPath: keyPath)
+    }
+    
+    class func pickerWithColors(colors: String...) -> ThemeColorPicker {
+        return ThemeColorPicker(v: { return ThemeManager.colorForArray(colors) })
     }
     
 }
@@ -46,9 +52,100 @@ public class ThemeImagePicker: ThemePicker {
         self.init(v: { return ThemeManager.imageForKeyPath(keyPath) })
     }
     
+    convenience init(images: String...) {
+        self.init(v: { return ThemeManager.imageForArray(images) })
+    }
+    
     class func pickerWithKeyPath(keyPath: String) -> ThemeImagePicker {
         return ThemeImagePicker(keyPath: keyPath)
     }
+    
+    class func pickerWithImages(images: String...) -> ThemeImagePicker {
+        return ThemeImagePicker(v: { return ThemeManager.imageForArray(images) })
+    }
+    
+}
+
+public class ThemeCGFloatPicker: ThemePicker {
+    
+    convenience init(keyPath: String) {
+        self.init(v: { return CGFloat(ThemeManager.numberForKeyPath(keyPath) ?? 0) })
+    }
+    
+    convenience init(floats: CGFloat...) {
+        self.init(v: { return ThemeManager.elementForArray(floats) })
+    }
+    
+    class func pickerWithKeyPath(keyPath: String) -> ThemeCGFloatPicker {
+        return ThemeCGFloatPicker(keyPath: keyPath)
+    }
+    
+    class func pickerWithFloats(floats: CGFloat...) -> ThemeCGFloatPicker {
+        return ThemeCGFloatPicker(v: { return ThemeManager.elementForArray(floats) })
+    }
+    
+}
+
+public class ThemeCGColorPicker: ThemePicker {
+    
+    convenience init(keyPath: String) {
+        self.init(v: { return ThemeManager.colorForKeyPath(keyPath)?.CGColor })
+    }
+    
+    convenience init(colors: String...) {
+        self.init(v: { return ThemeManager.colorForArray(colors)?.CGColor })
+    }
+    
+    class func pickerWithKeyPath(keyPath: String) -> ThemeCGColorPicker {
+        return ThemeCGColorPicker(keyPath: keyPath)
+    }
+    
+    class func pickerWithFloats(colors: String...) -> ThemeCGColorPicker {
+        return ThemeCGColorPicker(v: { return ThemeManager.colorForArray(colors) })
+    }
+    
+}
+
+public class ThemeStatusBarStylePicker: ThemePicker {
+    
+    var styles: [UIStatusBarStyle]?
+    var animated = true
+    
+    convenience init(keyPath: String) {
+        self.init(v: { return ThemeManager.stringForKeyPath(keyPath) })
+    }
+    
+    convenience init(styles: UIStatusBarStyle...) {
+        self.init(v: { return 0 })
+        self.styles = styles
+    }
+    
+    class func pickerWithKeyPath(keyPath: String) -> ThemeStatusBarStylePicker {
+        return ThemeStatusBarStylePicker(keyPath: keyPath)
+    }
+    
+    class func pickerWithStyles(styles: UIStatusBarStyle...) -> ThemeStatusBarStylePicker {
+        let picker = ThemeStatusBarStylePicker(v: { return 0 })
+        picker.styles = styles
+        return picker
+    }
+    
+    func currentStyle(value: AnyObject?) -> UIStatusBarStyle {
+        if let styles = styles {
+            if styles.indices ~= ThemeManager.currentThemeIndex {
+                return styles[ThemeManager.currentThemeIndex]
+            }
+        }
+        if let styleString = value as? String {
+            switch styleString {
+            case "UIStatusBarStyleDefault"      : return .Default
+            case "UIStatusBarStyleLightContent" : return .LightContent
+            default: break
+            }
+        }
+        return .Default
+    }
+    
 }
 
 public class ThemeStatePicker: ThemePicker {
@@ -69,65 +166,5 @@ public class ThemeStatePicker: ThemePicker {
     func setPicker(picker: ThemePicker, forState state: UIControlState) -> Self {
         values[state.rawValue] = picker
         return self
-    }
-}
-
-public class ThemeStatusBarStylePicker: ThemePicker {
-    
-    var style  = UIStatusBarStyle.Default
-    var styles = [UIStatusBarStyle]()
-    
-    var animated = true
-    
-    convenience init(styles: UIStatusBarStyle...) {
-        self.init(v: {
-            if ThemeManager.currentThemeIndex > styles.count - 1 || ThemeManager.currentThemeIndex < 0 {
-                return nil
-            }
-            self.style = styles[ThemeManager.currentThemeIndex]
-            
-            return 0 })
-        self.styles = styles
-    }
-
-    convenience init(keyPath: String) {
-        self.init(v: { [unowned self] in
-            if let statusBarStyle = ThemeManager.stringForKeyPath(keyPath) {
-                switch statusBarStyle {
-                case "UIStatusBarStyleDefault"      : self.style = .Default
-                case "UIStatusBarStyleLightContent" : self.style = .LightContent
-                default: break
-                }
-            }
-            return 0
-        })
-    }
-    
-}
-
-public class ThemeCGFloatPicker: ThemePicker {
-    
-    convenience init(keyPath: String) {
-        self.init(v: {
-            guard let number = ThemeManager.numberForKeyPath(keyPath) else {
-                return nil
-            }
-            return CGFloat(number)
-        })
-    }
-    
-    class func pickerWithKeyPath(keyPath: String) -> ThemeCGFloatPicker {
-        return ThemeCGFloatPicker(keyPath: keyPath)
-    }
-}
-
-public class ThemeCGColorPicker: ThemePicker {
-    
-    convenience init(keyPath: String) {
-        self.init(v: { return ThemeManager.colorForKeyPath(keyPath)?.CGColor })
-    }
-    
-    class func pickerWithKeyPath(keyPath: String) -> ThemeCGColorPicker {
-        return ThemeCGColorPicker(keyPath: keyPath)
     }
 }

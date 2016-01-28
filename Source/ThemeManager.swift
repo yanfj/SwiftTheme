@@ -52,20 +52,42 @@ public class ThemeManager: NSObject {
     class func setTheme(dict: NSDictionary, path: ThemePath) {
         currentTheme = dict
         currentThemePath = path
-        setupPromiseKeyPath()
         NSNotificationCenter.defaultCenter().postNotificationName(ThemeUpdateNotification, object: nil)
     }
     
-    private class func setupPromiseKeyPath() {
-        if let statusBarStyle = stringForKeyPath("UIStatusBarStyle") {
-            switch statusBarStyle {
-            case "UIStatusBarStyleDefault":
-                UIApplication.sharedApplication().setStatusBarStyle(.Default, animated: true)
-            case "UIStatusBarStyleLightContent":
-                UIApplication.sharedApplication().setStatusBarStyle(.LightContent, animated: true)
-            default: break
-            }
+}
+
+extension ThemeManager {
+    
+    class func stringForArray(array: [String]) -> String? {
+        guard let string = elementForArray(array) as? String else {
+            print("WARNING: Not found string in array: \(array)[\(currentThemeIndex)]")
+            return nil
         }
+        return string
+    }
+    
+    class func colorForArray(array: [String]) -> UIColor? {
+        guard let rgba = stringForArray(array) else { return nil }
+        guard let color = try? UIColor(rgba_throws: rgba) else {
+            print("WARNING: Not convert rgba \(rgba) in array: \(array)[\(currentThemeIndex)]")
+            return nil
+        }
+        return color
+    }
+    
+    class func imageForArray(array: [String]) -> UIImage? {
+        guard let imageName = stringForArray(array) else { return nil }
+        guard let image = UIImage(named: imageName) else {
+            print("WARNING: Not found image name \(imageName) in array: \(array)[\(currentThemeIndex)]")
+            return nil
+        }
+        return image
+    }
+    
+    class func elementForArray<T: AnyObject>(array: [T]) -> T? {
+        let index = ThemeManager.currentThemeIndex
+        return array.indices ~= index ? array[index] : nil
     }
     
 }
@@ -91,7 +113,7 @@ extension ThemeManager {
     class func colorForKeyPath(keyPath: String) -> UIColor? {
         guard let rgba = stringForKeyPath(keyPath) else { return nil }
         guard let color = try? UIColor(rgba_throws: rgba) else {
-            print("WARNING: Not found color rgba: \(rgba)")
+            print("WARNING: Not convert rgba \(rgba) at key path: \(keyPath)")
             return nil
         }
         return color
