@@ -26,8 +26,6 @@ public class ThemePicker: NSObject, NSCopying {
 
 public class ThemeColorPicker: ThemePicker {
     
-    var colors = [String]()
-    
     convenience init(keyPath: String) {
         self.init(v: { return ThemeManager.colorForKeyPath(keyPath) })
     }
@@ -40,7 +38,7 @@ public class ThemeColorPicker: ThemePicker {
         return ThemeColorPicker(keyPath: keyPath)
     }
     
-    class func pickerWithColors(colors: String...) -> ThemeColorPicker {
+    class func pickerWithColors(colors: [String]) -> ThemeColorPicker {
         return ThemeColorPicker(v: { return ThemeManager.colorForArray(colors) })
     }
     
@@ -52,16 +50,24 @@ public class ThemeImagePicker: ThemePicker {
         self.init(v: { return ThemeManager.imageForKeyPath(keyPath) })
     }
     
-    convenience init(images: String...) {
-        self.init(v: { return ThemeManager.imageForArray(images) })
+    convenience init(names: String...) {
+        self.init(v: { return ThemeManager.imageForArray(names) })
+    }
+    
+    convenience init(images: UIImage...) {
+        self.init(v: { return ThemeManager.elementForArray(images) })
     }
     
     class func pickerWithKeyPath(keyPath: String) -> ThemeImagePicker {
         return ThemeImagePicker(keyPath: keyPath)
     }
     
-    class func pickerWithImages(images: String...) -> ThemeImagePicker {
-        return ThemeImagePicker(v: { return ThemeManager.imageForArray(images) })
+    class func pickerWithNames(names: [String]) -> ThemeImagePicker {
+        return ThemeImagePicker(v: { return ThemeManager.imageForArray(names) })
+    }
+    
+    class func pickerWithImages(images: [UIImage]) -> ThemeImagePicker {
+        return ThemeImagePicker(v: { return ThemeManager.elementForArray(images) })
     }
     
 }
@@ -80,7 +86,7 @@ public class ThemeCGFloatPicker: ThemePicker {
         return ThemeCGFloatPicker(keyPath: keyPath)
     }
     
-    class func pickerWithFloats(floats: CGFloat...) -> ThemeCGFloatPicker {
+    class func pickerWithFloats(floats: [CGFloat]) -> ThemeCGFloatPicker {
         return ThemeCGFloatPicker(v: { return ThemeManager.elementForArray(floats) })
     }
     
@@ -100,8 +106,20 @@ public class ThemeCGColorPicker: ThemePicker {
         return ThemeCGColorPicker(keyPath: keyPath)
     }
     
-    class func pickerWithFloats(colors: String...) -> ThemeCGColorPicker {
-        return ThemeCGColorPicker(v: { return ThemeManager.colorForArray(colors) })
+    class func pickerWithColors(colors: [String]) -> ThemeCGColorPicker {
+        return ThemeCGColorPicker(v: { return ThemeManager.colorForArray(colors)?.CGColor })
+    }
+    
+}
+
+public class ThemeDictionaryPicker: ThemePicker {
+    
+    convenience init(dicts: [String: AnyObject]...) {
+        self.init(v: { return ThemeManager.elementForArray(dicts) })
+    }
+    
+    class func pickerWithDicts(dicts: [[String: AnyObject]]) -> ThemeDictionaryPicker {
+        return ThemeDictionaryPicker(v: { return ThemeManager.elementForArray(dicts) })
     }
     
 }
@@ -124,7 +142,7 @@ public class ThemeStatusBarStylePicker: ThemePicker {
         return ThemeStatusBarStylePicker(keyPath: keyPath)
     }
     
-    class func pickerWithStyles(styles: UIStatusBarStyle...) -> ThemeStatusBarStylePicker {
+    class func pickerWithStyles(styles: [UIStatusBarStyle]) -> ThemeStatusBarStylePicker {
         let picker = ThemeStatusBarStylePicker(v: { return 0 })
         picker.styles = styles
         return picker
@@ -148,9 +166,9 @@ public class ThemeStatusBarStylePicker: ThemePicker {
     
 }
 
-public class ThemeStatePicker: ThemePicker {
+class ThemeStatePicker: ThemePicker {
     
-    public typealias ValuesType = [UInt: ThemePicker]
+    typealias ValuesType = [UInt: ThemePicker]
     
     var values = ValuesType()
     

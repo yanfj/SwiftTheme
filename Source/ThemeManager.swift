@@ -59,17 +59,9 @@ public class ThemeManager: NSObject {
 
 extension ThemeManager {
     
-    class func stringForArray(array: [String]) -> String? {
-        guard let string = elementForArray(array) as? String else {
-            print("WARNING: Not found string in array: \(array)[\(currentThemeIndex)]")
-            return nil
-        }
-        return string
-    }
-    
     class func colorForArray(array: [String]) -> UIColor? {
-        guard let rgba = stringForArray(array) else { return nil }
-        guard let color = try? UIColor(rgba_throws: rgba) else {
+        guard let rgba = elementForArray(array) else { return nil }
+        guard let color = try? UIColor(rgba_throws: rgba as String) else {
             print("WARNING: Not convert rgba \(rgba) in array: \(array)[\(currentThemeIndex)]")
             return nil
         }
@@ -77,8 +69,8 @@ extension ThemeManager {
     }
     
     class func imageForArray(array: [String]) -> UIImage? {
-        guard let imageName = stringForArray(array) else { return nil }
-        guard let image = UIImage(named: imageName) else {
+        guard let imageName = elementForArray(array) else { return nil }
+        guard let image = UIImage(named: imageName as String) else {
             print("WARNING: Not found image name \(imageName) in array: \(array)[\(currentThemeIndex)]")
             return nil
         }
@@ -87,7 +79,11 @@ extension ThemeManager {
     
     class func elementForArray<T: AnyObject>(array: [T]) -> T? {
         let index = ThemeManager.currentThemeIndex
-        return array.indices ~= index ? array[index] : nil
+        guard  array.indices ~= index else {
+            print("WARNING: Not found element in array: \(array)[\(currentThemeIndex)]")
+            return nil
+        }
+        return array[index]
     }
     
 }
@@ -108,6 +104,14 @@ extension ThemeManager {
             return nil
         }
         return number
+    }
+    
+    class func dictionaryForKeyPath(keyPath: String) -> NSDictionary? {
+        guard let dict = currentTheme?.valueForKeyPath(keyPath) as? NSDictionary else {
+            print("WARNING: Not found dictionary key path: \(keyPath)")
+            return nil
+        }
+        return dict
     }
     
     class func colorForKeyPath(keyPath: String) -> UIColor? {

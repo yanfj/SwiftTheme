@@ -14,15 +14,15 @@ extension NSObject {
     
     public var themePickers: ThemePickers {
         get {
-            if let themePickers = objc_getAssociatedObject(self, &themesPickersKey) as? ThemePickers {
+            if let themePickers = objc_getAssociatedObject(self, &themePickersKey) as? ThemePickers {
                 return themePickers
             }
             let initValue = ThemePickers()
-            objc_setAssociatedObject(self, &themesPickersKey, initValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &themePickersKey, initValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             return initValue
         }
         set {
-            objc_setAssociatedObject(self, &themesPickersKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &themePickersKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             removeThemeNotification()
             if newValue.isEmpty == false { setupThemeNotification() }
         }
@@ -68,9 +68,9 @@ extension NSObject {
     
     private func setupThemeNotification() {
         if #available(iOS 9.0, *) {
-            NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateTheme", name: ThemeUpdateNotification, object: nil)
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "_updateTheme", name: ThemeUpdateNotification, object: nil)
         } else {
-            NSNotificationCenter.defaultCenter().addObserverForName(ThemeUpdateNotification, object: nil, queue: nil, usingBlock: { [weak self] notification in self?.updateTheme() })
+            NSNotificationCenter.defaultCenter().addObserverForName(ThemeUpdateNotification, object: nil, queue: nil, usingBlock: { [weak self] notification in self?._updateTheme() })
         }
     }
     
@@ -78,7 +78,7 @@ extension NSObject {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: ThemeUpdateNotification, object: nil)
     }
     
-    @objc private func updateTheme() {
+    @objc private func _updateTheme() {
         themePickers.forEach { selector, picker in
             UIView.animateWithDuration(ThemeManager.animationDuration) {
                 self.performThemePicker(selector, picker: picker)
@@ -88,4 +88,4 @@ extension NSObject {
     
 }
 
-private var themesPickersKey = ""
+private var themePickersKey = ""

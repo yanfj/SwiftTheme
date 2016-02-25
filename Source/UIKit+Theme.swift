@@ -23,6 +23,13 @@ extension UIView
         set { setThemePicker(self, "setTintColor:", newValue) }
     }
 }
+extension UIBarButtonItem
+{
+    var theme_tintColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setTintColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setTintColor:", newValue) }
+    }
+}
 extension UILabel
 {
     var theme_textColor: ThemeColorPicker? {
@@ -43,6 +50,10 @@ extension UINavigationBar
     var theme_barTintColor: ThemeColorPicker? {
         get { return getThemePicker(self, "setBarTintColor:") as? ThemeColorPicker }
         set { setThemePicker(self, "setBarTintColor:", newValue) }
+    }
+    var theme_titleTextAttributes: ThemeDictionaryPicker? {
+        get { return getThemePicker(self, "setTitleTextAttributes:") as? ThemeDictionaryPicker }
+        set { setThemePicker(self, "setTitleTextAttributes:", newValue) }
     }
 }
 extension UITabBar
