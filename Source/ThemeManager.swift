@@ -62,7 +62,7 @@ extension ThemeManager {
     class func colorForArray(array: [String]) -> UIColor? {
         guard let rgba = elementForArray(array) else { return nil }
         guard let color = try? UIColor(rgba_throws: rgba as String) else {
-            print("WARNING: Not convert rgba \(rgba) in array: \(array)[\(currentThemeIndex)]")
+            print("SwiftTheme WARNING: Not convert rgba \(rgba) in array: \(array)[\(currentThemeIndex)]")
             return nil
         }
         return color
@@ -71,7 +71,7 @@ extension ThemeManager {
     class func imageForArray(array: [String]) -> UIImage? {
         guard let imageName = elementForArray(array) else { return nil }
         guard let image = UIImage(named: imageName as String) else {
-            print("WARNING: Not found image name \(imageName) in array: \(array)[\(currentThemeIndex)]")
+            print("SwiftTheme WARNING: Not found image name \(imageName) in array: \(array)[\(currentThemeIndex)]")
             return nil
         }
         return image
@@ -80,7 +80,7 @@ extension ThemeManager {
     class func elementForArray<T: AnyObject>(array: [T]) -> T? {
         let index = ThemeManager.currentThemeIndex
         guard  array.indices ~= index else {
-            print("WARNING: Not found element in array: \(array)[\(currentThemeIndex)]")
+            print("SwiftTheme WARNING: Not found element in array: \(array)[\(currentThemeIndex)]")
             return nil
         }
         return array[index]
@@ -92,7 +92,7 @@ extension ThemeManager {
     
     class func stringForKeyPath(keyPath: String) -> String? {
         guard let string = currentTheme?.valueForKeyPath(keyPath) as? String else {
-            print("WARNING: Not found string key path: \(keyPath)")
+            print("SwiftTheme WARNING: Not found string key path: \(keyPath)")
             return nil
         }
         return string
@@ -100,7 +100,7 @@ extension ThemeManager {
     
     class func numberForKeyPath(keyPath: String) -> NSNumber? {
         guard let number = currentTheme?.valueForKeyPath(keyPath) as? NSNumber else {
-            print("WARNING: Not found number key path: \(keyPath)")
+            print("SwiftTheme WARNING: Not found number key path: \(keyPath)")
             return nil
         }
         return number
@@ -108,7 +108,7 @@ extension ThemeManager {
     
     class func dictionaryForKeyPath(keyPath: String) -> NSDictionary? {
         guard let dict = currentTheme?.valueForKeyPath(keyPath) as? NSDictionary else {
-            print("WARNING: Not found dictionary key path: \(keyPath)")
+            print("SwiftTheme WARNING: Not found dictionary key path: \(keyPath)")
             return nil
         }
         return dict
@@ -117,7 +117,7 @@ extension ThemeManager {
     class func colorForKeyPath(keyPath: String) -> UIColor? {
         guard let rgba = stringForKeyPath(keyPath) else { return nil }
         guard let color = try? UIColor(rgba_throws: rgba) else {
-            print("WARNING: Not convert rgba \(rgba) at key path: \(keyPath)")
+            print("SwiftTheme WARNING: Not convert rgba \(rgba) at key path: \(keyPath)")
             return nil
         }
         return color
@@ -127,13 +127,13 @@ extension ThemeManager {
         guard let imageName = stringForKeyPath(keyPath) else { return nil }
         if let filePath = currentThemePath?.URL?.URLByAppendingPathComponent(imageName).path {
             guard let image = UIImage(contentsOfFile: filePath) else {
-                print("WARNING: Not found image at file path: \(filePath)")
+                print("SwiftTheme WARNING: Not found image at file path: \(filePath)")
                 return nil
             }
             return image
         } else {
             guard let image = UIImage(named: imageName) else {
-                print("WARNING: Not found image name at main bundle: \(imageName)")
+                print("SwiftTheme WARNING: Not found image name at main bundle: \(imageName)")
                 return nil
             }
             return image
