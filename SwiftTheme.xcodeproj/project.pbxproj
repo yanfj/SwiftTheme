@@ -7,16 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		186C863D1C857AA900A5FFEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C863C1C857AA900A5FFEA /* AppDelegate.swift */; };
+		186C863F1C857AA900A5FFEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C863E1C857AA900A5FFEA /* ViewController.swift */; };
+		186C86421C857AA900A5FFEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186C86401C857AA900A5FFEA /* Main.storyboard */; };
+		186C86441C857AA900A5FFEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186C86431C857AA900A5FFEA /* Assets.xcassets */; };
+		186C86471C857AA900A5FFEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186C86451C857AA900A5FFEA /* LaunchScreen.storyboard */; };
+		186C864C1C857AFF00A5FFEA /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E01C53638200DADEC5 /* ThemeManager.swift */; };
+		186C864D1C857B0200A5FFEA /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C0D1D1C562AC00000FA89 /* ThemePicker.swift */; };
+		186C864E1C857B0400A5FFEA /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E11C53638200DADEC5 /* UIColorExtension.swift */; };
+		186C864F1C857B0600A5FFEA /* UIKit+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E21C53638200DADEC5 /* UIKit+Theme.swift */; };
+		186C86501C857B0800A5FFEA /* NSObject+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E31C53638200DADEC5 /* NSObject+Theme.swift */; };
+		186C86561C85A10A00A5FFEA /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C86551C85A10A00A5FFEA /* ListViewController.swift */; };
+		186C86581C85A13000A5FFEA /* SelectThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C86571C85A13000A5FFEA /* SelectThemeViewController.swift */; };
+		186C865A1C85A6D600A5FFEA /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C86591C85A6D600A5FFEA /* Global.swift */; };
+		186C865C1C8683BC00A5FFEA /* ChangeThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C865B1C8683BC00A5FFEA /* ChangeThemeCell.swift */; };
+		186C865E1C8684B300A5FFEA /* SelectThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C865D1C8684B300A5FFEA /* SelectThemeCell.swift */; };
+		186C86601C86850600A5FFEA /* SwitchNightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C865F1C86850600A5FFEA /* SwitchNightCell.swift */; };
+		186C86641C86C1C400A5FFEA /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C86631C86C1C400A5FFEA /* AboutCell.swift */; };
 		187C0D1E1C562AC00000FA89 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C0D1D1C562AC00000FA89 /* ThemePicker.swift */; };
 		187C0D1F1C562AC00000FA89 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C0D1D1C562AC00000FA89 /* ThemePicker.swift */; };
 		18D642B11C53613400DADEC5 /* SwiftTheme.h in Headers */ = {isa = PBXBuildFile; fileRef = 18D642B01C53613400DADEC5 /* SwiftTheme.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		18D642BF1C53615300DADEC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642BE1C53615300DADEC5 /* AppDelegate.swift */; };
-		18D642C11C53615300DADEC5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642C01C53615300DADEC5 /* ViewController.swift */; };
 		18D642C41C53615300DADEC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D642C21C53615300DADEC5 /* Main.storyboard */; };
 		18D642C61C53615300DADEC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18D642C51C53615300DADEC5 /* Assets.xcassets */; };
 		18D642C91C53615400DADEC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18D642C71C53615300DADEC5 /* LaunchScreen.storyboard */; };
-		18D642D11C5362CE00DADEC5 /* Day.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18D642CF1C5362CE00DADEC5 /* Day.plist */; };
-		18D642D21C5362CE00DADEC5 /* Night.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18D642D01C5362CE00DADEC5 /* Night.plist */; };
 		18D642E41C53638200DADEC5 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E01C53638200DADEC5 /* ThemeManager.swift */; };
 		18D642E51C53638200DADEC5 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E01C53638200DADEC5 /* ThemeManager.swift */; };
 		18D642E61C53638200DADEC5 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E11C53638200DADEC5 /* UIColorExtension.swift */; };
@@ -28,19 +42,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		186C863A1C857AA900A5FFEA /* PlistDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlistDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		186C863C1C857AA900A5FFEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		186C863E1C857AA900A5FFEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		186C86411C857AA900A5FFEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		186C86431C857AA900A5FFEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		186C86461C857AA900A5FFEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		186C86481C857AA900A5FFEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		186C86551C85A10A00A5FFEA /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		186C86571C85A13000A5FFEA /* SelectThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectThemeViewController.swift; sourceTree = "<group>"; };
+		186C86591C85A6D600A5FFEA /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		186C865B1C8683BC00A5FFEA /* ChangeThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeThemeCell.swift; sourceTree = "<group>"; };
+		186C865D1C8684B300A5FFEA /* SelectThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectThemeCell.swift; sourceTree = "<group>"; };
+		186C865F1C86850600A5FFEA /* SwitchNightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchNightCell.swift; sourceTree = "<group>"; };
+		186C86631C86C1C400A5FFEA /* AboutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
 		187C0D1D1C562AC00000FA89 /* ThemePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
 		18D642AD1C53613400DADEC5 /* SwiftTheme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftTheme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D642B01C53613400DADEC5 /* SwiftTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftTheme.h; sourceTree = "<group>"; };
 		18D642B21C53613400DADEC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18D642BC1C53615300DADEC5 /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18D642BE1C53615300DADEC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		18D642C01C53615300DADEC5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18D642C31C53615300DADEC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18D642C51C53615300DADEC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18D642C81C53615400DADEC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18D642CA1C53615400DADEC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18D642CF1C5362CE00DADEC5 /* Day.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Day.plist; sourceTree = "<group>"; };
-		18D642D01C5362CE00DADEC5 /* Night.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Night.plist; sourceTree = "<group>"; };
 		18D642E01C53638200DADEC5 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		18D642E11C53638200DADEC5 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		18D642E21C53638200DADEC5 /* UIKit+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Theme.swift"; sourceTree = "<group>"; };
@@ -48,6 +73,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		186C86371C857AA900A5FFEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18D642A91C53613400DADEC5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -65,12 +97,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		186C863B1C857AA900A5FFEA /* PlistDemo */ = {
+			isa = PBXGroup;
+			children = (
+				186C863C1C857AA900A5FFEA /* AppDelegate.swift */,
+				186C863E1C857AA900A5FFEA /* ViewController.swift */,
+				186C86401C857AA900A5FFEA /* Main.storyboard */,
+				186C86431C857AA900A5FFEA /* Assets.xcassets */,
+				186C86521C857FFD00A5FFEA /* Supporting Files */,
+			);
+			path = PlistDemo;
+			sourceTree = "<group>";
+		};
+		186C86521C857FFD00A5FFEA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				186C86451C857AA900A5FFEA /* LaunchScreen.storyboard */,
+				186C86481C857AA900A5FFEA /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		186C86611C86851200A5FFEA /* List */ = {
+			isa = PBXGroup;
+			children = (
+				186C86551C85A10A00A5FFEA /* ListViewController.swift */,
+				186C86631C86C1C400A5FFEA /* AboutCell.swift */,
+				186C865D1C8684B300A5FFEA /* SelectThemeCell.swift */,
+				186C865F1C86850600A5FFEA /* SwitchNightCell.swift */,
+				186C865B1C8683BC00A5FFEA /* ChangeThemeCell.swift */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		186C86621C86855000A5FFEA /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				186C86571C85A13000A5FFEA /* SelectThemeViewController.swift */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
 		18D642A31C53613400DADEC5 = {
 			isa = PBXGroup;
 			children = (
 				18D642AF1C53613400DADEC5 /* SwiftTheme */,
 				18D642DF1C53638200DADEC5 /* Source */,
 				18D642BD1C53615300DADEC5 /* Demo */,
+				186C863B1C857AA900A5FFEA /* PlistDemo */,
 				18D642AE1C53613400DADEC5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,6 +154,7 @@
 			children = (
 				18D642AD1C53613400DADEC5 /* SwiftTheme.framework */,
 				18D642BC1C53615300DADEC5 /* Demo.app */,
+				186C863A1C857AA900A5FFEA /* PlistDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,11 +172,11 @@
 			isa = PBXGroup;
 			children = (
 				18D642BE1C53615300DADEC5 /* AppDelegate.swift */,
-				18D642C01C53615300DADEC5 /* ViewController.swift */,
+				186C86591C85A6D600A5FFEA /* Global.swift */,
+				186C86611C86851200A5FFEA /* List */,
+				186C86621C86855000A5FFEA /* Detail */,
 				18D642C21C53615300DADEC5 /* Main.storyboard */,
 				18D642C51C53615300DADEC5 /* Assets.xcassets */,
-				18D642CF1C5362CE00DADEC5 /* Day.plist */,
-				18D642D01C5362CE00DADEC5 /* Night.plist */,
 				18D642CE1C53627500DADEC5 /* Supporting Files */,
 			);
 			path = Demo;
@@ -142,6 +217,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		186C86391C857AA900A5FFEA /* PlistDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 186C86491C857AA900A5FFEA /* Build configuration list for PBXNativeTarget "PlistDemo" */;
+			buildPhases = (
+				186C86361C857AA900A5FFEA /* Sources */,
+				186C86371C857AA900A5FFEA /* Frameworks */,
+				186C86381C857AA900A5FFEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlistDemo;
+			productName = PlistDemo;
+			productReference = 186C863A1C857AA900A5FFEA /* PlistDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 		18D642AC1C53613400DADEC5 /* SwiftTheme */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 18D642B51C53613400DADEC5 /* Build configuration list for PBXNativeTarget "SwiftTheme" */;
@@ -187,6 +279,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Gesen;
 				TargetAttributes = {
+					186C86391C857AA900A5FFEA = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
 					18D642AC1C53613400DADEC5 = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -210,11 +305,22 @@
 			targets = (
 				18D642AC1C53613400DADEC5 /* SwiftTheme */,
 				18D642BB1C53615300DADEC5 /* Demo */,
+				186C86391C857AA900A5FFEA /* PlistDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		186C86381C857AA900A5FFEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				186C86471C857AA900A5FFEA /* LaunchScreen.storyboard in Resources */,
+				186C86441C857AA900A5FFEA /* Assets.xcassets in Resources */,
+				186C86421C857AA900A5FFEA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18D642AB1C53613400DADEC5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,8 +333,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				18D642C91C53615400DADEC5 /* LaunchScreen.storyboard in Resources */,
-				18D642D21C5362CE00DADEC5 /* Night.plist in Resources */,
-				18D642D11C5362CE00DADEC5 /* Day.plist in Resources */,
 				18D642C61C53615300DADEC5 /* Assets.xcassets in Resources */,
 				18D642C41C53615300DADEC5 /* Main.storyboard in Resources */,
 			);
@@ -237,6 +341,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		186C86361C857AA900A5FFEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				186C863F1C857AA900A5FFEA /* ViewController.swift in Sources */,
+				186C864D1C857B0200A5FFEA /* ThemePicker.swift in Sources */,
+				186C864F1C857B0600A5FFEA /* UIKit+Theme.swift in Sources */,
+				186C864E1C857B0400A5FFEA /* UIColorExtension.swift in Sources */,
+				186C86501C857B0800A5FFEA /* NSObject+Theme.swift in Sources */,
+				186C863D1C857AA900A5FFEA /* AppDelegate.swift in Sources */,
+				186C864C1C857AFF00A5FFEA /* ThemeManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		18D642A81C53613400DADEC5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,12 +371,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186C86601C86850600A5FFEA /* SwitchNightCell.swift in Sources */,
 				18D642E91C53638200DADEC5 /* UIKit+Theme.swift in Sources */,
-				18D642C11C53615300DADEC5 /* ViewController.swift in Sources */,
 				187C0D1F1C562AC00000FA89 /* ThemePicker.swift in Sources */,
+				186C865C1C8683BC00A5FFEA /* ChangeThemeCell.swift in Sources */,
+				186C865A1C85A6D600A5FFEA /* Global.swift in Sources */,
 				18D642EB1C53638200DADEC5 /* NSObject+Theme.swift in Sources */,
+				186C865E1C8684B300A5FFEA /* SelectThemeCell.swift in Sources */,
 				18D642BF1C53615300DADEC5 /* AppDelegate.swift in Sources */,
 				18D642E51C53638200DADEC5 /* ThemeManager.swift in Sources */,
+				186C86641C86C1C400A5FFEA /* AboutCell.swift in Sources */,
+				186C86561C85A10A00A5FFEA /* ListViewController.swift in Sources */,
+				186C86581C85A13000A5FFEA /* SelectThemeViewController.swift in Sources */,
 				18D642E71C53638200DADEC5 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +390,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		186C86401C857AA900A5FFEA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				186C86411C857AA900A5FFEA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		186C86451C857AA900A5FFEA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				186C86461C857AA900A5FFEA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		18D642C21C53615300DADEC5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -285,6 +425,28 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		186C864A1C857AA900A5FFEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PlistDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.gesen.PlistDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		186C864B1C857AA900A5FFEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PlistDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.gesen.PlistDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		18D642B31C53613400DADEC5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -438,6 +600,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		186C86491C857AA900A5FFEA /* Build configuration list for PBXNativeTarget "PlistDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				186C864A1C857AA900A5FFEA /* Debug */,
+				186C864B1C857AA900A5FFEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		18D642A71C53613400DADEC5 /* Build configuration list for PBXProject "SwiftTheme" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
