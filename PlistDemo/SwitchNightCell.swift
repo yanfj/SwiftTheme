@@ -1,6 +1,6 @@
 //
 //  SwitchNightCell.swift
-//  Demo
+//  PlistDemo
 //
 //  Created by Gesen on 16/3/2.
 //  Copyright © 2016年 Gesen. All rights reserved.
@@ -18,7 +18,7 @@ class SwitchNightCell: BaseCell {
         super.awakeFromNib()
 
         title.theme_textColor = globalTextColorPicker
-        nightIcon.theme_image = ThemeImagePicker(names: "icon_night_dark", "icon_night_dark", "icon_night_dark", "icon_night_light")
+        nightIcon.theme_image = ThemeImagePicker(keyPath: "SwitchNightCell.iconImage")
         
         updateNightSwitch()
         

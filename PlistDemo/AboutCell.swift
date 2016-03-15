@@ -1,6 +1,6 @@
 //
 //  AboutCell.swift
-//  Demo
+//  PlistDemo
 //
 //  Created by Gesen on 16/3/2.
 //  Copyright © 2016年 Gesen. All rights reserved.

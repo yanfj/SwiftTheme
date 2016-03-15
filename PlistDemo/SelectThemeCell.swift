@@ -1,6 +1,6 @@
 //
 //  SelectThemeCell.swift
-//  Demo
+//  PlistDemo
 //
 //  Created by Gesen on 16/3/2.
 //  Copyright © 2016年 Gesen. All rights reserved.
@@ -17,7 +17,7 @@ class SelectThemeCell: BaseCell {
         super.awakeFromNib()
         
         title.theme_textColor = globalTextColorPicker
-        themeIcon.theme_image = ThemeImagePicker(names: "icon_theme_red", "icon_theme_yellow", "icon_theme_blue", "icon_theme_light")
+        themeIcon.theme_image = ThemeImagePicker(keyPath: "SelectThemeCell.iconImage")
     }
 
 }

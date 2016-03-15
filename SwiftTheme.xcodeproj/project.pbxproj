@@ -7,8 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1854EB631C96601E00E865C6 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB5D1C96601E00E865C6 /* AboutCell.swift */; };
+		1854EB641C96601E00E865C6 /* ChangeThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB5E1C96601E00E865C6 /* ChangeThemeCell.swift */; };
+		1854EB651C96601E00E865C6 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB5F1C96601E00E865C6 /* ListViewController.swift */; };
+		1854EB661C96601E00E865C6 /* SelectThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB601C96601E00E865C6 /* SelectThemeCell.swift */; };
+		1854EB671C96601E00E865C6 /* SelectThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB611C96601E00E865C6 /* SelectThemeViewController.swift */; };
+		1854EB681C96601E00E865C6 /* SwitchNightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB621C96601E00E865C6 /* SwitchNightCell.swift */; };
+		1854EB6F1C9660E700E865C6 /* Night.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1854EB6C1C9660E700E865C6 /* Night.plist */; };
+		1854EB701C9660E700E865C6 /* Red.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1854EB6D1C9660E700E865C6 /* Red.plist */; };
+		1854EB711C9660E700E865C6 /* Yellow.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1854EB6E1C9660E700E865C6 /* Yellow.plist */; };
+		1854EB751C9667F700E865C6 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB741C9667F700E865C6 /* Global.swift */; };
+		1854EB771C9670AB00E865C6 /* MyThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB761C9670AB00E865C6 /* MyThemes.swift */; };
+		1854EB791C96888D00E865C6 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB781C96888D00E865C6 /* BaseCell.swift */; };
+		1854EB7B1C96895700E865C6 /* MyThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB7A1C96895700E865C6 /* MyThemes.swift */; };
+		1854EB7D1C9689C600E865C6 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB7C1C9689C600E865C6 /* BaseCell.swift */; };
+		1854EB7F1C96998700E865C6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB7E1C96998700E865C6 /* NavigationController.swift */; };
+		1866B5291C97AFCD00396DA8 /* Zip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1866B5261C97AFA000396DA8 /* Zip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1866B52E1C97BB3E00396DA8 /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1866B52B1C97BB3900396DA8 /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1866B5301C97BE3A00396DA8 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866B52F1C97BE3A00396DA8 /* Helper.swift */; };
 		186C863D1C857AA900A5FFEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C863C1C857AA900A5FFEA /* AppDelegate.swift */; };
-		186C863F1C857AA900A5FFEA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C863E1C857AA900A5FFEA /* ViewController.swift */; };
 		186C86421C857AA900A5FFEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186C86401C857AA900A5FFEA /* Main.storyboard */; };
 		186C86441C857AA900A5FFEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 186C86431C857AA900A5FFEA /* Assets.xcassets */; };
 		186C86471C857AA900A5FFEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186C86451C857AA900A5FFEA /* LaunchScreen.storyboard */; };
@@ -41,10 +58,42 @@
 		18D642EB1C53638200DADEC5 /* NSObject+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E31C53638200DADEC5 /* NSObject+Theme.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1866B52A1C97AFCD00396DA8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1866B52E1C97BB3E00396DA8 /* MBProgressHUD.framework in Embed Frameworks */,
+				1866B5291C97AFCD00396DA8 /* Zip.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1854EB5D1C96601E00E865C6 /* AboutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
+		1854EB5E1C96601E00E865C6 /* ChangeThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeThemeCell.swift; sourceTree = "<group>"; };
+		1854EB5F1C96601E00E865C6 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		1854EB601C96601E00E865C6 /* SelectThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectThemeCell.swift; sourceTree = "<group>"; };
+		1854EB611C96601E00E865C6 /* SelectThemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectThemeViewController.swift; sourceTree = "<group>"; };
+		1854EB621C96601E00E865C6 /* SwitchNightCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchNightCell.swift; sourceTree = "<group>"; };
+		1854EB6C1C9660E700E865C6 /* Night.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Night.plist; sourceTree = "<group>"; };
+		1854EB6D1C9660E700E865C6 /* Red.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Red.plist; sourceTree = "<group>"; };
+		1854EB6E1C9660E700E865C6 /* Yellow.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Yellow.plist; sourceTree = "<group>"; };
+		1854EB741C9667F700E865C6 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		1854EB761C9670AB00E865C6 /* MyThemes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyThemes.swift; sourceTree = "<group>"; };
+		1854EB781C96888D00E865C6 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		1854EB7A1C96895700E865C6 /* MyThemes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyThemes.swift; sourceTree = "<group>"; };
+		1854EB7C1C9689C600E865C6 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
+		1854EB7E1C96998700E865C6 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		1866B5261C97AFA000396DA8 /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Zip.framework; sourceTree = "<group>"; };
+		1866B52B1C97BB3900396DA8 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MBProgressHUD.framework; sourceTree = "<group>"; };
+		1866B52F1C97BE3A00396DA8 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		186C863A1C857AA900A5FFEA /* PlistDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlistDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186C863C1C857AA900A5FFEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		186C863E1C857AA900A5FFEA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		186C86411C857AA900A5FFEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		186C86431C857AA900A5FFEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		186C86461C857AA900A5FFEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,11 +146,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1854EB691C96602200E865C6 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				1854EB5F1C96601E00E865C6 /* ListViewController.swift */,
+				1854EB7C1C9689C600E865C6 /* BaseCell.swift */,
+				1854EB5D1C96601E00E865C6 /* AboutCell.swift */,
+				1854EB601C96601E00E865C6 /* SelectThemeCell.swift */,
+				1854EB621C96601E00E865C6 /* SwitchNightCell.swift */,
+				1854EB5E1C96601E00E865C6 /* ChangeThemeCell.swift */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		1854EB6A1C96602600E865C6 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				1854EB611C96601E00E865C6 /* SelectThemeViewController.swift */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		1854EB6B1C96605900E865C6 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				1854EB6D1C9660E700E865C6 /* Red.plist */,
+				1854EB6E1C9660E700E865C6 /* Yellow.plist */,
+				1854EB6C1C9660E700E865C6 /* Night.plist */,
+			);
+			name = Plist;
+			sourceTree = "<group>";
+		};
+		1854EB801C9699A400E865C6 /* Nav */ = {
+			isa = PBXGroup;
+			children = (
+				1854EB7E1C96998700E865C6 /* NavigationController.swift */,
+			);
+			name = Nav;
+			sourceTree = "<group>";
+		};
 		186C863B1C857AA900A5FFEA /* PlistDemo */ = {
 			isa = PBXGroup;
 			children = (
 				186C863C1C857AA900A5FFEA /* AppDelegate.swift */,
-				186C863E1C857AA900A5FFEA /* ViewController.swift */,
+				1854EB741C9667F700E865C6 /* Global.swift */,
+				1854EB7A1C96895700E865C6 /* MyThemes.swift */,
+				1854EB691C96602200E865C6 /* List */,
+				1854EB6A1C96602600E865C6 /* Detail */,
+				1854EB801C9699A400E865C6 /* Nav */,
+				1854EB6B1C96605900E865C6 /* Plist */,
 				186C86401C857AA900A5FFEA /* Main.storyboard */,
 				186C86431C857AA900A5FFEA /* Assets.xcassets */,
 				186C86521C857FFD00A5FFEA /* Supporting Files */,
@@ -112,6 +205,9 @@
 		186C86521C857FFD00A5FFEA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1866B52F1C97BE3A00396DA8 /* Helper.swift */,
+				1866B52B1C97BB3900396DA8 /* MBProgressHUD.framework */,
+				1866B5261C97AFA000396DA8 /* Zip.framework */,
 				186C86451C857AA900A5FFEA /* LaunchScreen.storyboard */,
 				186C86481C857AA900A5FFEA /* Info.plist */,
 			);
@@ -122,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				186C86551C85A10A00A5FFEA /* ListViewController.swift */,
+				1854EB781C96888D00E865C6 /* BaseCell.swift */,
 				186C86631C86C1C400A5FFEA /* AboutCell.swift */,
 				186C865D1C8684B300A5FFEA /* SelectThemeCell.swift */,
 				186C865F1C86850600A5FFEA /* SwitchNightCell.swift */,
@@ -173,6 +270,7 @@
 			children = (
 				18D642BE1C53615300DADEC5 /* AppDelegate.swift */,
 				186C86591C85A6D600A5FFEA /* Global.swift */,
+				1854EB761C9670AB00E865C6 /* MyThemes.swift */,
 				186C86611C86851200A5FFEA /* List */,
 				186C86621C86855000A5FFEA /* Detail */,
 				18D642C21C53615300DADEC5 /* Main.storyboard */,
@@ -224,6 +322,7 @@
 				186C86361C857AA900A5FFEA /* Sources */,
 				186C86371C857AA900A5FFEA /* Frameworks */,
 				186C86381C857AA900A5FFEA /* Resources */,
+				1866B52A1C97AFCD00396DA8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -315,9 +414,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1854EB711C9660E700E865C6 /* Yellow.plist in Resources */,
 				186C86471C857AA900A5FFEA /* LaunchScreen.storyboard in Resources */,
 				186C86441C857AA900A5FFEA /* Assets.xcassets in Resources */,
 				186C86421C857AA900A5FFEA /* Main.storyboard in Resources */,
+				1854EB6F1C9660E700E865C6 /* Night.plist in Resources */,
+				1854EB701C9660E700E865C6 /* Red.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,12 +447,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				186C863F1C857AA900A5FFEA /* ViewController.swift in Sources */,
 				186C864D1C857B0200A5FFEA /* ThemePicker.swift in Sources */,
 				186C864F1C857B0600A5FFEA /* UIKit+Theme.swift in Sources */,
 				186C864E1C857B0400A5FFEA /* UIColorExtension.swift in Sources */,
 				186C86501C857B0800A5FFEA /* NSObject+Theme.swift in Sources */,
+				1854EB661C96601E00E865C6 /* SelectThemeCell.swift in Sources */,
+				1854EB751C9667F700E865C6 /* Global.swift in Sources */,
+				1854EB631C96601E00E865C6 /* AboutCell.swift in Sources */,
+				1854EB681C96601E00E865C6 /* SwitchNightCell.swift in Sources */,
+				1866B5301C97BE3A00396DA8 /* Helper.swift in Sources */,
+				1854EB641C96601E00E865C6 /* ChangeThemeCell.swift in Sources */,
+				1854EB7F1C96998700E865C6 /* NavigationController.swift in Sources */,
+				1854EB671C96601E00E865C6 /* SelectThemeViewController.swift in Sources */,
 				186C863D1C857AA900A5FFEA /* AppDelegate.swift in Sources */,
+				1854EB7B1C96895700E865C6 /* MyThemes.swift in Sources */,
+				1854EB651C96601E00E865C6 /* ListViewController.swift in Sources */,
+				1854EB7D1C9689C600E865C6 /* BaseCell.swift in Sources */,
 				186C864C1C857AFF00A5FFEA /* ThemeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,7 +494,9 @@
 				18D642E51C53638200DADEC5 /* ThemeManager.swift in Sources */,
 				186C86641C86C1C400A5FFEA /* AboutCell.swift in Sources */,
 				186C86561C85A10A00A5FFEA /* ListViewController.swift in Sources */,
+				1854EB771C9670AB00E865C6 /* MyThemes.swift in Sources */,
 				186C86581C85A13000A5FFEA /* SelectThemeViewController.swift in Sources */,
+				1854EB791C96888D00E865C6 /* BaseCell.swift in Sources */,
 				18D642E71C53638200DADEC5 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,8 +543,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/PlistDemo",
+				);
 				INFOPLIST_FILE = PlistDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = me.gesen.PlistDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -440,8 +561,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/PlistDemo",
+				);
 				INFOPLIST_FILE = PlistDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = me.gesen.PlistDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -578,7 +706,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.gesen.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -590,7 +718,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.gesen.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -607,6 +735,7 @@
 				186C864B1C857AA900A5FFEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18D642A71C53613400DADEC5 /* Build configuration list for PBXProject "SwiftTheme" */ = {
 			isa = XCConfigurationList;

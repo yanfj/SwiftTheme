@@ -44,8 +44,14 @@ public class ThemeManager: NSObject {
     }
     
     class func setTheme(plistName: String, path: ThemePath) {
-        guard let plistPath = path.plistPathByName(plistName)         else { return }
-        guard let plistDict = NSDictionary(contentsOfFile: plistPath) else { return }
+        guard let plistPath = path.plistPathByName(plistName)         else {
+            print("SwiftTheme WARNING: Not find plist '\(plistName)' with: \(path)")
+            return
+        }
+        guard let plistDict = NSDictionary(contentsOfFile: plistPath) else {
+            print("SwiftTheme WARNING: Not read plist '\(plistName)' with: \(plistPath)")
+            return
+        }
         self.setTheme(plistDict, path: path)
     }
     
@@ -71,7 +77,7 @@ extension ThemeManager {
     class func imageForArray(array: [String]) -> UIImage? {
         guard let imageName = elementForArray(array) else { return nil }
         guard let image = UIImage(named: imageName as String) else {
-            print("SwiftTheme WARNING: Not found image name \(imageName) in array: \(array)[\(currentThemeIndex)]")
+            print("SwiftTheme WARNING: Not found image name '\(imageName)' in array: \(array)[\(currentThemeIndex)]")
             return nil
         }
         return image

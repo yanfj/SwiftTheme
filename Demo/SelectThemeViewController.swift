@@ -17,15 +17,15 @@ class SelectThemeViewController: UIViewController {
     }
     
     @IBAction func tapRed(sender: AnyObject) {
-        ThemeManager.setTheme(MyThemes.Red.rawValue)
+        MyThemes.switchTo(.Red)
     }
     
     @IBAction func tapYellow(sender: AnyObject) {
-        ThemeManager.setTheme(MyThemes.Yello.rawValue)
+        MyThemes.switchTo(.Yello)
     }
     
     @IBAction func tapBlue(sender: AnyObject) {
-        ThemeManager.setTheme(MyThemes.Blue.rawValue)
+        MyThemes.switchTo(.Blue)
     }
 
 }

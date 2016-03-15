@@ -1,6 +1,6 @@
 //
 //  ChangeThemeCell.swift
-//  Demo
+//  PlistDemo
 //
 //  Created by Gesen on 16/3/2.
 //  Copyright © 2016年 Gesen. All rights reserved.
@@ -15,9 +15,9 @@ class ChangeThemeCell: BaseCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let titlePicker1 = ThemeColorPicker(colors: "#FFF", "#000", "#FFF", "#000")
-        let titlePicker2 = ThemeColorPicker(colors: "#555", "#AAA", "#555", "#AAA")
-        let backgroundPicker = ThemeColorPicker(colors: "#EB4F38", "#F4C600", "#56ABE4", "#ECF0F1")
+        let titlePicker1 = ThemeColorPicker(keyPath: "ChangeThemeCell.buttonTitleColorNormal")
+        let titlePicker2 = ThemeColorPicker(keyPath: "ChangeThemeCell.buttonTitleColorHighlighted")
+        let backgroundPicker = ThemeColorPicker(keyPath: "ChangeThemeCell.buttonBackgroundColor")
         
         changeTheme.theme_setTitleColor(titlePicker1, forState: .Normal)
         changeTheme.theme_setTitleColor(titlePicker2, forState: .Highlighted)

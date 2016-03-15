@@ -8,9 +8,6 @@
 
 import UIKit
 
-private let lastThemeIndexKey = "lastedThemeIndex"
-private let defaults = NSUserDefaults.standardUserDefaults()
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,8 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        let lastThemeIndex = defaults.integerForKey(lastThemeIndexKey)
-        ThemeManager.setTheme(lastThemeIndex)
+        MyThemes.restoreLastTheme()
         
         // status bar
         
@@ -27,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().theme_setStatusBarStyle(statusPicker, animated: true)
         
         // navigation bar
-        
+
         let navigationBar = UINavigationBar.appearance()
         let shadow = NSShadow(); shadow.shadowOffset = CGSizeZero
         let titleAttributes: [[String: AnyObject]] = globalBarTextColor.map { hexString in
@@ -60,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(application: UIApplication) { }
 
     func applicationWillTerminate(application: UIApplication) {
-        defaults.setInteger(ThemeManager.currentThemeIndex, forKey: lastThemeIndexKey)
+        MyThemes.saveLastTheme()
     }
 
 
