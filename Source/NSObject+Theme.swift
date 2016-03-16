@@ -23,8 +23,8 @@ extension NSObject {
         }
         set {
             objc_setAssociatedObject(self, &themePickersKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            removeThemeNotification()
-            if newValue.isEmpty == false { setupThemeNotification() }
+            _removeThemeNotification()
+            if newValue.isEmpty == false { _setupThemeNotification() }
         }
     }
     
@@ -66,7 +66,7 @@ extension NSObject {
 
 extension NSObject {
     
-    private func setupThemeNotification() {
+    private func _setupThemeNotification() {
         if #available(iOS 9.0, *) {
             NSNotificationCenter.defaultCenter().addObserver(self, selector: "_updateTheme", name: ThemeUpdateNotification, object: nil)
         } else {
@@ -74,7 +74,7 @@ extension NSObject {
         }
     }
     
-    private func removeThemeNotification() {
+    private func _removeThemeNotification() {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: ThemeUpdateNotification, object: nil)
     }
     

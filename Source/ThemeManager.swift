@@ -8,21 +8,21 @@
 
 import UIKit
 
-let ThemeUpdateNotification = "ThemeUpdateNotification"
+public let ThemeUpdateNotification = "ThemeUpdateNotification"
 
-enum ThemePath {
+public enum ThemePath {
     
     case MainBundle
     case Sandbox(NSURL)
     
-    var URL: NSURL? {
+    public var URL: NSURL? {
         switch self {
         case .MainBundle        : return nil
         case .Sandbox(let path) : return path
         }
     }
     
-    func plistPathByName(name: String) -> String? {
+    public func plistPathByName(name: String) -> String? {
         switch self {
         case .MainBundle:        return NSBundle.mainBundle().pathForResource(name, ofType: "plist")
         case .Sandbox(let path): return NSURL(string: name + ".plist", relativeToURL: path)?.path
@@ -32,18 +32,18 @@ enum ThemePath {
 
 public class ThemeManager: NSObject {
     
-    static var animationDuration = 0.3
+    public static var animationDuration = 0.3
     
-    private(set) static var currentTheme      : NSDictionary?
-    private(set) static var currentThemePath  : ThemePath?
-    private(set) static var currentThemeIndex : Int = 0
+    public private(set) static var currentTheme      : NSDictionary?
+    public private(set) static var currentThemePath  : ThemePath?
+    public private(set) static var currentThemeIndex : Int = 0
     
-    class func setTheme(index: Int) {
+    public class func setTheme(index: Int) {
         currentThemeIndex = index
         NSNotificationCenter.defaultCenter().postNotificationName(ThemeUpdateNotification, object: nil)
     }
     
-    class func setTheme(plistName: String, path: ThemePath) {
+    public class func setTheme(plistName: String, path: ThemePath) {
         guard let plistPath = path.plistPathByName(plistName)         else {
             print("SwiftTheme WARNING: Not find plist '\(plistName)' with: \(path)")
             return
@@ -55,7 +55,7 @@ public class ThemeManager: NSObject {
         self.setTheme(plistDict, path: path)
     }
     
-    class func setTheme(dict: NSDictionary, path: ThemePath) {
+    public class func setTheme(dict: NSDictionary, path: ThemePath) {
         currentTheme = dict
         currentThemePath = path
         NSNotificationCenter.defaultCenter().postNotificationName(ThemeUpdateNotification, object: nil)
@@ -65,7 +65,7 @@ public class ThemeManager: NSObject {
 
 extension ThemeManager {
     
-    class func colorForArray(array: [String]) -> UIColor? {
+    public class func colorForArray(array: [String]) -> UIColor? {
         guard let rgba = elementForArray(array) else { return nil }
         guard let color = try? UIColor(rgba_throws: rgba as String) else {
             print("SwiftTheme WARNING: Not convert rgba \(rgba) in array: \(array)[\(currentThemeIndex)]")
@@ -74,7 +74,7 @@ extension ThemeManager {
         return color
     }
     
-    class func imageForArray(array: [String]) -> UIImage? {
+    public class func imageForArray(array: [String]) -> UIImage? {
         guard let imageName = elementForArray(array) else { return nil }
         guard let image = UIImage(named: imageName as String) else {
             print("SwiftTheme WARNING: Not found image name '\(imageName)' in array: \(array)[\(currentThemeIndex)]")
@@ -83,7 +83,7 @@ extension ThemeManager {
         return image
     }
     
-    class func elementForArray<T: AnyObject>(array: [T]) -> T? {
+    public class func elementForArray<T: AnyObject>(array: [T]) -> T? {
         let index = ThemeManager.currentThemeIndex
         guard  array.indices ~= index else {
             print("SwiftTheme WARNING: Not found element in array: \(array)[\(currentThemeIndex)]")
@@ -96,7 +96,7 @@ extension ThemeManager {
 
 extension ThemeManager {
     
-    class func stringForKeyPath(keyPath: String) -> String? {
+    public class func stringForKeyPath(keyPath: String) -> String? {
         guard let string = currentTheme?.valueForKeyPath(keyPath) as? String else {
             print("SwiftTheme WARNING: Not found string key path: \(keyPath)")
             return nil
@@ -104,7 +104,7 @@ extension ThemeManager {
         return string
     }
     
-    class func numberForKeyPath(keyPath: String) -> NSNumber? {
+    public class func numberForKeyPath(keyPath: String) -> NSNumber? {
         guard let number = currentTheme?.valueForKeyPath(keyPath) as? NSNumber else {
             print("SwiftTheme WARNING: Not found number key path: \(keyPath)")
             return nil
@@ -112,7 +112,7 @@ extension ThemeManager {
         return number
     }
     
-    class func dictionaryForKeyPath(keyPath: String) -> NSDictionary? {
+    public class func dictionaryForKeyPath(keyPath: String) -> NSDictionary? {
         guard let dict = currentTheme?.valueForKeyPath(keyPath) as? NSDictionary else {
             print("SwiftTheme WARNING: Not found dictionary key path: \(keyPath)")
             return nil
@@ -120,7 +120,7 @@ extension ThemeManager {
         return dict
     }
     
-    class func colorForKeyPath(keyPath: String) -> UIColor? {
+    public class func colorForKeyPath(keyPath: String) -> UIColor? {
         guard let rgba = stringForKeyPath(keyPath) else { return nil }
         guard let color = try? UIColor(rgba_throws: rgba) else {
             print("SwiftTheme WARNING: Not convert rgba \(rgba) at key path: \(keyPath)")
@@ -129,7 +129,7 @@ extension ThemeManager {
         return color
     }
     
-    class func imageForKeyPath(keyPath: String) -> UIImage? {
+    public class func imageForKeyPath(keyPath: String) -> UIImage? {
         guard let imageName = stringForKeyPath(keyPath) else { return nil }
         if let filePath = currentThemePath?.URL?.URLByAppendingPathComponent(imageName).path {
             guard let image = UIImage(contentsOfFile: filePath) else {
