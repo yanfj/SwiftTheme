@@ -8,7 +8,8 @@
 
 [前言](#前言) - [示例](#示例) - [安装](#安装) - [文档](#文档) - [贡献](#贡献)
 
--- Gif --
+![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/day.png)
+![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/night.png)
 
 ## 前言
 ### 灵感
