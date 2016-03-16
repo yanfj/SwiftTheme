@@ -23,6 +23,13 @@ extension UIView
         set { setThemePicker(self, "setTintColor:", newValue) }
     }
 }
+extension UIApplication
+{
+    func theme_setStatusBarStyle(picker: ThemeStatusBarStylePicker, animated: Bool) {
+        picker.animated = animated
+        setThemePicker(self, "setStatusBarStyle:animated:", picker)
+    }
+}
 extension UIBarButtonItem
 {
     var theme_tintColor: ThemeColorPicker? {
@@ -177,13 +184,6 @@ extension CALayer
     var theme_shadowColor: ThemeCGColorPicker? {
         get { return getThemePicker(self, "setShadowColor:") as? ThemeCGColorPicker }
         set { setThemePicker(self, "setShadowColor:", newValue) }
-    }
-}
-extension UIApplication
-{
-    func theme_setStatusBarStyle(picker: ThemeStatusBarStylePicker, animated: Bool) {
-        picker.animated = animated
-        setThemePicker(self, "setStatusBarStyle:animated:", picker)
     }
 }
 
