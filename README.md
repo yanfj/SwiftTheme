@@ -12,102 +12,49 @@
 ![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/night.png)
 
 ## 前言
-### 灵感
-为了在主题切换时及时更新UI，不可避免的要在多个界面注册通知，需要针对不同的主题设置UI，当主题和界面逐渐增多，会造成大量的重复及冗余代码，给主要的业务造成干扰。
+### 缘起
+项目需求，我们要为“节操精选”开发夜间模式功能。我们的需求不是简单的调整亮度或者alpha，而是更换为一套更深色的UI。因此所谓夜间模式其实就是特定的更换主题（换肤）功能。
+
+如何实现呢？判断某个全局变量，然后在初始化视图控件时设置不同的背景色或者加载不同的切图文件？但是在切换主题时，已经初始化好的视图控件呢？没错，也许你也想到了通过通知让相应的视图控件修改背景色或切图。想到这里你应该也意识到了Controller 中将充斥着注册通知、if...else、更新视图控件的代码，糟糕的是如果忘记了注销通知还可能引起应用崩溃。
+
+一番思考后，我们对该任务提出了更高的要求，打造一套简单、可复用的主题框架，正如你看到的这样。
 
 ### 目标
-使用SwiftTheme，通过简单的改写UI设置，就可以在初始化及切换主题时，自动更新UI。
-
-### 主要特点
-- [x] 纯Swift
-- [x] 兼容Objective-C
-- [x] 基于runtime
-- [x] 易于集成
-- [x] 支持UIAppearance
-- [x] 自动监听主题切换，更新UI
-- [x] 支持通过字面量设置不同主题，通过索引进行切换
-- [x] 支持使用plist设置主题，可直接通过项目资源加载，或远程下载至沙盒中加载
-- [x] 主题参数配置错误时日志提示
-- [x] 强类型ThemePicker
-- [x] 完整的Demo
+将SwiftTheme 打造为一款简单、功能丰富、高性能、可扩展的主题框架（换肤框架），为iOS 平台提供一个统一的主题解决方案。
 
 ## 示例
 
-下面通过实现夜间模式，比较三种实现方法：
-
-### 未使用SwiftTheme
-
-```swift
-
-var isNight: Bool = false
-
-class ViewController: UIViewController {
-
-	@IBOutlet weak var label     : UILabel
-	@IBOutlet weak var button    : UIButton
-	@IBOutlet weak var imageView : UIImageView
-	
-	override fund viewDidLoad() {
-		super.viewDidLoad()
-		setupUI()
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "setupUI", name: "ThemeUpdateNotification", object: nil)
-	}
-	
-	func setupUI() {	
-		if isNight {
-			view.backgroundColor = UIColor.blackColor()
-			label.textColor = UIColor.whiteColor()
-			button.setTitleColor(UIColor.whiteColor(), state: .Normal)
-			imageView.image = UIImage(named: "night")
-		} else {
-			view.backgroundColor = UIColor.whiteColor()
-			label.textColor = UIColor.blackColor()
-			button.setTitleColor(UIColor.blackColor(), forState: .Normal)
-			imageView.image = UIImage(named: "day")
-		}
-	}
-	
-	@IBAction func toggleNight() {
-		isNight = !isNight		
-		NSNotificationCenter.defaultCenter().postNotificationName("ThemeUpdateNotification", object: nil)
-	}
-	
-}
-```
 
 ### SwiftTheme（索引）
 
-```swift
+让UIView 随主题变换背景色？
 
-var isNight: Bool = false
+```
+view.theme_backgroundColor = ThemeColorPicker(colors: "#FFF", "#000")
+```
 
-class ViewController: UIViewController {
+让UILabel 和UIButton 随主题变换文字颜色？
 
-	@IBOutlet weak var label     : UILabel
-	@IBOutlet weak var button    : UIButton
-	@IBOutlet weak var imageView : UIImageView
-	
-	override fund viewDidLoad() {
-		super.viewDidLoad()
-		setupUI()
-	}
-	
-	func setupUI() {
-		view.theme_backgroundColor = ThemeColorPicker(colors: "#FFF", "#000")
-		label.theme_textColor = ThemeColorPicker(colors: "#000", "#FFF")
-		button.theme_setTitleColor(ThemeColorPicker(colors: "#000", "#FFF"), forState: .Normal)
-		imageView.theme_image = ThemeImagePicker(names: "day", "night")
-	}
-	
-	@IBAction func toggleNight() {
-		isNight = !isNight		
-		ThemeManager.setTheme(isNight ? 1 : 0)
-	}
-	
-}
+```
+label.theme_textColor = ThemeColorPicker(colors: "#000", "#FFF")
+button.theme_setTitleColor(ThemeColorPicker(colors: "#000", "#FFF"), forState: .Normal)
+```
+
+让UIImageView 随主题变换切图？
+
+```
+imageView.theme_image = ThemeImagePicker(names: "day", "night")
+```
+
+没问题，当你执行如下代码时，奇迹发生了！
+
+```
+//这里的数字代表主题参数的索引
+ThemeManager.setTheme(isNight ? 1 : 0)
 ```
 
 > 直接根据索引切换样式，便于快速开发，适合主题不多、无需下载主题的App。
+
 
 ### SwiftTheme（plist）
 
@@ -142,6 +89,21 @@ class ViewController: UIViewController {
 ```
 
 > 增加主题无需修改代码，适合多主题、包含下载主题的App。
+
+
+### 主要特点
+- [x] 纯Swift
+- [x] 兼容Objective-C
+- [x] 基于runtime
+- [x] 易于集成
+- [x] 支持UIAppearance
+- [x] 自动监听主题切换，更新UI
+- [x] 支持通过字面量设置不同主题，通过索引进行切换
+- [x] 支持使用plist设置主题，可直接通过项目资源加载，或远程下载至沙盒中加载
+- [x] 主题参数配置错误时日志提示
+- [x] 强类型ThemePicker
+- [x] 完整的Demo
+
 
 ## 安装
 
