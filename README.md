@@ -25,7 +25,7 @@
 ## 示例
 
 
-### SwiftTheme（索引）
+### 索引
 
 让UIView 随主题变换背景色？
 
@@ -53,42 +53,30 @@ imageView.theme_image = ThemeImagePicker(names: "day", "night")
 ThemeManager.setTheme(isNight ? 1 : 0)
 ```
 
-> 直接根据索引切换样式，便于快速开发，适合主题不多、无需下载主题的App。
+> 直接根据索引切换主题，便于快速开发。适合主题不多、无需下载主题的App。
 
 
-### SwiftTheme（plist）
+### plist
+为了满足通过网络下载和安装主题包的需求，我们支持以plist 配置主题。简单讲就是在plist 中记录配置参数，比如背景色、切图文件名等，在代码中通过key 来指定相应的参数。因此，该plist 文件以及用到的资源文件就组成了一个主题包。
 
-```swift
+以下为用法示例：
 
-var isNight: Bool = false
+```
+view.theme_backgroundColor = ThemeColorPicker(keyPath: "Global.bg")
+label.theme_textColor = ThemeColorPicker(keyPath: "ViewController.labelText")
+button.theme_setTitleColor(ThemeColorPicker(keyPath: "ViewController.buttonNormal"), forState: .Normal)
+imageView.theme_image = ThemeImagePicker(keyPath: "ViewController.image")
+```
+> 与索引方式类似，只是具体的参数值变为了间接的key 名称，正因如此赋予了它扩展的能力。
 
-class ViewController: UIViewController {
 
-	@IBOutlet weak var label     : UILabel
-	@IBOutlet weak var button    : UIButton
-	@IBOutlet weak var imageView : UIImageView
-	
-	override fund viewDidLoad() {
-		super.viewDidLoad()
-		setupUI()
-	}
-	
-	func setupUI() {
-		view.theme_backgroundColor = ThemeColorPicker(keyPath: "Global.bg")
-		label.theme_textColor = ThemeColorPicker(keyPath: "ViewController.labelText")
-		button.theme_setTitleColor(ThemeColorPicker(keyPath: "ViewController.buttonNormal"), forState: .Normal)
-		imageView.theme_image = ThemeImagePicker(keyPath: "ViewController.image")
-	}
-	
-	@IBAction func toggleNight() {
-		isNight = !isNight
-		ThemeManager.setTheme(isNight ? "Night" : "Day", path: .MainBundle)
-	}
-	
-}
+切换主题时参数为plist 名称，这里以bundle 中的plist 文件及资源文件为例，使用沙箱中的文件也是可以的。
+
+```
+ThemeManager.setTheme(isNight ? "Night" : "Day", path: .MainBundle)
 ```
 
-> 增加主题无需修改代码，适合多主题、包含下载主题的App。
+> plist 方式增加主题无需修改代码，可以无限扩展主题，因此你完全可以通过这种方式为你的用户开发下载安装主题的功能。
 
 
 ### 主要特点
