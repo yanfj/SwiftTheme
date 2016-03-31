@@ -25,30 +25,30 @@
 ## 示例
 
 
-### 索引
+### 索引方式
 
 让UIView 随主题变换背景色？
 
-```
+```swift
 view.theme_backgroundColor = ThemeColorPicker(colors: "#FFF", "#000")
 ```
 
 让UILabel 和UIButton 随主题变换文字颜色？
 
-```
+```swift
 label.theme_textColor = ThemeColorPicker(colors: "#000", "#FFF")
 button.theme_setTitleColor(ThemeColorPicker(colors: "#000", "#FFF"), forState: .Normal)
 ```
 
 让UIImageView 随主题变换切图？
 
-```
+```swift
 imageView.theme_image = ThemeImagePicker(names: "day", "night")
 ```
 
 没问题，当你执行如下代码时，奇迹发生了！
 
-```
+```swift
 //这里的数字代表主题参数的索引
 ThemeManager.setTheme(isNight ? 1 : 0)
 ```
@@ -56,34 +56,44 @@ ThemeManager.setTheme(isNight ? 1 : 0)
 > 直接根据索引切换主题，便于快速开发。适合主题不多、无需下载主题的App。
 
 
-### plist
+### plist 方式
 为了满足通过网络下载和安装主题包的需求，我们支持以plist 配置主题。简单讲就是在plist 中记录配置参数，比如背景色、切图文件名等，在代码中通过key 来指定相应的参数。因此，该plist 文件以及用到的资源文件就组成了一个主题包。
 
 以下为用法示例：
 
-```
-view.theme_backgroundColor = ThemeColorPicker(keyPath: "Global.bg")
-label.theme_textColor = ThemeColorPicker(keyPath: "ViewController.labelText")
-button.theme_setTitleColor(ThemeColorPicker(keyPath: "ViewController.buttonNormal"), forState: .Normal)
-imageView.theme_image = ThemeImagePicker(keyPath: "ViewController.image")
+```swift
+view.theme_backgroundColor = ThemeColorPicker(keyPath: "Global.backgroundColor")
+imageView.theme_image = ThemeImagePicker(keyPath: "SelectedThemeCell.iconImage")
 ```
 > 与索引方式类似，只是具体的参数值变为了间接的key 名称，正因如此赋予了它扩展的能力。
 
 
 切换主题时参数为plist 名称，这里以bundle 中的plist 文件及资源文件为例，使用沙箱中的文件也是可以的。
 
-```
-ThemeManager.setTheme(isNight ? "Night" : "Day", path: .MainBundle)
+```swift
+ThemeManager.setTheme("Red", path: .MainBundle)
 ```
 
 > plist 方式增加主题无需修改代码，可以无限扩展主题，因此你完全可以通过这种方式为你的用户开发下载安装主题的功能。
 
+上面用到的plist、image 展示如下：
+
+![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/2.pic.jpg)
+![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/1.pic.jpg)
+
+### Objective-C
+完全兼容Objective-C，用法示例：
+
+```objective-c
+lbl.theme_backgroundColor = [ThemeColorPicker pickerWithColors:@[@"#FAF9F9", @"#E2E2E2"]];
+```
 
 ### 主要特点
-- [x] 纯Swift
+- [x] 纯Swift 编写
 - [x] 兼容Objective-C
 - [x] 基于runtime
 - [x] 易于集成
+- [x] 扩展属性以 "theme_*" 开头，便于 IDE 自动补全
 - [x] 支持UIAppearance
 - [x] 自动监听主题切换，更新UI
 - [x] 支持通过字面量设置不同主题，通过索引进行切换
