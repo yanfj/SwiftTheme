@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "SwiftTheme"
-  s.version      = "0.1"
-  s.summary      = "Powerful theme manager for iOS 7+, in Swift."
+  s.version      = "0.2"
+  s.summary      = "Powerful theme/skin manager for iOS 7+ 主题/换肤, 夜间模式"
   s.homepage     = "https://github.com/jiecao-fm/SwiftTheme"
 
   s.license      = 'MIT'

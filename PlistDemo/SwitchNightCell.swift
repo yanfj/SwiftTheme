@@ -22,7 +22,7 @@ class SwitchNightCell: BaseCell {
         
         updateNightSwitch()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateNightSwitch", name: ThemeUpdateNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateNightSwitch), name: ThemeUpdateNotification, object: nil)
     }
     
     @IBAction func changeNight(sender: UISwitch) {

@@ -8,39 +8,38 @@
 
 [前言](#前言) - [示例](#示例) - [安装](#安装) - [文档](#文档) - [贡献](#贡献)
 
-![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/day.png)
-![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/night.png)
+![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/switch.git)
 
 ## 前言
 ### 缘起
-项目需求，我们要为“节操精选”开发夜间模式功能。我们的需求不是简单的调整亮度或者alpha，而是更换为一套更深色的UI。因此所谓夜间模式其实就是特定的更换主题（换肤）功能。
+项目需求，我们要为“节操精选”开发夜间模式功能。我们的需求不是简单的调整亮度或者`alpha`，而是更换为一套更深色的UI。因此所谓夜间模式其实就是特定的更换主题（换肤）功能。
 
-如何实现呢？判断某个全局变量，然后在初始化视图控件时设置不同的背景色或者加载不同的切图文件？但是在切换主题时，已经初始化好的视图控件呢？没错，也许你也想到了通过通知让相应的视图控件修改背景色或切图。想到这里你应该也意识到了Controller 中将充斥着注册通知、if...else、更新视图控件的代码，糟糕的是如果忘记了注销通知还可能引起应用崩溃。
+如何实现呢？判断某个全局变量，然后在初始化视图控件时设置不同的背景色或者加载不同的切图文件？但是在切换主题时，已经初始化好的视图控件呢？没错，也许你也想到了通过通知让相应的视图控件修改背景色或切图。想到这里你应该也意识到了`Controller`中将充斥着注册通知、`if...else`、更新视图控件的代码，糟糕的是如果忘记了注销通知还可能引起应用崩溃。
 
 一番思考后，我们对该任务提出了更高的要求，打造一套简单、可复用的主题框架，正如你看到的这样。
 
 ### 目标
-将SwiftTheme 打造为一款简单、功能丰富、高性能、可扩展的主题框架（换肤框架），为iOS 平台提供一个统一的主题解决方案。
+将`SwiftTheme`打造为一款简单、功能丰富、高性能、可扩展的主题框架（换肤框架），为iOS 平台提供一个统一的主题解决方案。
 
 ## 示例
 
 
 ### 索引方式
 
-让UIView 随主题变换背景色？
+让`UIView`随主题变换背景色？
 
 ```swift
 view.theme_backgroundColor = ThemeColorPicker(colors: "#FFF", "#000")
 ```
 
-让UILabel 和UIButton 随主题变换文字颜色？
+让`UILabel`和`UIButton`随主题变换文字颜色？
 
 ```swift
 label.theme_textColor = ThemeColorPicker(colors: "#000", "#FFF")
 button.theme_setTitleColor(ThemeColorPicker(colors: "#000", "#FFF"), forState: .Normal)
 ```
 
-让UIImageView 随主题变换切图？
+让`UIImageView`随主题变换切图？
 
 ```swift
 imageView.theme_image = ThemeImagePicker(names: "day", "night")
@@ -78,8 +77,8 @@ ThemeManager.setTheme("Red", path: .MainBundle)
 
 上面用到的plist、image 展示如下：
 
-![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/2.pic.jpg)
 ![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/1.pic.jpg)
+![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/2.pic.jpg)
 
 ### Objective-C
 完全兼容Objective-C，用法示例：
@@ -241,6 +240,7 @@ NSNotificationCenter.defaultCenter().addObserver(self, selector: "doSomething", 
 - func theme_setTitleColor(picker: ThemeColorPicker, forState state: UIControlState)
 
 ##### CALayer
+- var theme_borderWidth: ThemeCGFloatPicker?
 - var theme_borderColor: ThemeCGColorPicker?
 - var theme_shadowColor: ThemeCGColorPicker?
 
@@ -326,7 +326,6 @@ ThemeStatusBarStylePicker.pickerWithKeyPath("someStringKeyPath")
 
 ### Issue
 如果你需要帮助或者遇到Bug，请[创建一个Issue](https://github.com/jiecao-fm/SwiftTheme/issues/new)
-
 
 ### Pull Request
 期待你的贡献 :D

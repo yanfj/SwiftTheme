@@ -177,6 +177,10 @@ extension UIButton
 }
 extension CALayer
 {
+    public var theme_borderWidth: ThemeCGFloatPicker? {
+        get { return getThemePicker(self, "setBorderWidth:") as? ThemeCGFloatPicker }
+        set { setThemePicker(self, "setBorderWidth:", newValue) }
+    }
     public var theme_borderColor: ThemeCGColorPicker? {
         get { return getThemePicker(self, "setBorderColor:") as? ThemeCGColorPicker }
         set { setThemePicker(self, "setBorderColor:", newValue) }
@@ -206,12 +210,14 @@ private func setThemePicker(
 private func makeStatePicker(
       object : NSObject,
     _ selector : String,
-var _ picker : ThemePicker?,
+    _ picker : ThemePicker?,
     _ state : UIControlState
 ) -> ThemePicker? {
     guard picker != nil else {
         return nil
     }
+    
+    var picker = picker
     
     if let statePicker = object.themePickers[selector] as? ThemeStatePicker {
         picker = statePicker.setPicker(picker!, forState: state)

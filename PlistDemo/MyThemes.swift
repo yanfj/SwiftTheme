@@ -39,7 +39,7 @@ enum MyThemes: Int {
         var next = current.rawValue + 1
         var max  = 2 // without Blue and Night
         
-        if isBlueThemeExist() { max++ }
+        if isBlueThemeExist() { max += 1 }
         if next >= max { next = 0 }
         
         switchTo(MyThemes(rawValue: next)!)

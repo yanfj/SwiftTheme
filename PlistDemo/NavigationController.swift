@@ -20,7 +20,7 @@ class NavigationController: UINavigationController {
 
         updateTitleTextAttributes()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateTitleTextAttributes", name: ThemeUpdateNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(updateTitleTextAttributes), name: ThemeUpdateNotification, object: nil)
     }
 
     func updateTitleTextAttributes() {
