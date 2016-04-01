@@ -6,7 +6,7 @@
 [![License: MIT](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/jiecao-fm/SwiftTheme/blob/master/LICENSE)
 [![Release version](https://img.shields.io/badge/release-0.1-blue.svg)]()
 
-[前言](#前言) - [示例](#示例) - [安装](#安装) - [文档](#文档) - [贡献](#贡献)
+[前言](#前言) - [示例](#示例) - [安装](#安装) - [参考](#参考) - [贡献](#贡献)
 
 ![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/switch.gif)
 
@@ -22,7 +22,6 @@
 将`SwiftTheme`打造为一款简单、功能丰富、高性能、可扩展的主题框架（换肤框架），为iOS 平台提供一个统一的主题解决方案。
 
 ## 示例
-
 
 ### 索引方式
 
@@ -80,6 +79,17 @@ ThemeManager.setTheme("Red", path: .MainBundle)
 ![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/1.pic.jpg)
 ![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/2.pic.jpg)
 
+
+### 自定义行为
+
+如果你想在切换主题时执行自定义任务，或者当`SwiftTheme`无法满足你的需求时，可以注册名为`ThemeUpdateNotification`的通知，你可以在任何地方观察这个通知，来实现自定义的行为：
+```swift
+NSNotificationCenter.defaultCenter().addObserver(self, selector: "doSomething", name: ThemeUpdateNotification, object: nil)
+```
+```objective-c
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doSomething) name:@"ThemeUpdateNotification" object:nil];
+```
+
 ### Objective-C
 完全兼容Objective-C，用法示例：
 
@@ -125,51 +135,7 @@ github "jiecao-fm/SwiftTheme"
 #### 源文件（iOS7）
 拷贝`Source`文件夹下的所有文件到你的项目中
 
-## 文档
-
-注：`①` 索引的使用方法 `②` plist的使用方法
-
-### *基本用法*
-***
-
-#### 设置样式
-
-`SwiftTheme`为每个UI相关的属性提供了 `theme_backgroundColor` 、 `theme_image` 这种以 `theme_` 开头的属性，来实现对相应属性的监听与更新，你需要设置这些属性来设置主题，例如：
-```swift
-①
-view.theme_backgroundColor = ThemeColorPicker(colors: "#FFF", "#000")
-view.theme_image = ThemeImagePicker(names: "day", "night")
-②
-view.theme_backgroundColor = ThemeColorPicker(keyPath: "SomeColorKeyPath")
-view.theme_image = ThemeImagePicker(keyPath: "SomeImageKeyPath")
-```
-> 不同的属性会接收不同类型的`ThemePicker`，来帮助你避免传入错误的参数，并提供更简便的设置，即便你使用了错误的`ThemePicker`，编译器也会提示你。
-
-#### 切换主题
-
-切换主题时，所有通过 `theme_` 设置的属性都会立即更新，并带有渐变动画，切换方法：
-```swift
-①
-ThemeManager.setTheme(0) // 使用第一个主题，如 "#FFF" "day"
-ThemeManager.setTheme(1) // 使用第二个主题，如 "#000" "night"
-②
-// 使用项目资源中的`day.plist`作为主题
-ThemeManager.setTheme("day", path: .MainBundle)
-// 使用沙盒的`someURL`路径中的`night.plist`作为主题，`someURL`也会作为读取资源的相对路径
-ThemeManager.setTheme("night", path: .Sandbox(someURL))
-// 使用传入的字典`dict`作为主题，`someURL`也会作为读取资源的相对路径
-ThemeManager.setTheme(dict, path: .Sandbox(someURL))
-```
-
-#### 自定义行为
-
-切换主题时会发送名为`ThemeUpdateNotification`的通知，你可以在任何地方观察这个通知，来实现自定义的行为：
-```swift
-NSNotificationCenter.defaultCenter().addObserver(self, selector: "doSomething", name: ThemeUpdateNotification, object: nil)
-```
-```objective-c
-[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doSomething) name:@"ThemeUpdateNotification" object:nil];
-```
+## 参考
 
 ### *目前支持的属性*
 ***
