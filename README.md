@@ -8,13 +8,13 @@
 
 [前言](#前言) - [示例](#示例) - [安装](#安装) - [文档](#文档) - [贡献](#贡献)
 
-![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/switch.git)
+![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/switch.gif)
 
 ## 前言
 ### 缘起
 项目需求，我们要为“节操精选”开发夜间模式功能。我们的需求不是简单的调整亮度或者`alpha`，而是更换为一套更深色的UI。因此所谓夜间模式其实就是特定的更换主题（换肤）功能。
 
-如何实现呢？判断某个全局变量，然后在初始化视图控件时设置不同的背景色或者加载不同的切图文件？但是在切换主题时，已经初始化好的视图控件呢？没错，也许你也想到了通过通知让相应的视图控件修改背景色或切图。想到这里你应该也意识到了`Controller`中将充斥着注册通知、`if...else`、更新视图控件的代码，糟糕的是如果忘记了注销通知还可能引起应用崩溃。
+如何实现呢？判断某个全局变量，然后在初始化视图控件时设置不同的背景色或者加载不同的切图文件？但是在切换主题时，已经初始化好的视图控件呢？没错，也许你也想到了通过通知让相应的视图控件修改背景色或切图。想到这里你应该也意识到了Controller中将充斥着注册通知、`if...else`、更新视图控件的代码，糟糕的是如果忘记了注销通知还可能引起应用崩溃。
 
 一番思考后，我们对该任务提出了更高的要求，打造一套简单、可复用的主题框架，正如你看到的这样。
 
@@ -26,20 +26,20 @@
 
 ### 索引方式
 
-让`UIView`随主题变换背景色？
+让 `UIView` 随主题变换背景色？
 
 ```swift
 view.theme_backgroundColor = ThemeColorPicker(colors: "#FFF", "#000")
 ```
 
-让`UILabel`和`UIButton`随主题变换文字颜色？
+让 `UILabel` 和 `UIButton` 随主题变换文字颜色？
 
 ```swift
 label.theme_textColor = ThemeColorPicker(colors: "#000", "#FFF")
 button.theme_setTitleColor(ThemeColorPicker(colors: "#000", "#FFF"), forState: .Normal)
 ```
 
-让`UIImageView`随主题变换切图？
+让 `UIImageView` 随主题变换切图？
 
 ```swift
 imageView.theme_image = ThemeImagePicker(names: "day", "night")
@@ -56,7 +56,7 @@ ThemeManager.setTheme(isNight ? 1 : 0)
 
 
 ### plist 方式
-为了满足通过网络下载和安装主题包的需求，我们支持以plist 配置主题。简单讲就是在plist 中记录配置参数，比如背景色、切图文件名等，在代码中通过key 来指定相应的参数。因此，该plist 文件以及用到的资源文件就组成了一个主题包。
+为了满足通过网络下载和安装主题包的需求，我们支持以`plist`配置主题。简单讲就是在`plist` 中记录配置参数，比如背景色、切图文件名等，在代码中通过`key`来指定相应的参数。因此，该`plist`文件以及用到的资源文件就组成了一个主题包。
 
 以下为用法示例：
 
@@ -64,41 +64,41 @@ ThemeManager.setTheme(isNight ? 1 : 0)
 view.theme_backgroundColor = ThemeColorPicker(keyPath: "Global.backgroundColor")
 imageView.theme_image = ThemeImagePicker(keyPath: "SelectedThemeCell.iconImage")
 ```
-> 与索引方式类似，只是具体的参数值变为了间接的key 名称，正因如此赋予了它扩展的能力。
+> 与索引方式类似，只是具体的参数值变为了间接的`key`名称，正因如此赋予了它扩展的能力。
 
 
-切换主题时参数为plist 名称，这里以bundle 中的plist 文件及资源文件为例，使用沙箱中的文件也是可以的。
+切换主题时参数为`plist`名称，这里以`bundle`中的`plist`文件及资源文件为例，使用沙箱中的文件也是可以的。
 
 ```swift
 ThemeManager.setTheme("Red", path: .MainBundle)
 ```
 
-> plist 方式增加主题无需修改代码，可以无限扩展主题，因此你完全可以通过这种方式为你的用户开发下载安装主题的功能。
+> `plist`方式增加主题无需修改代码，可以无限扩展主题，因此你完全可以通过这种方式为你的用户开发下载安装主题的功能。
 
-上面用到的plist、image 展示如下：
+上面用到的`plist`、`image`展示如下：
 
 ![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/1.pic.jpg)
 ![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/2.pic.jpg)
 
 ### Objective-C
-完全兼容Objective-C，用法示例：
+完全兼容`Objective-C`，用法示例：
 
 ```objective-c
 lbl.theme_backgroundColor = [ThemeColorPicker pickerWithColors:@[@"#FAF9F9", @"#E2E2E2"]];
 ```
 
 ### 主要特点
-- [x] 纯Swift 编写
-- [x] 兼容Objective-C
-- [x] 基于runtime
+- [x] 纯`Swift`编写
+- [x] 兼容`Objective-C`
+- [x] 基于`runtime`
 - [x] 易于集成
-- [x] 扩展属性以 "theme_*" 开头，便于 IDE 自动补全
-- [x] 支持UIAppearance
+- [x] 扩展属性以 `theme_*` 开头，便于 IDE 自动补全
+- [x] 支持`UIAppearance`
 - [x] 自动监听主题切换，更新UI
 - [x] 支持通过字面量设置不同主题，通过索引进行切换
-- [x] 支持使用plist设置主题，可直接通过项目资源加载，或远程下载至沙盒中加载
+- [x] 支持使用`plist`设置主题，可直接通过项目资源加载，或远程下载至沙盒中加载
 - [x] 主题参数配置错误时日志提示
-- [x] 强类型ThemePicker
+- [x] 强类型`ThemePicker`
 - [x] 完整的Demo
 
 
@@ -120,10 +120,10 @@ github "jiecao-fm/SwiftTheme"
 ```
 
 #### Framework
-运行项目中名为SwiftTheme的Target，将生成的framework链到你自己的项目中
+运行项目中名为`SwiftTheme`的Target，将生成的`framework`链到你自己的项目中
 
 #### 源文件（iOS7）
-拷贝Source文件夹下的所有文件到你的项目中
+拷贝`Source`文件夹下的所有文件到你的项目中
 
 ## 文档
 
@@ -134,7 +134,7 @@ github "jiecao-fm/SwiftTheme"
 
 #### 设置样式
 
-SwiftTheme为每个UI相关的属性提供了 theme_backgroundColor 、 theme_image 这种以 theme_ 开头的属性，来实现对相应属性的监听与更新，你需要设置这些属性来设置主题，例如：
+`SwiftTheme`为每个UI相关的属性提供了 `theme_backgroundColor` 、 `theme_image` 这种以 `theme_` 开头的属性，来实现对相应属性的监听与更新，你需要设置这些属性来设置主题，例如：
 ```swift
 ①
 view.theme_backgroundColor = ThemeColorPicker(colors: "#FFF", "#000")
@@ -143,21 +143,21 @@ view.theme_image = ThemeImagePicker(names: "day", "night")
 view.theme_backgroundColor = ThemeColorPicker(keyPath: "SomeColorKeyPath")
 view.theme_image = ThemeImagePicker(keyPath: "SomeImageKeyPath")
 ```
-> 不同的属性会接收不同类型的Picker，来帮助你避免传入错误的参数，并提供更简便的设置，即便你使用了错误的Picker，编译器也会提示你。
+> 不同的属性会接收不同类型的`Picker`，来帮助你避免传入错误的参数，并提供更简便的设置，即便你使用了错误的`Picker`，编译器也会提示你。
 
 #### 切换主题
 
-切换主题时，所有通过 theme_ 设置的属性都会立即更新，并带有渐变动画，切换方法：
+切换主题时，所有通过 `theme_` 设置的属性都会立即更新，并带有渐变动画，切换方法：
 ```swift
 ①
 ThemeManager.setTheme(0) // 使用第一个主题，如 "#FFF" "day"
 ThemeManager.setTheme(1) // 使用第二个主题，如 "#000" "night"
 ②
-// 使用项目资源中的day.plist作为主题
+// 使用项目资源中的`day.plist`作为主题
 ThemeManager.setTheme("day", path: .MainBundle)
-// 使用沙盒的someURL路径中的night.plist作为主题，someURL也会作为读取资源的相对路径
+// 使用沙盒的`someURL`路径中的`night.plist`作为主题，`someURL`也会作为读取资源的相对路径
 ThemeManager.setTheme("night", path: .Sandbox(someURL))
-// 使用传入的字典dict作为主题，someURL也会作为读取资源的相对路径
+// 使用传入的字典`dict`作为主题，`someURL`也会作为读取资源的相对路径
 ThemeManager.setTheme(dict, path: .Sandbox(someURL))
 ```
 
@@ -174,7 +174,7 @@ NSNotificationCenter.defaultCenter().addObserver(self, selector: "doSomething", 
 ### *目前支持的属性*
 ***
 
-> 子类会拥有父类的属性，例如UILabel也会拥有UIView的theme_alpha等属性，这种属性不一一列出
+> 子类会拥有父类的属性，例如`UILabel`也会拥有`UIView`的`theme_alpha`等属性，这种属性不一一列出
 
 ##### UIView
 - var theme_alpha: ThemeCGFloatPicker?
@@ -300,7 +300,7 @@ ThemeCGColorPicker.pickerWithKeyPath("someStringKeyPath")
 ThemeDictionaryPicker(dicts: ["key": "value"], ["key": "value"])
 ThemeDictionaryPicker.pickerWithDicts([["key": "value"], ["key": "value"]])
 ②
-// 暂时不支持从plist中读取字典
+// 暂时不支持从`plist`中读取字典
 ```
 
 #### ThemeStatusBarStylePicker
@@ -309,7 +309,7 @@ ThemeDictionaryPicker.pickerWithDicts([["key": "value"], ["key": "value"]])
 ThemeStatusBarStylePicker(styles: .Default, .LightContent)
 ThemeStatusBarStylePicker.pickerWithStyles([.Default, .LightContent])
 ②
-// 在自定的Key中设置指定的Value，匹配字符串即可生效
+// 在自定的`Key`中设置指定的`Value`，匹配字符串即可生效
 // 可选的值有："UIStatusBarStyleDefault" 和 "UIStatusBarStyleLightContent"
 ThemeStatusBarStylePicker(keyPath: "someStringKeyPath")
 ThemeStatusBarStylePicker.pickerWithKeyPath("someStringKeyPath")
@@ -317,10 +317,10 @@ ThemeStatusBarStylePicker.pickerWithKeyPath("someStringKeyPath")
 
 ### *更多*
 
-下载SwiftTheme项目，了解如何在项目中使用，其中包含两个Demo Target：
+下载`SwiftTheme`项目，了解如何在项目中使用，其中包含两个Demo Target：
 
 - `Demo`演示了如何使用索引进行管理，退出时保存上次使用的主题等常见需求
-- `PlistDemo`演示了如何使用plist进行管理，并包含下载保存主题Zip包等功能
+- `PlistDemo`演示了如何使用`plist`进行管理，并包含下载保存主题Zip包等功能
 
 ## 贡献
 
