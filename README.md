@@ -81,15 +81,15 @@ ThemeManager.setTheme("Red", path: .MainBundle)
 ![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/2.pic.jpg)
 
 ### Objective-C
-完全兼容`Objective-C`，用法示例：
+完全兼容Objective-C，用法示例：
 
 ```objective-c
 lbl.theme_backgroundColor = [ThemeColorPicker pickerWithColors:@[@"#FAF9F9", @"#E2E2E2"]];
 ```
 
 ### 主要特点
-- [x] 纯`Swift`编写
-- [x] 兼容`Objective-C`
+- [x] 纯Swift编写
+- [x] 兼容Objective-C
 - [x] 基于`runtime`
 - [x] 易于集成
 - [x] 扩展属性以 `theme_*` 开头，便于 IDE 自动补全
@@ -143,7 +143,7 @@ view.theme_image = ThemeImagePicker(names: "day", "night")
 view.theme_backgroundColor = ThemeColorPicker(keyPath: "SomeColorKeyPath")
 view.theme_image = ThemeImagePicker(keyPath: "SomeImageKeyPath")
 ```
-> 不同的属性会接收不同类型的`Picker`，来帮助你避免传入错误的参数，并提供更简便的设置，即便你使用了错误的`Picker`，编译器也会提示你。
+> 不同的属性会接收不同类型的`ThemePicker`，来帮助你避免传入错误的参数，并提供更简便的设置，即便你使用了错误的`ThemePicker`，编译器也会提示你。
 
 #### 切换主题
 
@@ -332,7 +332,7 @@ ThemeStatusBarStylePicker.pickerWithKeyPath("someStringKeyPath")
 
 ### Todo
 - [ ] 完善文档
-- [ ] 增加ThemeColorPicker支持的格式
+- [ ] 增加`ThemeColorPicker`支持的格式
 - [ ] [Open Issue](https://github.com/jiecao-fm/SwiftTheme/issues)
 
 ### Contributors
