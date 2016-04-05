@@ -1,12 +1,23 @@
-# SwiftTheme
-[![Language: Swift 2](https://img.shields.io/badge/language-swift2-f48041.svg?style=flat)](https://developer.apple.com/swift)
-![Platform: iOS 7+](https://img.shields.io/badge/platform-iOS%207%2B-blue.svg?style=flat)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Cocoapods compatible](https://img.shields.io/badge/Cocoapods-compatible-4BC51D.svg?style=flat)](https://cocoapods.org)
-[![License: MIT](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/jiecao-fm/SwiftTheme/blob/master/LICENSE)
-[![Release version](https://img.shields.io/badge/release-0.1-blue.svg)]()
+![SwiftTheme](https://raw.githubusercontent.com/jiecao-fm/SwiftThemeResources/master/Screenshots/logo.png)
 
-[前言](#前言) - [示例](#示例) - [安装](#安装) - [参考](#参考) - [贡献](#贡献)
+<p align="center">
+<a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/language-swift2-f48041.svg?style=flat"></a>
+<a href="https://developer.apple.com/ios"><img src="https://img.shields.io/badge/platform-iOS%207%2B-blue.svg?style=flat"></a>
+<a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
+<a href="http://cocoadocs.org/docsets/SwiftTheme"><img src="https://img.shields.io/badge/Cocoapods-compatible-4BC51D.svg?style=flat"></a>
+<a href="https://github.com/jiecao-fm/SwiftTheme/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat"></a>
+<a href="https://github.com/jiecao-fm/SwiftTheme/tree/0.2"><img src="https://img.shields.io/badge/release-0.2-blue.svg"></a>
+</p>
+
+<p align="center">
+<a href="#前言">前言</a> -
+<a href="#示例">示例</a> -
+<a href="#安装">安装</a> -
+<a href="#参考">参考</a> -
+<a href="#贡献">贡献</a>
+</p>
+
+## 截屏
 
 ![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/switch.gif)
 
