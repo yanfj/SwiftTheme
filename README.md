@@ -5,7 +5,8 @@
 <a href="#示例">示例</a> -
 <a href="#安装">安装</a> -
 <a href="#参考">参考</a> -
-<a href="#贡献">贡献</a>
+<a href="#贡献">贡献</a> -
+<a href="README.md">English Document</a>
 </p>
 
 <p align="center">
