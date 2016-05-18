@@ -21,6 +21,8 @@
 
 ![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/switch.gif)
 
+> 运行：打开`SwiftTheme.xcworkspace`选择`PlistDemo`
+
 ## 前言
 ### 缘起
 项目需求，我们要为“节操精选”开发夜间模式功能。我们的需求不是简单的调整亮度或者`alpha`，而是更换为一套更深色的UI。因此所谓夜间模式其实就是特定的更换主题（换肤）功能。
