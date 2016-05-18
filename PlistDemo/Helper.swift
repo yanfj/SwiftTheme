@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import MBProgressHUD
 
 
 let cachesURL = NSFileManager.defaultManager().URLsForDirectory(.CachesDirectory, inDomains: .UserDomainMask)[0]

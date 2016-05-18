@@ -32,6 +32,3 @@ xcuserdata
 
 xcshareddata
 
-# Exclude cocoapods
-
-Pods/

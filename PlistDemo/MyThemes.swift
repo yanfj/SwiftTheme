@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Zip
 
 enum MyThemes: Int {
     
@@ -78,10 +77,11 @@ enum MyThemes: Int {
             _ = try? manager.removeItemAtURL(zipPath)
             _ = try? manager.moveItemAtURL(location, toURL: zipPath)
             
-            _ = try? Zip.unzipFile(zipPath, destination: unzipPath, overwrite: true, password: nil, progress: nil)
+            let isSuccess = SSZipArchive.unzipFileAtPath(zipPath.path,
+                                        toDestination: unzipPath.path)
             
             dispatch_async(dispatch_get_main_queue()) {
-                handler(isSuccess: true)
+                handler(isSuccess: isSuccess)
             }
         }
         
