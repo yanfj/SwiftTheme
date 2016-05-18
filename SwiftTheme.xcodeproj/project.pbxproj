@@ -22,8 +22,6 @@
 		1854EB7B1C96895700E865C6 /* MyThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB7A1C96895700E865C6 /* MyThemes.swift */; };
 		1854EB7D1C9689C600E865C6 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB7C1C9689C600E865C6 /* BaseCell.swift */; };
 		1854EB7F1C96998700E865C6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB7E1C96998700E865C6 /* NavigationController.swift */; };
-		1866B5291C97AFCD00396DA8 /* Zip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1866B5261C97AFA000396DA8 /* Zip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1866B52E1C97BB3E00396DA8 /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1866B52B1C97BB3900396DA8 /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1866B5301C97BE3A00396DA8 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866B52F1C97BE3A00396DA8 /* Helper.swift */; };
 		186C863D1C857AA900A5FFEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C863C1C857AA900A5FFEA /* AppDelegate.swift */; };
 		186C86421C857AA900A5FFEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186C86401C857AA900A5FFEA /* Main.storyboard */; };
@@ -56,17 +54,19 @@
 		18D642E91C53638200DADEC5 /* UIKit+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E21C53638200DADEC5 /* UIKit+Theme.swift */; };
 		18D642EA1C53638200DADEC5 /* NSObject+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E31C53638200DADEC5 /* NSObject+Theme.swift */; };
 		18D642EB1C53638200DADEC5 /* NSObject+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E31C53638200DADEC5 /* NSObject+Theme.swift */; };
+		A3EF94C51CEC05300068F86C /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A3EF94C01CEC05030068F86C /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A3EF94C71CEC05300068F86C /* Zip.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A3EF94C11CEC05030068F86C /* Zip.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1866B52A1C97AFCD00396DA8 /* Embed Frameworks */ = {
+		A3EF94C81CEC05300068F86C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1866B52E1C97BB3E00396DA8 /* MBProgressHUD.framework in Embed Frameworks */,
-				1866B5291C97AFCD00396DA8 /* Zip.framework in Embed Frameworks */,
+				A3EF94C71CEC05300068F86C /* Zip.framework in Embed Frameworks */,
+				A3EF94C51CEC05300068F86C /* MBProgressHUD.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,8 +89,6 @@
 		1854EB7A1C96895700E865C6 /* MyThemes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyThemes.swift; sourceTree = "<group>"; };
 		1854EB7C1C9689C600E865C6 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		1854EB7E1C96998700E865C6 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		1866B5261C97AFA000396DA8 /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Zip.framework; sourceTree = "<group>"; };
-		1866B52B1C97BB3900396DA8 /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MBProgressHUD.framework; sourceTree = "<group>"; };
 		1866B52F1C97BE3A00396DA8 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		186C863A1C857AA900A5FFEA /* PlistDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlistDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186C863C1C857AA900A5FFEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +117,8 @@
 		18D642E11C53638200DADEC5 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		18D642E21C53638200DADEC5 /* UIKit+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Theme.swift"; sourceTree = "<group>"; };
 		18D642E31C53638200DADEC5 /* NSObject+Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Theme.swift"; sourceTree = "<group>"; };
+		A3EF94C01CEC05030068F86C /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MBProgressHUD.framework; sourceTree = "<group>"; };
+		A3EF94C11CEC05030068F86C /* Zip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Zip.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,8 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				1866B52F1C97BE3A00396DA8 /* Helper.swift */,
-				1866B52B1C97BB3900396DA8 /* MBProgressHUD.framework */,
-				1866B5261C97AFA000396DA8 /* Zip.framework */,
+				A3EF94BF1CEC05030068F86C /* Frameworks */,
 				186C86451C857AA900A5FFEA /* LaunchScreen.storyboard */,
 				186C86481C857AA900A5FFEA /* Info.plist */,
 			);
@@ -301,6 +300,15 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		A3EF94BF1CEC05030068F86C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3EF94C01CEC05030068F86C /* MBProgressHUD.framework */,
+				A3EF94C11CEC05030068F86C /* Zip.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -322,7 +330,7 @@
 				186C86361C857AA900A5FFEA /* Sources */,
 				186C86371C857AA900A5FFEA /* Frameworks */,
 				186C86381C857AA900A5FFEA /* Resources */,
-				1866B52A1C97AFCD00396DA8 /* Embed Frameworks */,
+				A3EF94C81CEC05300068F86C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -546,7 +554,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/PlistDemo",
+					"$(PROJECT_DIR)/PlistDemo/Frameworks/**",
 				);
 				INFOPLIST_FILE = PlistDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -564,7 +572,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/PlistDemo",
+					"$(PROJECT_DIR)/PlistDemo/Frameworks/**",
 				);
 				INFOPLIST_FILE = PlistDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
