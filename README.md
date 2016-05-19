@@ -1,7 +1,7 @@
 ![SwiftTheme](https://raw.githubusercontent.com/jiecao-fm/SwiftThemeResources/master/Screenshots/logo.png)
 
 <p align="center">
-<a href="#ntroduction">Introduction</a> -
+<a href="#introduction">Introduction</a> -
 <a href="#demos">Demos</a> -
 <a href="#installation">Installation</a> -
 <a href="#documents">Documents</a> -
