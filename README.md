@@ -24,19 +24,6 @@
 
 > Running：open `SwiftTheme.xcworkspace`, run target `PlistDemo`
 
-# SwiftTheme
-[![Language: Swift 2](https://img.shields.io/badge/language-swift2-f48041.svg?style=flat)](https://developer.apple.com/swift)
-![Platform: iOS 7+](https://img.shields.io/badge/platform-iOS%207%2B-blue.svg?style=flat)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Cocoapods compatible](https://img.shields.io/badge/Cocoapods-compatible-4BC51D.svg?style=flat)](https://cocoapods.org)
-[![License: MIT](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/jiecao-fm/SwiftTheme/blob/master/LICENSE)
-[![Release version](https://img.shields.io/badge/release-0.1-blue.svg)]()
-
-[Introduction](#Introduction) - [Example](#Example) - [Install](#Install) - [Document](#Document) - [Contribution](#Contribution)
-
-![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/day.png)
-![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/night.png)
-
 ## Introduction
 ### The Beginning Of The Story
 
