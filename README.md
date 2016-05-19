@@ -1,11 +1,11 @@
 ![SwiftTheme](https://raw.githubusercontent.com/jiecao-fm/SwiftThemeResources/master/Screenshots/logo.png)
 
 <p align="center">
-<a href="#Introduction">Introduction</a> -
-<a href="#Demos">Demos</a> -
-<a href="#Installation">Installation</a> -
-<a href="#Documents">Documents</a> -
-<a href="#Contribution">Contribution</a> -
+<a href="#ntroduction">Introduction</a> -
+<a href="#demos">Demos</a> -
+<a href="#installation">Installation</a> -
+<a href="#documents">Documents</a> -
+<a href="#contribution">Contribution</a> -
 <a href="README_CN.md">中文文档</a>
 </p>
 
