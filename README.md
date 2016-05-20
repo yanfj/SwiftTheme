@@ -195,7 +195,7 @@ NSNotificationCenter.defaultCenter().addObserver(
 )
 ```
 ```objective-c
-[[NSNotificationCenter defaultCenter] addObserver:self 										  selector:@selector(doSomethingMethod) 											  name:@"ThemeUpdateNotification" 											object:nil];
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doSomethingMethod) name:@"ThemeUpdateNotification" object:nil];
 ```
 
 ### *Now Supported Properties*

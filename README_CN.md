@@ -100,7 +100,12 @@ ThemeManager.setTheme("Red", path: .MainBundle)
 
 如果你想在切换主题时执行自定义任务，或者当`SwiftTheme`无法满足你的需求时，可以注册名为`ThemeUpdateNotification`的通知，你可以在任何地方观察这个通知，来实现自定义的行为：
 ```swift
-NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(doSomething), name: ThemeUpdateNotification, object: nil)
+NSNotificationCenter.defaultCenter().addObserver(
+	self, 
+	selector: #selector(doSomethingMethod),
+	name: ThemeUpdateNotification, 
+	object: nil
+)
 ```
 ```objective-c
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doSomething) name:@"ThemeUpdateNotification" object:nil];
