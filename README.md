@@ -16,6 +16,7 @@
 <a href="http://cocoadocs.org/docsets/SwiftTheme"><img src="https://img.shields.io/badge/Cocoapods-compatible-4BC51D.svg?style=flat"></a>
 <a href="https://github.com/jiecao-fm/SwiftTheme/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat"></a>
 <a href="https://github.com/jiecao-fm/SwiftTheme/tree/0.2"><img src="https://img.shields.io/badge/release-0.2-blue.svg"></a>
+<a href="https://travis-ci.org/jiecao-fm/SwiftTheme"><img src="https://travis-ci.org/jiecao-fm/SwiftTheme.svg"></a>
 </p>
 
 ## Screenshot
@@ -64,7 +65,8 @@ imageView.theme_image = ThemeImagePicker(names: "day", "night")
 No problem! A miracle happens after you executing the one line of code below!
 
 ```swift
-//these numbers represent the parameters' index. eg. "ThemeColorPicker(colors: "#000", "#FFF")", index 0 represents "#000", index 1 represents "#FFF"
+// these numbers represent the parameters' index. 
+// eg. "ThemeColorPicker(colors: "#000", "#FFF")", index 0 represents "#000", index 1 represents "#FFF"
 ThemeManager.setTheme(isNight ? 1 : 0)
 ```
 
@@ -171,9 +173,11 @@ When you switch themes, all the `theme_` properties you set will update with ani
 ThemeManager.setTheme(0) // ThemePickers will use the first parameter, eg. "#FFF" "day"
 ThemeManager.setTheme(1) // ThemePickers will use the second parameter, eg. "#000" "night"
 ②
-// use "day.plist" in the appllication bundle as the theme configuration file. In this mode, SwiftTheme will find the resource files in the appllication bundle.
+// use "day.plist" in the appllication bundle as the theme configuration file. 
+// In this mode, SwiftTheme will find the resource files in the appllication bundle.
 ThemeManager.setTheme("day", path: .MainBundle)
-// use "night.plist" in the sandbox as the theme configuration file, "someURL" is its file path. In this mode, SwiftTheme will find the resource files in the same path.
+// use "night.plist" in the sandbox as the theme configuration file, "someURL" is its file path. 
+// In this mode, SwiftTheme will find the resource files in the same path.
 ThemeManager.setTheme("night", path: .Sandbox(someURL))
 // use a dictionary as the theme configuration, but find resource files in the sandbox.(Not recommend)
 ThemeManager.setTheme(dict, path: .Sandbox(someURL))
@@ -183,10 +187,15 @@ ThemeManager.setTheme(dict, path: .Sandbox(someURL))
 
 SwiftTheme posts a notification named `ThemeUpdateNotification` when theme changes, you can observe this notification anywhere and do whatever you want:
 ```swift
-NSNotificationCenter.defaultCenter().addObserver(self, selector: "doSomething", name: ThemeUpdateNotification, object: nil)
+NSNotificationCenter.defaultCenter().addObserver(
+	self, 
+	selector: #selector(doSomethingMethod),
+	name: ThemeUpdateNotification, 
+	object: nil
+)
 ```
 ```objective-c
-[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doSomething) name:@"ThemeUpdateNotification" object:nil];
+[[NSNotificationCenter defaultCenter] addObserver:self 										  selector:@selector(doSomethingMethod) 											  name:@"ThemeUpdateNotification" 											object:nil];
 ```
 
 ### *Now Supported Properties*
@@ -346,11 +355,6 @@ If you find a bug or need a help, you can [create a issue](https://github.com/ji
 
 ### Pull Request
 Expect your pull request :D. But please make sure it's needed by most developers and make it simple to use. If you are not sure you can create a issue and let's discuss before coding.
-
-### Todo
-- [ ] Improve documents
-- [ ] Support more properties
-- [ ] [Open Issue](https://github.com/jiecao-fm/SwiftTheme/issues)
 
 ### Contributors
 [GeSen](https://github.com/wxxsw), [Zhoujun](https://github.com/shannonchou)

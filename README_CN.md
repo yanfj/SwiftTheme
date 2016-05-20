@@ -16,13 +16,14 @@
 <a href="http://cocoadocs.org/docsets/SwiftTheme"><img src="https://img.shields.io/badge/Cocoapods-compatible-4BC51D.svg?style=flat"></a>
 <a href="https://github.com/jiecao-fm/SwiftTheme/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat"></a>
 <a href="https://github.com/jiecao-fm/SwiftTheme/tree/0.2"><img src="https://img.shields.io/badge/release-0.2-blue.svg"></a>
+<a href="https://travis-ci.org/jiecao-fm/SwiftTheme"><img src="https://travis-ci.org/jiecao-fm/SwiftTheme.svg"></a>
 </p>
 
 ## 截屏
 
 ![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/switch.gif)
 
-> 运行：打开`SwiftTheme.xcworkspace`选择`PlistDemo`
+> 运行：打开`SwiftTheme.xcworkspace`选择构建目标为`PlistDemo`
 
 ## 前言
 ### 缘起
@@ -61,7 +62,8 @@ imageView.theme_image = ThemeImagePicker(names: "day", "night")
 没问题，当你执行如下代码时，奇迹发生了！
 
 ```swift
-//这里的数字代表主题参数的索引
+// 这里的数字代表主题参数的索引
+// 例如 "ThemeColorPicker(colors: "#000", "#FFF")", 索引 0 代表 "#000", 索引 1 代表 "#FFF"
 ThemeManager.setTheme(isNight ? 1 : 0)
 ```
 
@@ -98,7 +100,7 @@ ThemeManager.setTheme("Red", path: .MainBundle)
 
 如果你想在切换主题时执行自定义任务，或者当`SwiftTheme`无法满足你的需求时，可以注册名为`ThemeUpdateNotification`的通知，你可以在任何地方观察这个通知，来实现自定义的行为：
 ```swift
-NSNotificationCenter.defaultCenter().addObserver(self, selector: "doSomething", name: ThemeUpdateNotification, object: nil)
+NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(doSomething), name: ThemeUpdateNotification, object: nil)
 ```
 ```objective-c
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doSomething) name:@"ThemeUpdateNotification" object:nil];
@@ -309,11 +311,6 @@ ThemeStatusBarStylePicker.pickerWithKeyPath("someStringKeyPath")
 
 ### Pull Request
 期待你的贡献 :D
-
-### Todo
-- [ ] 完善文档
-- [ ] 增加`ThemeColorPicker`支持的格式
-- [ ] [Open Issue](https://github.com/jiecao-fm/SwiftTheme/issues)
 
 ### Contributors
 [GeSen](https://github.com/wxxsw), [Zhoujun](https://github.com/shannonchou)
