@@ -27,7 +27,7 @@
 
 ## 前言
 ### 缘起
-项目需求，我们要为“节操精选”开发夜间模式功能。我们的需求不是简单的调整亮度或者`alpha`，而是更换为一套更深色的UI。因此所谓夜间模式其实就是特定的更换主题（换肤）功能。
+项目需求，我们要为[节操精选](http://um0.cn/5FpZs)开发夜间模式功能。我们的需求不是简单的调整亮度或者`alpha`，而是更换为一套更深色的UI。因此所谓夜间模式其实就是特定的更换主题（换肤）功能。
 
 如何实现呢？判断某个全局变量，然后在初始化视图控件时设置不同的背景色或者加载不同的切图文件？但是在切换主题时，已经初始化好的视图控件呢？没错，也许你也想到了通过通知让相应的视图控件修改背景色或切图。想到这里你应该也意识到了Controller中将充斥着注册通知、`if...else`、更新视图控件的代码，糟糕的是如果忘记了注销通知还可能引起应用崩溃。
 
@@ -135,11 +135,11 @@ lbl.theme_backgroundColor = [ThemeColorPicker pickerWithColors:@[@"#FAF9F9", @"#
 
 ## 安装
 
-> *Cocopods、Carthage和Framework安装基于动态链接库，动态链接库最低支持iOS8。*
+> *CocoaPods、Carthage和Framework安装基于动态链接库，动态链接库最低支持iOS8。*
 > 
-> **如果你的项目需要支持iOS7，必须手动拷贝源文件**
+> **如果你的项目需要支持iOS7，请手动拷贝源文件**
 
-#### Cocoapods
+#### CocoaPods
 ```swift
 pod 'SwiftTheme'
 use_frameworks!
@@ -315,7 +315,7 @@ ThemeStatusBarStylePicker.pickerWithKeyPath("someStringKeyPath")
 如果你需要帮助或者遇到Bug，请[创建一个Issue](https://github.com/jiecao-fm/SwiftTheme/issues/new)
 
 ### Pull Request
-期待你的贡献 :D
+期待你的贡献 :D。但是请确保你添加的功能不要偏离主旨，并保证其足够简单易用，如果你不确定可以先通过issue与我们讨论。
 
 ### Contributors
 [GeSen](https://github.com/wxxsw), [Zhoujun](https://github.com/shannonchou)

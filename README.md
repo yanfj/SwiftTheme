@@ -28,7 +28,7 @@
 ## Introduction
 ### The Beginning Of The Story
 
-As the project requirement, we need to add night mode to our app "节操精选". It's not as simple as changing brightness or alpha only on the top-level view. In fact, it need a entirely new interface: different colors, different alpha, different image cuts. More accurately, so called "night mode" is themes/skinning feature that can switch between a bright theme and a dark theme.
+As the project requirement, we need to add night mode to our app [节操精选](http://um0.cn/5FpZs). It's not as simple as changing brightness or alpha only on the top-level view. In fact, it need a entirely new interface: different colors, different alpha, different image cuts. More accurately, so called "night mode" is themes/skinning feature that can switch between a bright theme and a dark theme.
 
 How to achieve this? Maybe we can set a global variable represents current selected theme, use different background colors or different image cuts based on the variable during the controllers initialization. But how to deal with the views that have been initialized? Yes, maybe you think we can use notification to change their colors or image cuts. Thought here, you should premonition that your controllers will be filled up with notification register/unregister, if...else and UI updating codes. Worse, if you forget to unregister the notifications app may crash.
 
@@ -70,7 +70,7 @@ No problem! A miracle happens after you executing the one line of code below!
 ThemeManager.setTheme(isNight ? 1 : 0)
 ```
 
-> Index mode is a fast way for these situation: a few themes, but not many, no need to download more new themes.
+> Index mode is a fast way for the situation: a few themes, but not many, no need to download more new themes.
 
 
 ### Plist Mode
@@ -122,7 +122,7 @@ lbl.theme_backgroundColor = [ThemeColorPicker pickerWithColors:@[@"#FAF9F9", @"#
 
 ## Installation
 
-> *Swift code is built as dynamic framework by CocoaPods, Carthage and the project itself, so dynamic frameworks works on iOS8+*
+> *Swift code is built as dynamic framework by CocoaPods, Carthage and the project itself, while dynamic frameworks works on iOS8+*
 >
 > **If you want it work on iOS7, you should copy the source files into you project**
 
