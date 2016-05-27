@@ -26,7 +26,7 @@ class SwitchNightCell: BaseCell {
     }
     
     @IBAction func changeNight(sender: UISwitch) {
-        MyThemes.switchToNight(sender.on)
+        MyThemes.switchNight(sender.on)
     }
     
     @objc private func updateNightSwitch() {

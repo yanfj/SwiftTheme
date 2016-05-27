@@ -55,6 +55,24 @@
 		18D642EA1C53638200DADEC5 /* NSObject+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E31C53638200DADEC5 /* NSObject+Theme.swift */; };
 		18D642EB1C53638200DADEC5 /* NSObject+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E31C53638200DADEC5 /* NSObject+Theme.swift */; };
 		23229EF4ED9B1C6C541F848C /* libPods-PlistDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F8D63A2324D0A281801B40 /* libPods-PlistDemo.a */; };
+		A34AD0521CF6A7A900B54F53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A34AD0511CF6A7A900B54F53 /* main.m */; };
+		A34AD0551CF6A7A900B54F53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A34AD0541CF6A7A900B54F53 /* AppDelegate.m */; };
+		A34AD05D1CF6A7A900B54F53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A34AD05C1CF6A7A900B54F53 /* Assets.xcassets */; };
+		A34AD0601CF6A7A900B54F53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A34AD05E1CF6A7A900B54F53 /* LaunchScreen.storyboard */; };
+		A34AD06B1CF6F83E00B54F53 /* MyThemes.m in Sources */ = {isa = PBXBuildFile; fileRef = A34AD06A1CF6F83E00B54F53 /* MyThemes.m */; };
+		A34AD06C1CF6FE0200B54F53 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E01C53638200DADEC5 /* ThemeManager.swift */; };
+		A34AD06D1CF6FE0400B54F53 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187C0D1D1C562AC00000FA89 /* ThemePicker.swift */; };
+		A34AD06E1CF6FE0700B54F53 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E11C53638200DADEC5 /* UIColorExtension.swift */; };
+		A34AD06F1CF6FE0900B54F53 /* UIKit+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E21C53638200DADEC5 /* UIKit+Theme.swift */; };
+		A34AD0701CF6FE0B00B54F53 /* NSObject+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E31C53638200DADEC5 /* NSObject+Theme.swift */; };
+		A34AD0751CF708CD00B54F53 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A34AD0741CF708CD00B54F53 /* ListViewController.m */; };
+		A34AD0781CF7096100B54F53 /* BaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A34AD0771CF7096100B54F53 /* BaseCell.m */; };
+		A34AD07B1CF7099800B54F53 /* AboutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A34AD07A1CF7099800B54F53 /* AboutCell.m */; };
+		A34AD07E1CF7E0B900B54F53 /* SelectThemeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A34AD07D1CF7E0B900B54F53 /* SelectThemeCell.m */; };
+		A34AD0811CF7E14E00B54F53 /* SwitchNightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A34AD0801CF7E14E00B54F53 /* SwitchNightCell.m */; };
+		A34AD0871CF7E3E300B54F53 /* SelectThemeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A34AD0861CF7E3E300B54F53 /* SelectThemeViewController.m */; };
+		A34AD0881CF7E5A000B54F53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A34AD0591CF6A7A900B54F53 /* Main.storyboard */; };
+		A368D4C31CF7ECDA0016F62A /* ChangeThemeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A34AD0831CF7E29900B54F53 /* ChangeThemeCell.m */; };
 		B3405FA6AAA1F26EBDA63620 /* libPods-SwiftTheme.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9EA2683344B1FA2E7553A18 /* libPods-SwiftTheme.a */; };
 		BF7C00D046C63F5919357B2A /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F20E6BF028F63DFA7AB48C /* libPods-Demo.a */; };
 /* End PBXBuildFile section */
@@ -109,6 +127,31 @@
 		42F8D63A2324D0A281801B40 /* libPods-PlistDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlistDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		559F74E961CA8E15657FD04A /* Pods-SwiftTheme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTheme.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTheme/Pods-SwiftTheme.release.xcconfig"; sourceTree = "<group>"; };
 		93F20E6BF028F63DFA7AB48C /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A34AD04E1CF6A7A900B54F53 /* OCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A34AD0511CF6A7A900B54F53 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A34AD0531CF6A7A900B54F53 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A34AD0541CF6A7A900B54F53 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A34AD05A1CF6A7A900B54F53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A34AD05C1CF6A7A900B54F53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A34AD05F1CF6A7A900B54F53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A34AD0611CF6A7A900B54F53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A34AD0681CF6A96300B54F53 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
+		A34AD0691CF6F83E00B54F53 /* MyThemes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyThemes.h; sourceTree = "<group>"; };
+		A34AD06A1CF6F83E00B54F53 /* MyThemes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyThemes.m; sourceTree = "<group>"; };
+		A34AD0731CF708CD00B54F53 /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		A34AD0741CF708CD00B54F53 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		A34AD0761CF7096100B54F53 /* BaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCell.h; sourceTree = "<group>"; };
+		A34AD0771CF7096100B54F53 /* BaseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCell.m; sourceTree = "<group>"; };
+		A34AD0791CF7099800B54F53 /* AboutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutCell.h; sourceTree = "<group>"; };
+		A34AD07A1CF7099800B54F53 /* AboutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutCell.m; sourceTree = "<group>"; };
+		A34AD07C1CF7E0B900B54F53 /* SelectThemeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectThemeCell.h; sourceTree = "<group>"; };
+		A34AD07D1CF7E0B900B54F53 /* SelectThemeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectThemeCell.m; sourceTree = "<group>"; };
+		A34AD07F1CF7E14E00B54F53 /* SwitchNightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwitchNightCell.h; sourceTree = "<group>"; };
+		A34AD0801CF7E14E00B54F53 /* SwitchNightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwitchNightCell.m; sourceTree = "<group>"; };
+		A34AD0821CF7E29900B54F53 /* ChangeThemeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeThemeCell.h; sourceTree = "<group>"; };
+		A34AD0831CF7E29900B54F53 /* ChangeThemeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeThemeCell.m; sourceTree = "<group>"; };
+		A34AD0851CF7E3E300B54F53 /* SelectThemeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectThemeViewController.h; sourceTree = "<group>"; };
+		A34AD0861CF7E3E300B54F53 /* SelectThemeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectThemeViewController.m; sourceTree = "<group>"; };
 		A3EF94C91CEC29FD0068F86C /* PlistDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlistDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		ADF2E15BBF38F3DF9EF2C974 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		D9EA2683344B1FA2E7553A18 /* libPods-SwiftTheme.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwiftTheme.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +180,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF7C00D046C63F5919357B2A /* libPods-Demo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A34AD04B1CF6A7A900B54F53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +288,7 @@
 				18D642DF1C53638200DADEC5 /* Source */,
 				18D642BD1C53615300DADEC5 /* Demo */,
 				186C863B1C857AA900A5FFEA /* PlistDemo */,
+				A34AD04F1CF6A7A900B54F53 /* OCDemo */,
 				18D642AE1C53613400DADEC5 /* Products */,
 				CE1915C51728852635765A2E /* Pods */,
 				29018FD95431D269A5EFB3A1 /* Frameworks */,
@@ -250,6 +301,7 @@
 				18D642AD1C53613400DADEC5 /* SwiftTheme.framework */,
 				18D642BC1C53615300DADEC5 /* Demo.app */,
 				186C863A1C857AA900A5FFEA /* PlistDemo.app */,
+				A34AD04E1CF6A7A900B54F53 /* OCDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -307,6 +359,61 @@
 				D9EA2683344B1FA2E7553A18 /* libPods-SwiftTheme.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A34AD04F1CF6A7A900B54F53 /* OCDemo */ = {
+			isa = PBXGroup;
+			children = (
+				A34AD0531CF6A7A900B54F53 /* AppDelegate.h */,
+				A34AD0541CF6A7A900B54F53 /* AppDelegate.m */,
+				A34AD0681CF6A96300B54F53 /* Global.h */,
+				A34AD0691CF6F83E00B54F53 /* MyThemes.h */,
+				A34AD06A1CF6F83E00B54F53 /* MyThemes.m */,
+				A34AD0711CF7089400B54F53 /* List */,
+				A34AD0721CF708A800B54F53 /* Detail */,
+				A34AD0591CF6A7A900B54F53 /* Main.storyboard */,
+				A34AD05C1CF6A7A900B54F53 /* Assets.xcassets */,
+				A34AD0501CF6A7A900B54F53 /* Supporting Files */,
+			);
+			path = OCDemo;
+			sourceTree = "<group>";
+		};
+		A34AD0501CF6A7A900B54F53 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A34AD05E1CF6A7A900B54F53 /* LaunchScreen.storyboard */,
+				A34AD0611CF6A7A900B54F53 /* Info.plist */,
+				A34AD0511CF6A7A900B54F53 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A34AD0711CF7089400B54F53 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				A34AD0731CF708CD00B54F53 /* ListViewController.h */,
+				A34AD0741CF708CD00B54F53 /* ListViewController.m */,
+				A34AD0761CF7096100B54F53 /* BaseCell.h */,
+				A34AD0771CF7096100B54F53 /* BaseCell.m */,
+				A34AD0791CF7099800B54F53 /* AboutCell.h */,
+				A34AD07A1CF7099800B54F53 /* AboutCell.m */,
+				A34AD07C1CF7E0B900B54F53 /* SelectThemeCell.h */,
+				A34AD07D1CF7E0B900B54F53 /* SelectThemeCell.m */,
+				A34AD07F1CF7E14E00B54F53 /* SwitchNightCell.h */,
+				A34AD0801CF7E14E00B54F53 /* SwitchNightCell.m */,
+				A34AD0821CF7E29900B54F53 /* ChangeThemeCell.h */,
+				A34AD0831CF7E29900B54F53 /* ChangeThemeCell.m */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		A34AD0721CF708A800B54F53 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				A34AD0851CF7E3E300B54F53 /* SelectThemeViewController.h */,
+				A34AD0861CF7E3E300B54F53 /* SelectThemeViewController.m */,
+			);
+			name = Detail;
 			sourceTree = "<group>";
 		};
 		CE1915C51728852635765A2E /* Pods */ = {
@@ -396,6 +503,23 @@
 			productReference = 18D642BC1C53615300DADEC5 /* Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A34AD04D1CF6A7A900B54F53 /* OCDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A34AD0641CF6A7A900B54F53 /* Build configuration list for PBXNativeTarget "OCDemo" */;
+			buildPhases = (
+				A34AD04A1CF6A7A900B54F53 /* Sources */,
+				A34AD04B1CF6A7A900B54F53 /* Frameworks */,
+				A34AD04C1CF6A7A900B54F53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OCDemo;
+			productName = OCDemo;
+			productReference = A34AD04E1CF6A7A900B54F53 /* OCDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -415,6 +539,9 @@
 					18D642BB1C53615300DADEC5 = {
 						CreatedOnToolsVersion = 7.2;
 					};
+					A34AD04D1CF6A7A900B54F53 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 				};
 			};
 			buildConfigurationList = 18D642A71C53613400DADEC5 /* Build configuration list for PBXProject "SwiftTheme" */;
@@ -433,6 +560,7 @@
 				18D642AC1C53613400DADEC5 /* SwiftTheme */,
 				18D642BB1C53615300DADEC5 /* Demo */,
 				186C86391C857AA900A5FFEA /* PlistDemo */,
+				A34AD04D1CF6A7A900B54F53 /* OCDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -465,6 +593,16 @@
 				18D642C91C53615400DADEC5 /* LaunchScreen.storyboard in Resources */,
 				18D642C61C53615300DADEC5 /* Assets.xcassets in Resources */,
 				18D642C41C53615300DADEC5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A34AD04C1CF6A7A900B54F53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A34AD0881CF7E5A000B54F53 /* Main.storyboard in Resources */,
+				A34AD0601CF6A7A900B54F53 /* LaunchScreen.storyboard in Resources */,
+				A34AD05D1CF6A7A900B54F53 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +790,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A34AD04A1CF6A7A900B54F53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A34AD0811CF7E14E00B54F53 /* SwitchNightCell.m in Sources */,
+				A34AD06F1CF6FE0900B54F53 /* UIKit+Theme.swift in Sources */,
+				A34AD0701CF6FE0B00B54F53 /* NSObject+Theme.swift in Sources */,
+				A34AD0781CF7096100B54F53 /* BaseCell.m in Sources */,
+				A34AD0751CF708CD00B54F53 /* ListViewController.m in Sources */,
+				A34AD06E1CF6FE0700B54F53 /* UIColorExtension.swift in Sources */,
+				A34AD06B1CF6F83E00B54F53 /* MyThemes.m in Sources */,
+				A34AD0871CF7E3E300B54F53 /* SelectThemeViewController.m in Sources */,
+				A34AD07B1CF7099800B54F53 /* AboutCell.m in Sources */,
+				A34AD06C1CF6FE0200B54F53 /* ThemeManager.swift in Sources */,
+				A368D4C31CF7ECDA0016F62A /* ChangeThemeCell.m in Sources */,
+				A34AD06D1CF6FE0400B54F53 /* ThemePicker.swift in Sources */,
+				A34AD0551CF6A7A900B54F53 /* AppDelegate.m in Sources */,
+				A34AD0521CF6A7A900B54F53 /* main.m in Sources */,
+				A34AD07E1CF7E0B900B54F53 /* SelectThemeCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -683,6 +843,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				18D642C81C53615400DADEC5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		A34AD0591CF6A7A900B54F53 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A34AD05A1CF6A7A900B54F53 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A34AD05E1CF6A7A900B54F53 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A34AD05F1CF6A7A900B54F53 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -885,6 +1061,36 @@
 			};
 			name = Release;
 		};
+		A34AD0621CF6A7A900B54F53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				INFOPLIST_FILE = OCDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = me.gesen.OCDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A34AD0631CF6A7A900B54F53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
+				INFOPLIST_FILE = OCDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = me.gesen.OCDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -920,6 +1126,15 @@
 			buildConfigurations = (
 				18D642CC1C53615400DADEC5 /* Debug */,
 				18D642CD1C53615400DADEC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A34AD0641CF6A7A900B54F53 /* Build configuration list for PBXNativeTarget "OCDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A34AD0621CF6A7A900B54F53 /* Debug */,
+				A34AD0631CF6A7A900B54F53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

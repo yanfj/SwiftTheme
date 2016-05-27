@@ -148,6 +148,10 @@ public class ThemeStatusBarStylePicker: ThemePicker {
         return picker
     }
     
+    public class func pickerWithStringStyles(styles: [String]) -> ThemeStatusBarStylePicker {
+        return ThemeStatusBarStylePicker(v: { return ThemeManager.elementForArray(styles) })
+    }
+    
     func currentStyle(value: AnyObject?) -> UIStatusBarStyle {
         if let styles = styles {
             if styles.indices ~= ThemeManager.currentThemeIndex {

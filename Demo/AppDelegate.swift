@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let navigationBar = UINavigationBar.appearance()
         let shadow = NSShadow(); shadow.shadowOffset = CGSizeZero
-        let titleAttributes: [[String: AnyObject]] = globalBarTextColor.map { hexString in
+        let titleAttributes: [[String: AnyObject]] = globalBarTextColors.map { hexString in
             return [
                 NSForegroundColorAttributeName: UIColor(rgba: hexString),
                 NSFontAttributeName: UIFont.systemFontOfSize(16),

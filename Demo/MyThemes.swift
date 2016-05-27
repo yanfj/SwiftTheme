@@ -38,7 +38,7 @@ enum MyThemes: Int {
     
     // MARK: - Switch Night
     
-    static func switchToNight(isToNight: Bool) {
+    static func switchNight(isToNight: Bool) {
         switchTo(isToNight ? .Night : before)
     }
     
