@@ -10,5 +10,5 @@ let globalBackgroundColorPicker = ThemeColorPicker(colors: "#fff", "#fff", "#fff
 let globalTextColorPicker = ThemeColorPicker(colors: "#000", "#000", "#000", "#ECF0F1")
 
 let globalBarTextColors = ["#FFF", "#000", "#FFF", "#FFF"]
-let globalBarTextColorPicker = ThemeColorPicker.pickerWithColors(globalBarTextColor)
+let globalBarTextColorPicker = ThemeColorPicker.pickerWithColors(globalBarTextColors)
 let globalBarTintColorPicker = ThemeColorPicker(colors: "#EB4F38", "#F4C600", "#56ABE4", "#01040D")
