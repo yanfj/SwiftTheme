@@ -65,6 +65,37 @@ public class ThemeManager: NSObject {
 
 extension ThemeManager {
     
+    /**
+     extension for Objective-C, Use setTheme(plistName: String, path: ThemePath) in Swift
+     */
+    public class func setThemeWithPlistInMainBundle(plistName: String) {
+        setTheme(plistName, path: .MainBundle)
+    }
+    
+    /**
+     extension for Objective-C, Use setTheme(plistName: String, path: ThemePath) in Swift
+     */
+    public class func setThemeWithPlistInSandbox(plistName: String, path: NSURL) {
+        setTheme(plistName, path: .Sandbox(path))
+    }
+    
+    /**
+     extension for Objective-C, Use setTheme(dict: NSDictionary, path: ThemePath) in Swift
+     */
+    public class func setThemeWithDictInMainBundle(dict: NSDictionary) {
+        setTheme(dict, path: .MainBundle)
+    }
+    
+    /**
+     extension for Objective-C, Use setTheme(dict: NSDictionary, path: ThemePath) in Swift
+     */
+    public class func setThemeWithDictInSandbox(dict: NSDictionary, path: NSURL) {
+        setTheme(dict, path: .Sandbox(path))
+    }
+}
+
+extension ThemeManager {
+    
     public class func colorForArray(array: [String]) -> UIColor? {
         guard let rgba = elementForArray(array) else { return nil }
         guard let color = try? UIColor(rgba_throws: rgba as String) else {
