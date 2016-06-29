@@ -176,16 +176,14 @@ class ThemeStatePicker: ThemePicker {
     
     var values = ValuesType()
     
-    convenience init(picker: ThemePicker, withState state: UIControlState) {
+    convenience init?(picker: ThemePicker?, withState state: UIControlState) {
+        guard let picker = picker else { return nil}
+        
         self.init(v: { return 0 })
         self.setPicker(picker, forState: state)
     }
     
-    class func pickerWithPicker(picker: ThemePicker, andState state: UIControlState) -> ThemeStatePicker {
-        return ThemeStatePicker(picker: picker, withState: state)
-    }
-    
-    func setPicker(picker: ThemePicker, forState state: UIControlState) -> Self {
+    func setPicker(picker: ThemePicker?, forState state: UIControlState) -> Self {
         values[state.rawValue] = picker
         return self
     }

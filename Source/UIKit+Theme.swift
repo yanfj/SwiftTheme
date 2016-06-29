@@ -162,15 +162,15 @@ extension UIImageView
 }
 extension UIButton
 {
-    public func theme_setImage(picker: ThemeImagePicker, forState state: UIControlState) {
+    public func theme_setImage(picker: ThemeImagePicker?, forState state: UIControlState) {
         let statePicker = makeStatePicker(self, "setImage:forState:", picker, state)
         setThemePicker(self, "setImage:forState:", statePicker)
     }
-    public func theme_setBackgroundImage(picker: ThemeImagePicker, forState state: UIControlState) {
+    public func theme_setBackgroundImage(picker: ThemeImagePicker?, forState state: UIControlState) {
         let statePicker = makeStatePicker(self, "setBackgroundImage:forState:", picker, state)
         setThemePicker(self, "setBackgroundImage:forState:", statePicker)
     }
-    public func theme_setTitleColor(picker: ThemeColorPicker, forState state: UIControlState) {
+    public func theme_setTitleColor(picker: ThemeColorPicker?, forState state: UIControlState) {
         let statePicker = makeStatePicker(self, "setTitleColor:forState:", picker, state)
         setThemePicker(self, "setTitleColor:forState:", statePicker)
     }
@@ -213,16 +213,13 @@ private func makeStatePicker(
     _ picker : ThemePicker?,
     _ state : UIControlState
 ) -> ThemePicker? {
-    guard picker != nil else {
-        return nil
-    }
     
     var picker = picker
     
     if let statePicker = object.themePickers[selector] as? ThemeStatePicker {
-        picker = statePicker.setPicker(picker!, forState: state)
+        picker = statePicker.setPicker(picker, forState: state)
     } else {
-        picker = ThemeStatePicker(picker: picker!, withState: state)
+        picker = ThemeStatePicker(picker: picker, withState: state)
     }
     return picker
 }
