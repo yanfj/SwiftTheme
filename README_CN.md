@@ -66,9 +66,12 @@ imageView.theme_image = ThemeImagePicker(names: "day", "night")
 // 这里的数字代表主题参数的索引
 // 例如 "ThemeColorPicker(colors: "#000", "#FFF")", 索引 0 代表 "#000", 索引 1 代表 "#FFF"
 ThemeManager.setTheme(isNight ? 1 : 0)
+```
 
-// 你还可以随时获取当前主题的索引（readonly）
-ThemeManager.currentThemeIndex
+想知道当前的索引？
+
+```swift
+ThemeManager.currentThemeIndex	// Readonly
 ```
 
 > 直接根据索引切换主题，便于快速开发。适合主题不多、无需下载主题的App。
@@ -315,13 +318,13 @@ ThemeStatusBarStylePicker.pickerWithKeyPath("someStringKeyPath")
 
 ## 常见问题
 
-1. 使用theme_setStatusBarStyle设置状态栏样式时没有任何效果，为什么？
+1.  使用theme_setStatusBarStyle设置状态栏样式时没有任何效果，为什么？
+    
+    答：你需要将`Info.plist`中的`View Controller-based status bar appearence`设置为`NO`。
 
-答：你需要将`Info.plist`中的`View Controller-based status bar appearence`设置为`NO`。
-
-2. 我可以手动取消某个属性的主题吗？
-
-答：可以，传入`nil`即可，例如 `view.theme_backgroundColor = nil`。
+2.  我可以手动取消某个属性的主题吗？
+    
+    答：可以，传入`nil`即可，例如 `view.theme_backgroundColor = nil`。
 
 ## 贡献
 
