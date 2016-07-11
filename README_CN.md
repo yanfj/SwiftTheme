@@ -18,6 +18,7 @@
 <a href="https://github.com/jiecao-fm/SwiftTheme/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat"></a>
 <a href="https://github.com/jiecao-fm/SwiftTheme/tree/0.2.1"><img src="https://img.shields.io/badge/release-0.2.1-blue.svg"></a>
 <a href="https://travis-ci.org/jiecao-fm/SwiftTheme"><img src="https://travis-ci.org/jiecao-fm/SwiftTheme.svg"></a>
+<a href="https://codebeat.co/projects/github-com-jiecao-fm-swifttheme"><img alt="codebeat badge" src="https://codebeat.co/badges/900eef02-9b88-46eb-8ce9-440c1dc31435" /></a>
 </p>
 
 ## 截屏
