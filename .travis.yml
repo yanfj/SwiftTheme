@@ -3,4 +3,10 @@ language: objective-c
 
 xcode_workspace: SwiftTheme.xcworkspace
 xcode_scheme: SwiftTheme
-xcode_sdk: iphonesimulator
+xcode_sdk: iphonesimulator10.0
+
+before_install:
+ - gem install xcpretty
+script:
+ - set -o pipefail
+ - xcodebuild -project $TRAVIS_XCODE_PROJECT -scheme $TRAVIS_XCODE_SCHEME -sdk $TRAVIS_XCODE_SDK -destination 'name=iPhone 6' test | xcpretty -c
