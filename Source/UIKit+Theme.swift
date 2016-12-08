@@ -177,6 +177,10 @@ extension UIButton
 }
 extension CALayer
 {
+    public var theme_backgroundColor: ThemeCGColorPicker? {
+        get { return getThemePicker(self, "setBackgroundColor:") as? ThemeCGColorPicker}
+        set { setThemePicker(self, "setBackgroundColor:", newValue) }
+    }
     public var theme_borderWidth: ThemeCGFloatPicker? {
         get { return getThemePicker(self, "setBorderWidth:") as? ThemeCGFloatPicker }
         set { setThemePicker(self, "setBorderWidth:", newValue) }
