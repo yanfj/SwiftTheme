@@ -14,7 +14,7 @@ class ListViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.theme_backgroundColor = globalBackgroundColorPicker
-        tableView.theme_separatorColor = ThemeColorPicker(colors: "#C6C5C5", "#C6C5C5", "#C6C5C5", "#ECF0F1")
+        tableView.theme_separatorColor = ["#C6C5C5", "#C6C5C5", "#C6C5C5", "#ECF0F1"]
     }
     
 }

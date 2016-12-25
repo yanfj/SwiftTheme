@@ -24,7 +24,7 @@ open class ThemePicker: NSObject, NSCopying {
     
 }
 
-open class ThemeColorPicker: ThemePicker {
+open class ThemeColorPicker: ThemePicker, ExpressibleByStringLiteral, ExpressibleByArrayLiteral {
     
     public convenience init(keyPath: String) {
         self.init(v: { return ThemeManager.colorForKeyPath(keyPath) })
@@ -32,6 +32,22 @@ open class ThemeColorPicker: ThemePicker {
 
     public convenience init(colors: String...) {
         self.init(v: { return ThemeManager.colorForArray(colors) })
+    }
+    
+    public required convenience init(arrayLiteral elements: String...) {
+        self.init(v: { return ThemeManager.colorForArray(elements) })
+    }
+    
+    public required convenience init(stringLiteral value: String) {
+        self.init(keyPath: value)
+    }
+    
+    public required convenience init(unicodeScalarLiteral value: String) {
+        self.init(keyPath: value)
+    }
+    
+    public required convenience init(extendedGraphemeClusterLiteral value: String) {
+        self.init(keyPath: value)
     }
     
     open class func pickerWithKeyPath(_ keyPath: String) -> ThemeColorPicker {
@@ -44,7 +60,7 @@ open class ThemeColorPicker: ThemePicker {
     
 }
 
-open class ThemeImagePicker: ThemePicker {
+open class ThemeImagePicker: ThemePicker, ExpressibleByStringLiteral, ExpressibleByArrayLiteral {
     
     public convenience init(keyPath: String) {
         self.init(v: { return ThemeManager.imageForKeyPath(keyPath) })
@@ -56,6 +72,22 @@ open class ThemeImagePicker: ThemePicker {
     
     public convenience init(images: UIImage...) {
         self.init(v: { return ThemeManager.elementForArray(images) })
+    }
+    
+    public required convenience init(arrayLiteral elements: String...) {
+        self.init(v: { return ThemeManager.imageForArray(elements) })
+    }
+    
+    public required convenience init(stringLiteral value: String) {
+        self.init(keyPath: value)
+    }
+    
+    public required convenience init(unicodeScalarLiteral value: String) {
+        self.init(keyPath: value)
+    }
+    
+    public required convenience init(extendedGraphemeClusterLiteral value: String) {
+        self.init(keyPath: value)
     }
     
     open class func pickerWithKeyPath(_ keyPath: String) -> ThemeImagePicker {
@@ -72,7 +104,7 @@ open class ThemeImagePicker: ThemePicker {
     
 }
 
-open class ThemeCGFloatPicker: ThemePicker {
+open class ThemeCGFloatPicker: ThemePicker, ExpressibleByStringLiteral, ExpressibleByArrayLiteral {
     
     public convenience init(keyPath: String) {
         self.init(v: { return CGFloat(ThemeManager.numberForKeyPath(keyPath) ?? 0) })
@@ -80,6 +112,22 @@ open class ThemeCGFloatPicker: ThemePicker {
     
     public convenience init(floats: CGFloat...) {
         self.init(v: { return ThemeManager.elementForArray(floats) })
+    }
+    
+    public required convenience init(arrayLiteral elements: CGFloat...) {
+        self.init(v: { return ThemeManager.elementForArray(elements) })
+    }
+    
+    public required convenience init(stringLiteral value: String) {
+        self.init(keyPath: value)
+    }
+    
+    public required convenience init(unicodeScalarLiteral value: String) {
+        self.init(keyPath: value)
+    }
+    
+    public required convenience init(extendedGraphemeClusterLiteral value: String) {
+        self.init(keyPath: value)
     }
     
     open class func pickerWithKeyPath(_ keyPath: String) -> ThemeCGFloatPicker {
@@ -92,7 +140,7 @@ open class ThemeCGFloatPicker: ThemePicker {
     
 }
 
-open class ThemeCGColorPicker: ThemePicker {
+open class ThemeCGColorPicker: ThemePicker, ExpressibleByStringLiteral, ExpressibleByArrayLiteral {
     
     public convenience init(keyPath: String) {
         self.init(v: { return ThemeManager.colorForKeyPath(keyPath)?.cgColor })
@@ -100,6 +148,22 @@ open class ThemeCGColorPicker: ThemePicker {
     
     public convenience init(colors: String...) {
         self.init(v: { return ThemeManager.colorForArray(colors)?.cgColor })
+    }
+    
+    public required convenience init(arrayLiteral elements: String...) {
+        self.init(v: { return ThemeManager.colorForArray(elements)?.cgColor })
+    }
+    
+    public required convenience init(stringLiteral value: String) {
+        self.init(keyPath: value)
+    }
+    
+    public required convenience init(unicodeScalarLiteral value: String) {
+        self.init(keyPath: value)
+    }
+    
+    public required convenience init(extendedGraphemeClusterLiteral value: String) {
+        self.init(keyPath: value)
     }
     
     open class func pickerWithKeyPath(_ keyPath: String) -> ThemeCGColorPicker {
@@ -112,10 +176,14 @@ open class ThemeCGColorPicker: ThemePicker {
     
 }
 
-open class ThemeDictionaryPicker: ThemePicker {
+open class ThemeDictionaryPicker: ThemePicker, ExpressibleByArrayLiteral {
     
     public convenience init(dicts: [String: AnyObject]...) {
         self.init(v: { return ThemeManager.elementForArray(dicts) })
+    }
+    
+    public required convenience init(arrayLiteral elements: [String: AnyObject]...) {
+        self.init(v: { return ThemeManager.elementForArray(elements) })
     }
     
     open class func pickerWithDicts(_ dicts: [[String: AnyObject]]) -> ThemeDictionaryPicker {
@@ -124,7 +192,7 @@ open class ThemeDictionaryPicker: ThemePicker {
     
 }
 
-open class ThemeStatusBarStylePicker: ThemePicker {
+open class ThemeStatusBarStylePicker: ThemePicker, ExpressibleByStringLiteral, ExpressibleByArrayLiteral {
     
     var styles: [UIStatusBarStyle]?
     var animated = true
@@ -136,6 +204,23 @@ open class ThemeStatusBarStylePicker: ThemePicker {
     public convenience init(styles: UIStatusBarStyle...) {
         self.init(v: { return 0 })
         self.styles = styles
+    }
+    
+    public required convenience init(arrayLiteral elements: UIStatusBarStyle...) {
+        self.init(v: { return 0 })
+        self.styles = elements
+    }
+    
+    public required convenience init(stringLiteral value: String) {
+        self.init(keyPath: value)
+    }
+    
+    public required convenience init(unicodeScalarLiteral value: String) {
+        self.init(keyPath: value)
+    }
+    
+    public required convenience init(extendedGraphemeClusterLiteral value: String) {
+        self.init(keyPath: value)
     }
     
     open class func pickerWithKeyPath(_ keyPath: String) -> ThemeStatusBarStylePicker {

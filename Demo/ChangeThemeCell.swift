@@ -15,13 +15,9 @@ class ChangeThemeCell: BaseCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let titlePicker1 = ThemeColorPicker(colors: "#FFF", "#000", "#FFF", "#000")
-        let titlePicker2 = ThemeColorPicker(colors: "#555", "#AAA", "#555", "#AAA")
-        let backgroundPicker = ThemeColorPicker(colors: "#EB4F38", "#F4C600", "#56ABE4", "#ECF0F1")
-        
-        changeTheme.theme_setTitleColor(titlePicker1, forState: .normal)
-        changeTheme.theme_setTitleColor(titlePicker2, forState: .highlighted)
-        changeTheme.theme_backgroundColor = backgroundPicker
+        changeTheme.theme_setTitleColor(["#FFF", "#000", "#FFF", "#000"], forState: .normal)
+        changeTheme.theme_setTitleColor(["#555", "#AAA", "#555", "#AAA"], forState: .highlighted)
+        changeTheme.theme_backgroundColor = ["#EB4F38", "#F4C600", "#56ABE4", "#ECF0F1"]
         changeTheme.layer.cornerRadius = 60
     }
     

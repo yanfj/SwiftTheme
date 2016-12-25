@@ -19,8 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // status bar
         
-        let statusPicker = ThemeStatusBarStylePicker(styles: .lightContent, .default, .lightContent, .lightContent)
-        UIApplication.shared.theme_setStatusBarStyle(statusPicker, animated: true)
+        UIApplication.shared.theme_setStatusBarStyle([.lightContent, .default, .lightContent, .lightContent], animated: true)
         
         // navigation bar
 

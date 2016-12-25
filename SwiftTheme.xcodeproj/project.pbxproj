@@ -16,7 +16,6 @@
 		1854EB6F1C9660E700E865C6 /* Night.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1854EB6C1C9660E700E865C6 /* Night.plist */; };
 		1854EB701C9660E700E865C6 /* Red.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1854EB6D1C9660E700E865C6 /* Red.plist */; };
 		1854EB711C9660E700E865C6 /* Yellow.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1854EB6E1C9660E700E865C6 /* Yellow.plist */; };
-		1854EB751C9667F700E865C6 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB741C9667F700E865C6 /* Global.swift */; };
 		1854EB771C9670AB00E865C6 /* MyThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB761C9670AB00E865C6 /* MyThemes.swift */; };
 		1854EB791C96888D00E865C6 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB781C96888D00E865C6 /* BaseCell.swift */; };
 		1854EB7B1C96895700E865C6 /* MyThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB7A1C96895700E865C6 /* MyThemes.swift */; };
@@ -100,7 +99,6 @@
 		1854EB6C1C9660E700E865C6 /* Night.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Night.plist; sourceTree = "<group>"; };
 		1854EB6D1C9660E700E865C6 /* Red.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Red.plist; sourceTree = "<group>"; };
 		1854EB6E1C9660E700E865C6 /* Yellow.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Yellow.plist; sourceTree = "<group>"; };
-		1854EB741C9667F700E865C6 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		1854EB761C9670AB00E865C6 /* MyThemes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyThemes.swift; sourceTree = "<group>"; };
 		1854EB781C96888D00E865C6 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		1854EB7A1C96895700E865C6 /* MyThemes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyThemes.swift; sourceTree = "<group>"; };
@@ -251,7 +249,6 @@
 			isa = PBXGroup;
 			children = (
 				186C863C1C857AA900A5FFEA /* AppDelegate.swift */,
-				1854EB741C9667F700E865C6 /* Global.swift */,
 				1854EB7A1C96895700E865C6 /* MyThemes.swift */,
 				1854EB691C96602200E865C6 /* List */,
 				1854EB6A1C96602600E865C6 /* Detail */,
@@ -764,7 +761,6 @@
 				186C86501C857B0800A5FFEA /* NSObject+Theme.swift in Sources */,
 				A3A389A21D8E305B00797F17 /* ThemeManager+Index.swift in Sources */,
 				1854EB661C96601E00E865C6 /* SelectThemeCell.swift in Sources */,
-				1854EB751C9667F700E865C6 /* Global.swift in Sources */,
 				1854EB631C96601E00E865C6 /* AboutCell.swift in Sources */,
 				1854EB681C96601E00E865C6 /* SwitchNightCell.swift in Sources */,
 				1866B5301C97BE3A00396DA8 /* Helper.swift in Sources */,

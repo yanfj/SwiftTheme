@@ -18,7 +18,7 @@ class SwitchNightCell: BaseCell {
         super.awakeFromNib()
 
         title.theme_textColor = globalTextColorPicker
-        nightIcon.theme_image = ThemeImagePicker(names: "icon_night_dark", "icon_night_dark", "icon_night_dark", "icon_night_light")
+        nightIcon.theme_image = ["icon_night_dark", "icon_night_dark", "icon_night_dark", "icon_night_light"]
         
         updateNightSwitch()
         
