@@ -42,34 +42,38 @@
 
 ### 索引方式
 
-让 `UIView` 随主题变换背景色？
+让 `UIView` 随主题变换背景色：
 
 ```swift
-view.theme_backgroundColor = ThemeColorPicker(colors: "#FFF", "#000")
+view.theme_backgroundColor = ["#FFF", "#000"]
 ```
 
-让 `UILabel` 和 `UIButton` 随主题变换文字颜色？
+让 `UILabel` 和 `UIButton` 随主题变换文字颜色：
 
 ```swift
-label.theme_textColor = ThemeColorPicker(colors: "#000", "#FFF")
-button.theme_setTitleColor(ThemeColorPicker(colors: "#000", "#FFF"), forState: .Normal)
+label.theme_textColor = ["#000", "#FFF"]
+button.theme_setTitleColor(["#000", "#FFF"], forState: .Normal)
 ```
 
-让 `UIImageView` 随主题变换切图？
+让 `UIImageView` 随主题变换切图：
 
 ```swift
-imageView.theme_image = ThemeImagePicker(names: "day", "night")
+imageView.theme_image = ["day", "night"]
+
+// 不想通过切图名，想通过 UIImage 来设置不同主题的图片也是可以的
+imageView.theme_image = ThemeImagePicker(images: UIImage(named: "day"), UIImage(named: "night"))
+
+// 提示：实际上 ["day", "night"] 就是 ThemeImagePicker(names: "day", "night") 的字面量写法
 ```
 
-没问题，当你执行如下代码时，奇迹发生了！
+然后，当你执行如下代码时，奇迹发生了！
 
 ```swift
-// 这里的数字代表主题参数的索引
-// 例如 "ThemeColorPicker(colors: "#000", "#FFF")", 索引 0 代表 "#000", 索引 1 代表 "#FFF"
+// 例如isNight为true，imageView将会使用 "night" 的切图
 ThemeManager.setTheme(index: isNight ? 1 : 0)
 ```
 
-想知道当前的索引？
+随时获取当前主题的索引：
 
 ```swift
 ThemeManager.currentThemeIndex	// Readonly
@@ -79,15 +83,15 @@ ThemeManager.currentThemeIndex	// Readonly
 
 
 ### plist 方式
-为了满足通过网络下载和安装主题包的需求，我们支持以`plist`配置主题。简单讲就是在`plist` 中记录配置参数，比如背景色、切图文件名等，在代码中通过`key`来指定相应的参数。因此，该`plist`文件以及用到的资源文件就组成了一个主题包。
+为了满足通过网络下载和安装主题包的需求，我们支持以`plist`配置主题。简单讲就是在`plist` 中记录配置参数，比如背景色、切图文件名等，在代码中通过`keyPath`来指定相应的位置。因此，该`plist`文件以及用到的资源文件就组成了一个主题包。
 
 以下为用法示例：
 
 ```swift
-view.theme_backgroundColor = ThemeColorPicker(keyPath: "Global.backgroundColor")
-imageView.theme_image = ThemeImagePicker(keyPath: "SelectedThemeCell.iconImage")
+view.theme_backgroundColor = "Global.backgroundColor"
+imageView.theme_image = "SelectedThemeCell.iconImage"
 ```
-> 与索引方式类似，只是具体的参数值变为了间接的`key`名称，正因如此赋予了它扩展的能力。
+> 与索引方式类似，只是具体的参数值变为了`plist`中的`keyPath`，正因如此赋予了它扩展的能力。
 
 
 切换主题时参数为`plist`名称，这里以`bundle`中的`plist`文件及资源文件为例，使用沙箱中的文件也是可以的。
@@ -326,7 +330,7 @@ ThemeStatusBarStylePicker.pickerWithKeyPath("someStringKeyPath")
 2.  我可以手动取消某个属性的主题吗？
     
     答：可以，传入`nil`即可，例如 `view.theme_backgroundColor = nil`。
-
+    
 ## 贡献
 
 ### Issue
