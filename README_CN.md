@@ -61,9 +61,7 @@ button.theme_setTitleColor(["#000", "#FFF"], forState: .Normal)
 imageView.theme_image = ["day", "night"]
 
 // 不想通过切图名，想通过 UIImage 来设置不同主题的图片也是可以的
-imageView.theme_image = ThemeImagePicker(images: UIImage(named: "day"), UIImage(named: "night"))
-
-// 提示：实际上 ["day", "night"] 就是 ThemeImagePicker(names: "day", "night") 的字面量写法
+imageView.theme_image = ThemeImagePicker(images: image1, image2)
 ```
 
 然后，当你执行如下代码时，奇迹发生了！
@@ -80,6 +78,24 @@ ThemeManager.currentThemeIndex	// Readonly
 ```
 
 > 直接根据索引切换主题，便于快速开发。适合主题不多、无需下载主题的App。
+
+关于字面量需要注意的：
+
+```swif
+// 以下的写法是错误的
+let colors = ["#FFF", "#000"]
+view.theme_backgroundColor = colors
+
+// 应该这样
+view.theme_backgroundColor = ["#FFF", "#000"]
+// 或者
+let colorPickers: ThemeColorPicker = ["#FFF", "#000"]
+view.theme_backgroundColor = colorPickers
+```
+
+> 因为 theme_backgroundColor 接受的是ThemeColorPicker 类型的参数，而不是Array，而 view.theme_backgroundColor = ["#FFF", "#000"] 其实是它的字面量写法
+
+
 
 
 ### plist 方式
@@ -148,7 +164,7 @@ lbl.theme_backgroundColor = [ThemeColorPicker pickerWithColors:@[@"#FAF9F9", @"#
 ## 安装
 
 > *CocoaPods、Carthage和Framework安装基于动态链接库，动态链接库最低支持iOS8。*
-> 
+>
 > **如果你的项目需要支持iOS7，请手动拷贝源文件**
 
 #### CocoaPods
@@ -324,13 +340,13 @@ ThemeStatusBarStylePicker.pickerWithKeyPath("someStringKeyPath")
 ## 常见问题
 
 1.  使用theme_setStatusBarStyle设置状态栏样式时没有任何效果，为什么？
-    
+
     答：你需要将`Info.plist`中的`View Controller-based status bar appearence`设置为`NO`。
 
 2.  我可以手动取消某个属性的主题吗？
-    
-    答：可以，传入`nil`即可，例如 `view.theme_backgroundColor = nil`。
-    
+
+      答：可以，传入`nil`即可，例如 `view.theme_backgroundColor = nil`。
+
 ## 贡献
 
 ### Issue
