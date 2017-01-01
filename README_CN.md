@@ -93,7 +93,7 @@ let colorPickers: ThemeColorPicker = ["#FFF", "#000"]
 view.theme_backgroundColor = colorPickers
 ```
 
-> 因为 theme_backgroundColor 接受的是ThemeColorPicker 类型的参数，而不是Array，而 view.theme_backgroundColor = ["#FFF", "#000"] 其实是它的字面量写法
+> 因为 theme_backgroundColor 接受的是ThemeColorPicker 类型的参数，而不是Array，而 view.theme_backgroundColor = ["#FFF", "#000"] 其实是用字面量初始化一个ThemeColorPicker 并赋值给theme_backgroundColor
 
 
 
