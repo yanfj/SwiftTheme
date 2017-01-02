@@ -45,40 +45,61 @@ Make SwiftTheme a simple, powerful, high-performance, extensible themes/skinning
 
 ### Index Mode
 
-Vary background color of UIView according to the theme setting?
+Vary background color of UIView according to the theme setting:
 
 ```swift
-view.theme_backgroundColor = ThemeColorPicker(colors: "#FFF", "#000")
+view.theme_backgroundColor = ["#FFF", "#000"]
 ```
 
-Vary text color of UILable and UIButton?
+Vary text color of UILable and UIButton:
 
 ```swift
-label.theme_textColor = ThemeColorPicker(colors: "#000", "#FFF")
-button.theme_setTitleColor(ThemeColorPicker(colors: "#000", "#FFF"), forState: .Normal)
+label.theme_textColor = ["#000", "#FFF"]
+button.theme_setTitleColor(["#000", "#FFF"], forState: .Normal)
 ```
 
-Vary image of UIImageView?
+Vary image of UIImageView:
 
 ```swift
-imageView.theme_image = ThemeImagePicker(names: "day", "night")
+imageView.theme_image = ["day", "night"]
+
+// It's ok by using UIImage instances if you don't want to use image names.
+imageView.theme_image = ThemeImagePicker(images: image1, image2)
 ```
 
-No problem! A miracle happens after you executing the one line of code below!
+A miracle happens after you executing the one line of code below!
 
 ```swift
 // these numbers represent the parameters' index. 
-// eg. "ThemeColorPicker(colors: "#000", "#FFF")", index 0 represents "#000", index 1 represents "#FFF"
+// eg. "view.theme_backgroundColor = ["#FFF", "#000"]
+", index 0 represents "#FFF", index 1 represents "#000"
 ThemeManager.setTheme(index: isNight ? 1 : 0)
 ```
 
-Then, get the current theme index.
+Get current theme index.
 
 ```swift
 ThemeManager.currentThemeIndex	// Readonly
 ```
 
 > Index mode is a fast way for the situation: a few themes, but not many, no need to download more new themes.
+
+Notice About Literal:
+
+```swif
+// Wrong example:
+let colors = ["#FFF", "#000"]
+view.theme_backgroundColor = colors
+
+// You should write like this:
+view.theme_backgroundColor = ["#FFF", "#000"]
+// or this:
+let colorPickers: ThemeColorPicker = ["#FFF", "#000"]
+view.theme_backgroundColor = colorPickers
+```
+
+> Because theme_backgroundColor accepts an argument of type ThemeColorPicker，not Array. Nevertheless, "view.theme_backgroundColor = ["#FFF", "#000"]" does the same as initializing an instance of ThemeColorPicker by "Literal" and passing it to the theme_backgroundColor.
+
 
 
 ### Plist Mode
