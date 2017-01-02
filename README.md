@@ -86,7 +86,7 @@ ThemeManager.currentThemeIndex	// Readonly
 
 Notice About Literal:
 
-```swif
+```swift
 // Wrong example:
 let colors = ["#FFF", "#000"]
 view.theme_backgroundColor = colors

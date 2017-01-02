@@ -81,7 +81,7 @@ ThemeManager.currentThemeIndex	// Readonly
 
 关于字面量需要注意的：
 
-```swif
+```swift
 // 以下的写法是错误的
 let colors = ["#FFF", "#000"]
 view.theme_backgroundColor = colors
