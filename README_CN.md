@@ -178,9 +178,6 @@ use_frameworks!
 github "jiecao-fm/SwiftTheme"
 ```
 
-#### Framework
-运行项目中名为`SwiftTheme`的Target，将生成的`framework`链到你自己的项目中
-
 #### 源文件（iOS7）
 拷贝`Source`文件夹下的所有文件到你的项目中
 
