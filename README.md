@@ -166,9 +166,6 @@ use_frameworks!
 github "jiecao-fm/SwiftTheme"
 ```
 
-#### Framework
-Build the source project, drop the SwiftTheme.framework into your project
-
 #### Source files（iOS7）
 Copy all the files in "Source" folder into your project
 
