@@ -113,6 +113,10 @@ extension UITextView
 }
 extension UIToolbar
 {
+    public var theme_barStyle: ThemeBarStylePicker? {
+        get { return getThemePicker(self, "setBarStyle:") as? ThemeBarStylePicker }
+        set { setThemePicker(self, "setBarStyle:", newValue) }
+    }
     public var theme_barTintColor: ThemeColorPicker? {
         get { return getThemePicker(self, "setBarTintColor:") as? ThemeColorPicker }
         set { setThemePicker(self, "setBarTintColor:", newValue) }
@@ -146,6 +150,10 @@ extension UISlider
 }
 extension UISearchBar
 {
+    public var theme_barStyle: ThemeBarStylePicker? {
+        get { return getThemePicker(self, "setBarStyle:") as? ThemeBarStylePicker }
+        set { setThemePicker(self, "setBarStyle:", newValue) }
+    }
     public var theme_barTintColor: ThemeColorPicker? {
         get { return getThemePicker(self, "setBarTintColor:") as? ThemeColorPicker }
         set { setThemePicker(self, "setBarTintColor:", newValue) }
@@ -180,7 +188,8 @@ extension UIImageView
         set { setThemePicker(self, "setImage:", newValue) }
     }
 }
-extension UIActivityIndicatorView {
+extension UIActivityIndicatorView
+{
     public var theme_activityIndicatorViewStyle: ThemeActivityIndicatorViewStylePicker? {
         get { return getThemePicker(self, "setActivityIndicatorViewStyle:") as? ThemeActivityIndicatorViewStylePicker }
         set { setThemePicker(self, "setActivityIndicatorViewStyle:", newValue) }
