@@ -6,6 +6,8 @@
 //  Copyright © 2016年 Gesen. All rights reserved.
 //
 
+#define globalStatusBarStringStyles @[@"LightContent", @"Default", @"LightContent", @"LightContent"]
+
 #define globalBackgroundColorPicker [ThemeColorPicker pickerWithColors:@[@"#fff", @"#fff", @"#fff", @"#292b38"]]
 #define globalTextColorPicker [ThemeColorPicker pickerWithColors:@[@"#000", @"#000", @"#000", @"#ECF0F1"]]
 

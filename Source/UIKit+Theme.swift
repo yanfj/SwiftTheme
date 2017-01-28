@@ -54,6 +54,10 @@ extension UILabel
 }
 extension UINavigationBar
 {
+    public var theme_barStyle: ThemeBarStylePicker? {
+        get { return getThemePicker(self, "setBarStyle:") as? ThemeBarStylePicker }
+        set { setThemePicker(self, "setBarStyle:", newValue) }
+    }
     public var theme_barTintColor: ThemeColorPicker? {
         get { return getThemePicker(self, "setBarTintColor:") as? ThemeColorPicker }
         set { setThemePicker(self, "setBarTintColor:", newValue) }
@@ -65,6 +69,10 @@ extension UINavigationBar
 }
 extension UITabBar
 {
+    public var theme_barStyle: ThemeBarStylePicker? {
+        get { return getThemePicker(self, "setBarStyle:") as? ThemeBarStylePicker }
+        set { setThemePicker(self, "setBarStyle:", newValue) }
+    }
     public var theme_barTintColor: ThemeColorPicker? {
         get { return getThemePicker(self, "setBarTintColor:") as? ThemeColorPicker }
         set { setThemePicker(self, "setBarTintColor:", newValue) }

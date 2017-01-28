@@ -49,9 +49,9 @@ public final class ThemeStatusBarStylePicker: ThemePicker {
     }
     
     class func statusBarStyle(stringStyle: String) -> UIStatusBarStyle {
-        switch stringStyle {
-        case "UIStatusBarStyleDefault"      : return .default
-        case "UIStatusBarStyleLightContent" : return .lightContent
+        switch stringStyle.lowercased() {
+        case "default"      : return .default
+        case "lightcontent" : return .lightContent
         default: return .default
         }
     }

@@ -25,12 +25,7 @@
     
     // status bar
     
-    NSArray *stylesString = @[@"UIStatusBarStyleLightContent",
-                              @"UIStatusBarStyleDefault",
-                              @"UIStatusBarStyleLightContent",
-                              @"UIStatusBarStyleLightContent"];
-    
-    ThemeStatusBarStylePicker *statusPicker = [ThemeStatusBarStylePicker pickerWithStringStyles:stylesString];
+    ThemeStatusBarStylePicker *statusPicker = [ThemeStatusBarStylePicker pickerWithStringStyles:globalStatusBarStringStyles];
     
     [[UIApplication sharedApplication] theme_setStatusBarStyle:statusPicker animated:YES];
 

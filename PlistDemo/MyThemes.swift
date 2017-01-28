@@ -59,7 +59,7 @@ enum MyThemes: Int {
     static func downloadBlueTask(_ handler: @escaping (_ isSuccess: Bool) -> Void) {
         
         let session = URLSession.shared
-        let url = "https://github.com/jiecao-fm/SwiftThemeResources/blob/master/20160315/Blue.zip?raw=true"
+        let url = "https://github.com/jiecao-fm/SwiftThemeResources/blob/master/20170128/Blue.zip?raw=true"
         let URL = Foundation.URL(string: url)
         
         let task = session.downloadTask(with: URL!, completionHandler: { location, response, error in
@@ -93,6 +93,6 @@ enum MyThemes: Int {
     }
     
     static let blueDiretory : URL = unzipPath.appendingPathComponent("Blue/")
-    static let unzipPath    : URL = libraryURL.appendingPathComponent("Themes/20160315")
+    static let unzipPath    : URL = libraryURL.appendingPathComponent("Themes/20170128")
     
 }
