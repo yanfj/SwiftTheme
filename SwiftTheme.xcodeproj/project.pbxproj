@@ -120,6 +120,10 @@
 		A3D5F81A1E3C56CD00F901C1 /* ThemeActivityIndicatorViewStylePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D5F8181E3C56CD00F901C1 /* ThemeActivityIndicatorViewStylePicker.swift */; };
 		A3D5F81B1E3C56CD00F901C1 /* ThemeActivityIndicatorViewStylePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D5F8181E3C56CD00F901C1 /* ThemeActivityIndicatorViewStylePicker.swift */; };
 		A3D5F81C1E3C56CD00F901C1 /* ThemeActivityIndicatorViewStylePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D5F8181E3C56CD00F901C1 /* ThemeActivityIndicatorViewStylePicker.swift */; };
+		A3D5F81E1E3C5B1F00F901C1 /* ThemeFontPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D5F81D1E3C5B1F00F901C1 /* ThemeFontPicker.swift */; };
+		A3D5F81F1E3C5B1F00F901C1 /* ThemeFontPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D5F81D1E3C5B1F00F901C1 /* ThemeFontPicker.swift */; };
+		A3D5F8201E3C5B1F00F901C1 /* ThemeFontPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D5F81D1E3C5B1F00F901C1 /* ThemeFontPicker.swift */; };
+		A3D5F8211E3C5B1F00F901C1 /* ThemeFontPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D5F81D1E3C5B1F00F901C1 /* ThemeFontPicker.swift */; };
 		B3405FA6AAA1F26EBDA63620 /* libPods-SwiftTheme.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9EA2683344B1FA2E7553A18 /* libPods-SwiftTheme.a */; };
 		BF7C00D046C63F5919357B2A /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F20E6BF028F63DFA7AB48C /* libPods-Demo.a */; };
 /* End PBXBuildFile section */
@@ -210,6 +214,7 @@
 		A3A3899C1D8E2FB200797F17 /* ThemeManager+Plist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ThemeManager+Plist.swift"; sourceTree = "<group>"; };
 		A3D5F8131E3C4D3900F901C1 /* ThemeBarStylePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeBarStylePicker.swift; sourceTree = "<group>"; };
 		A3D5F8181E3C56CD00F901C1 /* ThemeActivityIndicatorViewStylePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeActivityIndicatorViewStylePicker.swift; sourceTree = "<group>"; };
+		A3D5F81D1E3C5B1F00F901C1 /* ThemeFontPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeFontPicker.swift; sourceTree = "<group>"; };
 		A3EF94C91CEC29FD0068F86C /* PlistDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlistDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		ADF2E15BBF38F3DF9EF2C974 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		D9EA2683344B1FA2E7553A18 /* libPods-SwiftTheme.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SwiftTheme.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -484,6 +489,7 @@
 				A373E38F1E3C348B00ED2F2B /* ThemeCGColorPicker.swift */,
 				A373E38A1E3C346C00ED2F2B /* ThemeCGFloatPicker.swift */,
 				A373E3801E3C341200ED2F2B /* ThemeColorPicker.swift */,
+				A3D5F81D1E3C5B1F00F901C1 /* ThemeFontPicker.swift */,
 				A373E3851E3C344200ED2F2B /* ThemeImagePicker.swift */,
 				A373E39E1E3C34E500ED2F2B /* ThemeStatePicker.swift */,
 				A373E3991E3C34C600ED2F2B /* ThemeStatusBarStylePicker.swift */,
@@ -821,6 +827,7 @@
 				A373E3831E3C341700ED2F2B /* ThemeColorPicker.swift in Sources */,
 				186C864F1C857B0600A5FFEA /* UIKit+Theme.swift in Sources */,
 				186C864E1C857B0400A5FFEA /* UIColorExtension.swift in Sources */,
+				A3D5F8201E3C5B1F00F901C1 /* ThemeFontPicker.swift in Sources */,
 				A373E39C1E3C34C600ED2F2B /* ThemeStatusBarStylePicker.swift in Sources */,
 				186C86501C857B0800A5FFEA /* NSObject+Theme.swift in Sources */,
 				A3A389A21D8E305B00797F17 /* ThemeManager+Index.swift in Sources */,
@@ -864,6 +871,7 @@
 				A3A3899B1D8E2F7900797F17 /* ThemeManager+Index.swift in Sources */,
 				A373E38B1E3C346C00ED2F2B /* ThemeCGFloatPicker.swift in Sources */,
 				A373E3951E3C34A900ED2F2B /* ThemeDictionaryPicker.swift in Sources */,
+				A3D5F81E1E3C5B1F00F901C1 /* ThemeFontPicker.swift in Sources */,
 				A3D5F8141E3C4D3900F901C1 /* ThemeBarStylePicker.swift in Sources */,
 				18D642E81C53638200DADEC5 /* UIKit+Theme.swift in Sources */,
 				A373E39A1E3C34C600ED2F2B /* ThemeStatusBarStylePicker.swift in Sources */,
@@ -876,6 +884,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3D5F81F1E3C5B1F00F901C1 /* ThemeFontPicker.swift in Sources */,
 				186C86601C86850600A5FFEA /* SwitchNightCell.swift in Sources */,
 				18D642E91C53638200DADEC5 /* UIKit+Theme.swift in Sources */,
 				A373E3821E3C341600ED2F2B /* ThemeColorPicker.swift in Sources */,
@@ -910,6 +919,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3D5F8211E3C5B1F00F901C1 /* ThemeFontPicker.swift in Sources */,
 				A34AD0811CF7E14E00B54F53 /* SwitchNightCell.m in Sources */,
 				A34AD06F1CF6FE0900B54F53 /* UIKit+Theme.swift in Sources */,
 				A373E3841E3C341700ED2F2B /* ThemeColorPicker.swift in Sources */,

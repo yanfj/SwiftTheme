@@ -39,6 +39,10 @@ extension UIBarButtonItem
 }
 extension UILabel
 {
+    public var theme_font: ThemeFontPicker? {
+        get { return getThemePicker(self, "setFont:") as? ThemeFontPicker }
+        set { setThemePicker(self, "setFont:", newValue) }
+    }
     public var theme_textColor: ThemeColorPicker? {
         get { return getThemePicker(self, "setTextColor:") as? ThemeColorPicker }
         set { setThemePicker(self, "setTextColor:", newValue) }
@@ -87,6 +91,10 @@ extension UITableView
 }
 extension UITextField
 {
+    public var theme_font: ThemeFontPicker? {
+        get { return getThemePicker(self, "setFont:") as? ThemeFontPicker }
+        set { setThemePicker(self, "setFont:", newValue) }
+    }
     public var theme_textColor: ThemeColorPicker? {
         get { return getThemePicker(self, "setTextColor:") as? ThemeColorPicker }
         set { setThemePicker(self, "setTextColor:", newValue) }
@@ -94,6 +102,10 @@ extension UITextField
 }
 extension UITextView
 {
+    public var theme_font: ThemeFontPicker? {
+        get { return getThemePicker(self, "setFont:") as? ThemeFontPicker }
+        set { setThemePicker(self, "setFont:", newValue) }
+    }
     public var theme_textColor: ThemeColorPicker? {
         get { return getThemePicker(self, "setTextColor:") as? ThemeColorPicker }
         set { setThemePicker(self, "setTextColor:", newValue) }
