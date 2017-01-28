@@ -10,9 +10,9 @@ import UIKit
 
 extension NSObject {
     
-    public typealias ThemePickers = [String: ThemePicker]
+    typealias ThemePickers = [String: ThemePicker]
     
-    public var themePickers: ThemePickers {
+    var themePickers: ThemePickers {
         get {
             if let themePickers = objc_getAssociatedObject(self, &themePickersKey) as? ThemePickers {
                 return themePickers
@@ -41,8 +41,7 @@ extension NSObject {
             
         else if let statusBarStylePicker = picker as? ThemeStatusBarStylePicker {
             let setStatusBarStyle = unsafeBitCast(methodSignature, to: setStatusBarStyleValueIMP.self)
-            setStatusBarStyle(self, sel, statusBarStylePicker.currentStyle(value as AnyObject?), statusBarStylePicker.animated)
-            
+            setStatusBarStyle(self, sel, value as! UIStatusBarStyle, statusBarStylePicker.animated)
         }
         
         else if picker is ThemeCGFloatPicker {
