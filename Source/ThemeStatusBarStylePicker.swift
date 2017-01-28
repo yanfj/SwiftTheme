@@ -13,7 +13,7 @@ public final class ThemeStatusBarStylePicker: ThemePicker {
     var animated = true
     
     public convenience init(keyPath: String) {
-        self.init(v: { ThemeStatusBarStylePicker.statusBarStyle(stringStyle: ThemeManager.stringForKeyPath(keyPath) ?? "") })
+        self.init(v: { ThemeStatusBarStylePicker.getStyle(stringStyle: ThemeManager.stringForKeyPath(keyPath) ?? "") })
     }
     
     public convenience init(styles: UIStatusBarStyle...) {
@@ -45,10 +45,10 @@ public final class ThemeStatusBarStylePicker: ThemePicker {
     }
     
     public class func pickerWithStringStyles(_ styles: [String]) -> ThemeStatusBarStylePicker {
-        return ThemeStatusBarStylePicker(v: { ThemeManager.elementForArray(styles.map(statusBarStyle)) })
+        return ThemeStatusBarStylePicker(v: { ThemeManager.elementForArray(styles.map(getStyle)) })
     }
     
-    class func statusBarStyle(stringStyle: String) -> UIStatusBarStyle {
+    class func getStyle(stringStyle: String) -> UIStatusBarStyle {
         switch stringStyle.lowercased() {
         case "default"      : return .default
         case "lightcontent" : return .lightContent

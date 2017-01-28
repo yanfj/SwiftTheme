@@ -11,7 +11,7 @@ import UIKit
 public final class ThemeBarStylePicker: ThemePicker {
     
     public convenience init(keyPath: String) {
-        self.init(v: { ThemeBarStylePicker.barStyle(stringStyle: ThemeManager.stringForKeyPath(keyPath) ?? "") })
+        self.init(v: { ThemeBarStylePicker.getStyle(stringStyle: ThemeManager.stringForKeyPath(keyPath) ?? "") })
     }
     
     public convenience init(styles: UIBarStyle...) {
@@ -43,10 +43,10 @@ public final class ThemeBarStylePicker: ThemePicker {
     }
     
     public class func pickerWithStringStyles(_ styles: [String]) -> ThemeBarStylePicker {
-        return ThemeBarStylePicker(v: { ThemeManager.elementForArray(styles.map(barStyle)) })
+        return ThemeBarStylePicker(v: { ThemeManager.elementForArray(styles.map(getStyle)) })
     }
     
-    class func barStyle(stringStyle: String) -> UIBarStyle {
+    class func getStyle(stringStyle: String) -> UIBarStyle {
         switch stringStyle.lowercased() {
         case "default"  : return .default
         case "black"    : return .black

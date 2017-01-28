@@ -168,6 +168,12 @@ extension UIImageView
         set { setThemePicker(self, "setImage:", newValue) }
     }
 }
+extension UIActivityIndicatorView {
+    public var theme_activityIndicatorViewStyle: ThemeActivityIndicatorViewStylePicker? {
+        get { return getThemePicker(self, "setActivityIndicatorViewStyle:") as? ThemeActivityIndicatorViewStylePicker }
+        set { setThemePicker(self, "setActivityIndicatorViewStyle:", newValue) }
+    }
+}
 extension UIButton
 {
     public func theme_setImage(_ picker: ThemeImagePicker?, forState state: UIControlState) {
