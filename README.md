@@ -302,6 +302,8 @@ NotificationCenter.default.addObserver(
 - func theme_setTitleColor(picker: ThemeColorPicker, forState state: UIControlState)
 
 ##### CALayer
+- var theme_backgroundColor: ThemeCGColorPicker?
+- var theme_borderWidth: ThemeCGFloatPicker?
 - var theme_borderColor: ThemeCGColorPicker?
 - var theme_shadowColor: ThemeCGColorPicker?
 
