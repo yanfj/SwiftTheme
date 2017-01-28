@@ -16,7 +16,7 @@
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
 <a href="http://cocoadocs.org/docsets/SwiftTheme"><img src="https://img.shields.io/badge/CocoaPods-compatible-4BC51D.svg?style=flat"></a>
 <a href="https://github.com/jiecao-fm/SwiftTheme/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat"></a>
-<a href="https://github.com/jiecao-fm/SwiftTheme/tree/0.3.1"><img src="https://img.shields.io/badge/release-0.3.1-blue.svg"></a>
+<a href="https://github.com/jiecao-fm/SwiftTheme/tree/0.3.2"><img src="https://img.shields.io/badge/release-0.3.2-blue.svg"></a>
 <a href="https://travis-ci.org/jiecao-fm/SwiftTheme"><img src="https://travis-ci.org/jiecao-fm/SwiftTheme.svg"></a>
 <a href="https://codebeat.co/projects/github-com-jiecao-fm-swifttheme"><img alt="codebeat badge" src="https://codebeat.co/badges/900eef02-9b88-46eb-8ce9-440c1dc31435" /></a>
 </p>
@@ -200,27 +200,33 @@ github "jiecao-fm/SwiftTheme"
 - var theme_tintColor: ThemeColorPicker?
 
 ##### UILabel
+- var theme_font: ThemeFontPicker?
 - var theme_textColor: ThemeColorPicker?
 - var theme_highlightedTextColor: ThemeColorPicker?
 - var theme_shadowColor: ThemeColorPicker?
 
 ##### UINavigationBar
+- var theme_barStyle: ThemeBarStylePicker?
 - var theme_barTintColor: ThemeColorPicker?
 - var theme_titleTextAttributes: ThemeDictionaryPicker?
 
 ##### UITabBar
+- var theme_barStyle: ThemeBarStylePicker?
 - var theme_barTintColor: ThemeColorPicker?
 
 ##### UITableView
 - var theme_separatorColor: ThemeColorPicker?
 
 ##### UITextField
+- var theme_font: ThemeFontPicker?
 - var theme_textColor: ThemeColorPicker?
 
 ##### UITextView
+- var theme_font: ThemeFontPicker?
 - var theme_textColor: ThemeColorPicker?
 
 ##### UIToolbar
+- var theme_barStyle: ThemeBarStylePicker?
 - var theme_barTintColor: ThemeColorPicker?
 
 ##### UISwitch
@@ -233,6 +239,7 @@ github "jiecao-fm/SwiftTheme"
 - var theme_maximumTrackTintColor: ThemeColorPicker?
 
 ##### UISearchBar
+- var theme_barStyle: ThemeBarStylePicker?
 - var theme_barTintColor: ThemeColorPicker?
 
 ##### UIProgressView
@@ -246,12 +253,16 @@ github "jiecao-fm/SwiftTheme"
 ##### UIImageView
 - var theme_image: ThemeImagePicker?
 
+##### UIActivityIndicatorView
+- var theme_activityIndicatorViewStyle: ThemeActivityIndicatorViewStylePicker?
+
 ##### UIButton
 - func theme_setImage(picker: ThemeImagePicker, forState state: UIControlState)
 - func theme_setBackgroundImage(picker: ThemeImagePicker, forState state: UIControlState)
 - func theme_setTitleColor(picker: ThemeColorPicker, forState state: UIControlState)
 
 ##### CALayer
+- var theme_backgroundColor: ThemeCGColorPicker?
 - var theme_borderWidth: ThemeCGFloatPicker?
 - var theme_borderColor: ThemeCGColorPicker?
 - var theme_shadowColor: ThemeCGColorPicker?
@@ -306,6 +317,15 @@ ThemeCGColorPicker(keyPath: "someStringKeyPath")
 ThemeCGColorPicker.pickerWithKeyPath("someStringKeyPath")
 ```
 
+#### ThemeFontPicker
+```swift
+①
+ThemeFontPicker(fonts: UIFont.systemFont(ofSize: 10), UIFont.systemFont(ofSize: 11))
+ThemeFontPicker.pickerWithFonts([UIFont.systemFont(ofSize: 10), UIFont.systemFont(ofSize: 11)])
+②
+// 暂时不支持从`plist`中读取字体
+```
+
 #### ThemeDictionaryPicker
 ```swift
 ①
@@ -315,16 +335,43 @@ ThemeDictionaryPicker.pickerWithDicts([["key": "value"], ["key": "value"]])
 // 暂时不支持从`plist`中读取字典
 ```
 
+#### ThemeBarStylePicker
+```swift
+①
+ThemeBarStylePicker(styles: .default, .black)
+ThemeBarStylePicker.pickerWithStyles([.default, .black])
+ThemeBarStylePicker.pickerWithStringStyles(["default", "black"])
+②
+// 在自定的`Key`中设置指定的`Value`，匹配字符串即可生效
+// 可选的值有："default" 和 "black"
+ThemeBarStylePicker(keyPath: "someStringKeyPath")
+ThemeBarStylePicker.pickerWithKeyPath("someStringKeyPath")
+```
+
 #### ThemeStatusBarStylePicker
 ```swift
 ①
-ThemeStatusBarStylePicker(styles: .Default, .LightContent)
-ThemeStatusBarStylePicker.pickerWithStyles([.Default, .LightContent])
+ThemeStatusBarStylePicker(styles: .default, .lightContent)
+ThemeStatusBarStylePicker.pickerWithStyles([.default, .lightContent])
+ThemeStatusBarStylePicker.pickerWithStringStyles(["default", "lightContent"])
 ②
 // 在自定的`Key`中设置指定的`Value`，匹配字符串即可生效
-// 可选的值有："UIStatusBarStyleDefault" 和 "UIStatusBarStyleLightContent"
+// 可选的值有："default" 和 "lightContent"
 ThemeStatusBarStylePicker(keyPath: "someStringKeyPath")
 ThemeStatusBarStylePicker.pickerWithKeyPath("someStringKeyPath")
+```
+
+#### ThemeActivityIndicatorViewStylePicker
+```swift
+①
+ThemeActivityIndicatorViewStylePicker(styles: .whiteLarge, .white, .gray)
+ThemeActivityIndicatorViewStylePicker.pickerWithStyles([.whiteLarge, .white, .gray])
+ThemeActivityIndicatorViewStylePicker.pickerWithStringStyles(["whiteLarge", "white", "gray"])
+②
+// 在自定的`Key`中设置指定的`Value`，匹配字符串即可生效
+// 可选的值有："whiteLarge"、"white" 和 "gray"
+ThemeActivityIndicatorViewStylePicker(keyPath: "someStringKeyPath")
+ThemeActivityIndicatorViewStylePicker.pickerWithKeyPath("someStringKeyPath")
 ```
 
 ### *更多*
@@ -342,7 +389,7 @@ ThemeStatusBarStylePicker.pickerWithKeyPath("someStringKeyPath")
 
 2.  我可以手动取消某个属性的主题吗？
 
-      答：可以，传入`nil`即可，例如 `view.theme_backgroundColor = nil`。
+    答：可以，传入`nil`即可，例如 `view.theme_backgroundColor = nil`。
 
 ## 贡献
 
