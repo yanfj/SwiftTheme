@@ -293,7 +293,7 @@ NotificationCenter.default.addObserver(
 ##### UIImageView
 - var theme_image: ThemeImagePicker?
 
-##### UIImageView
+##### UIActivityIndicatorView
 - var theme_activityIndicatorViewStyle: ThemeActivityIndicatorViewStylePicker?
 
 ##### UIButton
