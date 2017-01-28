@@ -16,7 +16,7 @@
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
 <a href="http://cocoadocs.org/docsets/SwiftTheme"><img src="https://img.shields.io/badge/CocoaPods-compatible-4BC51D.svg?style=flat"></a>
 <a href="https://github.com/jiecao-fm/SwiftTheme/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat"></a>
-<a href="https://github.com/jiecao-fm/SwiftTheme/tree/0.3.1"><img src="https://img.shields.io/badge/release-0.3.1-blue.svg"></a>
+<a href="https://github.com/jiecao-fm/SwiftTheme/tree/0.3.2"><img src="https://img.shields.io/badge/release-0.3.2-blue.svg"></a>
 <a href="https://travis-ci.org/jiecao-fm/SwiftTheme"><img src="https://travis-ci.org/jiecao-fm/SwiftTheme.svg"></a>
 <a href="https://codebeat.co/projects/github-com-jiecao-fm-swifttheme"><img alt="codebeat badge" src="https://codebeat.co/badges/900eef02-9b88-46eb-8ce9-440c1dc31435" /></a>
 </p>
@@ -71,8 +71,7 @@ A miracle happens after you executing the one line of code below!
 
 ```swift
 // these numbers represent the parameters' index. 
-// eg. "view.theme_backgroundColor = ["#FFF", "#000"]
-", index 0 represents "#FFF", index 1 represents "#000"
+// eg. "view.theme_backgroundColor = ["#FFF", "#000"]", index 0 represents "#FFF", index 1 represents "#000"
 ThemeManager.setTheme(index: isNight ? 1 : 0)
 ```
 
@@ -241,27 +240,33 @@ NotificationCenter.default.addObserver(
 - var theme_tintColor: ThemeColorPicker?
 
 ##### UILabel
+- var theme_font: ThemeFontPicker?
 - var theme_textColor: ThemeColorPicker?
 - var theme_highlightedTextColor: ThemeColorPicker?
 - var theme_shadowColor: ThemeColorPicker?
 
 ##### UINavigationBar
+- var theme_barStyle: ThemeBarStylePicker?
 - var theme_barTintColor: ThemeColorPicker?
 - var theme_titleTextAttributes: ThemeDictionaryPicker?
 
 ##### UITabBar
+- var theme_barStyle: ThemeBarStylePicker?
 - var theme_barTintColor: ThemeColorPicker?
 
 ##### UITableView
 - var theme_separatorColor: ThemeColorPicker?
 
 ##### UITextField
+- var theme_font: ThemeFontPicker?
 - var theme_textColor: ThemeColorPicker?
 
 ##### UITextView
+- var theme_font: ThemeFontPicker?
 - var theme_textColor: ThemeColorPicker?
 
 ##### UIToolbar
+- var theme_barStyle: ThemeBarStylePicker?
 - var theme_barTintColor: ThemeColorPicker?
 
 ##### UISwitch
@@ -274,6 +279,7 @@ NotificationCenter.default.addObserver(
 - var theme_maximumTrackTintColor: ThemeColorPicker?
 
 ##### UISearchBar
+- var theme_barStyle: ThemeBarStylePicker?
 - var theme_barTintColor: ThemeColorPicker?
 
 ##### UIProgressView
@@ -286,6 +292,9 @@ NotificationCenter.default.addObserver(
 
 ##### UIImageView
 - var theme_image: ThemeImagePicker?
+
+##### UIImageView
+- var theme_activityIndicatorViewStyle: ThemeActivityIndicatorViewStylePicker?
 
 ##### UIButton
 - func theme_setImage(picker: ThemeImagePicker, forState state: UIControlState)
@@ -346,6 +355,15 @@ ThemeCGColorPicker(keyPath: "someStringKeyPath")
 ThemeCGColorPicker.pickerWithKeyPath("someStringKeyPath")
 ```
 
+#### ThemeFontPicker
+```swift
+①
+ThemeFontPicker(fonts: UIFont.systemFont(ofSize: 10), UIFont.systemFont(ofSize: 11))
+ThemeFontPicker.pickerWithFonts([UIFont.systemFont(ofSize: 10), UIFont.systemFont(ofSize: 11)])
+②
+// Reading font from plist is not supported now
+```
+
 #### ThemeDictionaryPicker
 ```swift
 ①
@@ -355,15 +373,40 @@ ThemeDictionaryPicker.pickerWithDicts([["key": "value"], ["key": "value"]])
 // Reading dictionary from plist is not supported now
 ```
 
+#### ThemeBarStylePicker
+```swift
+①
+ThemeBarStylePicker(styles: .default, .black)
+ThemeBarStylePicker.pickerWithStyles([.default, .black])
+ThemeBarStylePicker.pickerWithStringStyles(["default", "black"])
+②
+// name the key you like, but the available values are "default" and "black"
+ThemeBarStylePicker(keyPath: "someStringKeyPath")
+ThemeBarStylePicker.pickerWithKeyPath("someStringKeyPath")
+```
+
 #### ThemeStatusBarStylePicker
 ```swift
 ①
-ThemeStatusBarStylePicker(styles: .Default, .LightContent)
-ThemeStatusBarStylePicker.pickerWithStyles([.Default, .LightContent])
+ThemeStatusBarStylePicker(styles: .default, .lightContent)
+ThemeStatusBarStylePicker.pickerWithStyles([.default, .lightContent])
+ThemeStatusBarStylePicker.pickerWithStringStyles(["default", "lightContent"])
 ②
-// name the key you like, but the available values are "UIStatusBarStyleDefault" and "UIStatusBarStyleLightContent"
+// name the key you like, but the available values are "default" and "lightContent"
 ThemeStatusBarStylePicker(keyPath: "someStringKeyPath")
 ThemeStatusBarStylePicker.pickerWithKeyPath("someStringKeyPath")
+```
+
+#### ThemeActivityIndicatorViewStylePicker
+```swift
+①
+ThemeActivityIndicatorViewStylePicker(styles: .whiteLarge, .white, .gray)
+ThemeActivityIndicatorViewStylePicker.pickerWithStyles([.whiteLarge, .white, .gray])
+ThemeActivityIndicatorViewStylePicker.pickerWithStringStyles(["whiteLarge", "white", "gray"])
+②
+// name the key you like, but the available values are "whiteLarge", "white" and "gray"
+ThemeActivityIndicatorViewStylePicker(keyPath: "someStringKeyPath")
+ThemeActivityIndicatorViewStylePicker.pickerWithKeyPath("someStringKeyPath")
 ```
 
 ### *More*
