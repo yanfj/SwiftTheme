@@ -259,6 +259,7 @@ NotificationCenter.default.addObserver(
 
 ##### UITextField
 - var theme_font: ThemeFontPicker?
+- var theme_keyboardAppearance: ThemeKeyboardAppearancePicker?
 - var theme_textColor: ThemeColorPicker?
 
 ##### UITextView
@@ -397,6 +398,18 @@ ThemeStatusBarStylePicker.pickerWithStringStyles(["default", "lightContent"])
 // name the key you like, but the available values are "default" and "lightContent"
 ThemeStatusBarStylePicker(keyPath: "someStringKeyPath")
 ThemeStatusBarStylePicker.pickerWithKeyPath("someStringKeyPath")
+```
+
+#### ThemeKeyboardAppearancePicker
+```swift
+①
+ThemeKeyboardAppearancePicker(styles: .default, .dark, .light)
+ThemeKeyboardAppearancePicker.pickerWithStyles([.default, .dark, .light])
+ThemeKeyboardAppearancePicker.pickerWithStringStyles(["default", "dark", "light"])
+②
+// name the key you like, but the available values are "default", "dark" and "light"
+ThemeKeyboardAppearancePicker(keyPath: "someStringKeyPath")
+ThemeKeyboardAppearancePicker.pickerWithKeyPath("someStringKeyPath")
 ```
 
 #### ThemeActivityIndicatorViewStylePicker
