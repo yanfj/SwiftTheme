@@ -95,6 +95,10 @@ extension UITextField
         get { return getThemePicker(self, "setFont:") as? ThemeFontPicker }
         set { setThemePicker(self, "setFont:", newValue) }
     }
+    public var theme_keyboardAppearance: ThemeKeyboardAppearancePicker? {
+        get { return getThemePicker(self, "setKeyboardAppearance:") as? ThemeKeyboardAppearancePicker }
+        set { setThemePicker(self, "setKeyboardAppearance:", newValue) }
+    }
     public var theme_textColor: ThemeColorPicker? {
         get { return getThemePicker(self, "setTextColor:") as? ThemeColorPicker }
         set { setThemePicker(self, "setTextColor:", newValue) }

@@ -54,6 +54,10 @@
 		18D642EA1C53638200DADEC5 /* NSObject+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E31C53638200DADEC5 /* NSObject+Theme.swift */; };
 		18D642EB1C53638200DADEC5 /* NSObject+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E31C53638200DADEC5 /* NSObject+Theme.swift */; };
 		23229EF4ED9B1C6C541F848C /* libPods-PlistDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42F8D63A2324D0A281801B40 /* libPods-PlistDemo.a */; };
+		A322D88D1E665CFC0039520F /* ThemeKeyboardAppearancePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A322D88C1E665CFC0039520F /* ThemeKeyboardAppearancePicker.swift */; };
+		A322D88E1E665D030039520F /* ThemeKeyboardAppearancePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A322D88C1E665CFC0039520F /* ThemeKeyboardAppearancePicker.swift */; };
+		A322D88F1E665D030039520F /* ThemeKeyboardAppearancePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A322D88C1E665CFC0039520F /* ThemeKeyboardAppearancePicker.swift */; };
+		A322D8901E665D040039520F /* ThemeKeyboardAppearancePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A322D88C1E665CFC0039520F /* ThemeKeyboardAppearancePicker.swift */; };
 		A34AD0521CF6A7A900B54F53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A34AD0511CF6A7A900B54F53 /* main.m */; };
 		A34AD0551CF6A7A900B54F53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A34AD0541CF6A7A900B54F53 /* AppDelegate.m */; };
 		A34AD05D1CF6A7A900B54F53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A34AD05C1CF6A7A900B54F53 /* Assets.xcassets */; };
@@ -177,6 +181,7 @@
 		42F8D63A2324D0A281801B40 /* libPods-PlistDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlistDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		559F74E961CA8E15657FD04A /* Pods-SwiftTheme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftTheme.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftTheme/Pods-SwiftTheme.release.xcconfig"; sourceTree = "<group>"; };
 		93F20E6BF028F63DFA7AB48C /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A322D88C1E665CFC0039520F /* ThemeKeyboardAppearancePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeKeyboardAppearancePicker.swift; sourceTree = "<group>"; };
 		A34AD04E1CF6A7A900B54F53 /* OCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A34AD0511CF6A7A900B54F53 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A34AD0531CF6A7A900B54F53 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -495,6 +500,7 @@
 				A373E3991E3C34C600ED2F2B /* ThemeStatusBarStylePicker.swift */,
 				A3D5F8131E3C4D3900F901C1 /* ThemeBarStylePicker.swift */,
 				A3D5F8181E3C56CD00F901C1 /* ThemeActivityIndicatorViewStylePicker.swift */,
+				A322D88C1E665CFC0039520F /* ThemeKeyboardAppearancePicker.swift */,
 			);
 			name = ThemePickers;
 			sourceTree = "<group>";
@@ -847,6 +853,7 @@
 				A373E3881E3C344200ED2F2B /* ThemeImagePicker.swift in Sources */,
 				1854EB7B1C96895700E865C6 /* MyThemes.swift in Sources */,
 				1854EB651C96601E00E865C6 /* ListViewController.swift in Sources */,
+				A322D88F1E665D030039520F /* ThemeKeyboardAppearancePicker.swift in Sources */,
 				A3A389A51D8E305E00797F17 /* ThemeManager+Plist.swift in Sources */,
 				A373E38D1E3C346C00ED2F2B /* ThemeCGFloatPicker.swift in Sources */,
 				1854EB7D1C9689C600E865C6 /* BaseCell.swift in Sources */,
@@ -867,6 +874,7 @@
 				A373E39F1E3C34E500ED2F2B /* ThemeStatePicker.swift in Sources */,
 				18D642E61C53638200DADEC5 /* UIColorExtension.swift in Sources */,
 				187C0D1E1C562AC00000FA89 /* ThemePicker.swift in Sources */,
+				A322D88D1E665CFC0039520F /* ThemeKeyboardAppearancePicker.swift in Sources */,
 				A373E3861E3C344200ED2F2B /* ThemeImagePicker.swift in Sources */,
 				A3A3899B1D8E2F7900797F17 /* ThemeManager+Index.swift in Sources */,
 				A373E38B1E3C346C00ED2F2B /* ThemeCGFloatPicker.swift in Sources */,
@@ -904,6 +912,7 @@
 				A373E3A01E3C34E500ED2F2B /* ThemeStatePicker.swift in Sources */,
 				18D642E51C53638200DADEC5 /* ThemeManager.swift in Sources */,
 				186C86641C86C1C400A5FFEA /* AboutCell.swift in Sources */,
+				A322D88E1E665D030039520F /* ThemeKeyboardAppearancePicker.swift in Sources */,
 				186C86561C85A10A00A5FFEA /* ListViewController.swift in Sources */,
 				A3A389A41D8E305E00797F17 /* ThemeManager+Plist.swift in Sources */,
 				A3A3899E1D8E305800797F17 /* ThemeManager+OC.swift in Sources */,
@@ -939,6 +948,7 @@
 				A373E3A21E3C34E500ED2F2B /* ThemeStatePicker.swift in Sources */,
 				A34AD07B1CF7099800B54F53 /* AboutCell.m in Sources */,
 				A34AD06C1CF6FE0200B54F53 /* ThemeManager.swift in Sources */,
+				A322D8901E665D040039520F /* ThemeKeyboardAppearancePicker.swift in Sources */,
 				A368D4C31CF7ECDA0016F62A /* ChangeThemeCell.m in Sources */,
 				A3A389A61D8E305E00797F17 /* ThemeManager+Plist.swift in Sources */,
 				A3A389A01D8E305900797F17 /* ThemeManager+OC.swift in Sources */,
