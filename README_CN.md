@@ -219,6 +219,7 @@ github "jiecao-fm/SwiftTheme"
 
 ##### UITextField
 - var theme_font: ThemeFontPicker?
+- var theme_keyboardAppearance: ThemeKeyboardAppearancePicker?
 - var theme_textColor: ThemeColorPicker?
 
 ##### UITextView
@@ -359,6 +360,19 @@ ThemeStatusBarStylePicker.pickerWithStringStyles(["default", "lightContent"])
 // 可选的值有："default" 和 "lightContent"
 ThemeStatusBarStylePicker(keyPath: "someStringKeyPath")
 ThemeStatusBarStylePicker.pickerWithKeyPath("someStringKeyPath")
+```
+
+#### ThemeKeyboardAppearancePicker
+```swift
+①
+ThemeKeyboardAppearancePicker(styles: .default, .dark, .light)
+ThemeKeyboardAppearancePicker.pickerWithStyles([.default, .dark, .light])
+ThemeKeyboardAppearancePicker.pickerWithStringStyles(["default", "dark", "light"])
+②
+// 在自定的`Key`中设置指定的`Value`，匹配字符串即可生效
+// 可选的值有："default"、"dark" 和 "light"
+ThemeKeyboardAppearancePicker(keyPath: "someStringKeyPath")
+ThemeKeyboardAppearancePicker.pickerWithKeyPath("someStringKeyPath")
 ```
 
 #### ThemeActivityIndicatorViewStylePicker
