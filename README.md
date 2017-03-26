@@ -107,8 +107,8 @@ You may want to make you app download and install an indefinite number of themes
 Usage demo of plist mode.
 
 ```swift
-view.theme_backgroundColor = ThemeColorPicker(keyPath: "Global.backgroundColor")
-imageView.theme_image = ThemeImagePicker(keyPath: "SelectedThemeCell.iconImage")
+view.theme_backgroundColor = "Global.backgroundColor"
+imageView.theme_image = "SelectedThemeCell.iconImage"
 ```
 > Similar with the index mode. Only the specific parameters become keys. And as such, we give it the extension ability.
 
