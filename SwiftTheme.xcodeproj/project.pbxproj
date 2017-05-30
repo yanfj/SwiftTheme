@@ -20,7 +20,6 @@
 		1854EB791C96888D00E865C6 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB781C96888D00E865C6 /* BaseCell.swift */; };
 		1854EB7B1C96895700E865C6 /* MyThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB7A1C96895700E865C6 /* MyThemes.swift */; };
 		1854EB7D1C9689C600E865C6 /* BaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB7C1C9689C600E865C6 /* BaseCell.swift */; };
-		1854EB7F1C96998700E865C6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB7E1C96998700E865C6 /* NavigationController.swift */; };
 		1866B5301C97BE3A00396DA8 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866B52F1C97BE3A00396DA8 /* Helper.swift */; };
 		186C863D1C857AA900A5FFEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186C863C1C857AA900A5FFEA /* AppDelegate.swift */; };
 		186C86421C857AA900A5FFEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 186C86401C857AA900A5FFEA /* Main.storyboard */; };
@@ -147,7 +146,6 @@
 		1854EB781C96888D00E865C6 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
 		1854EB7A1C96895700E865C6 /* MyThemes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyThemes.swift; sourceTree = "<group>"; };
 		1854EB7C1C9689C600E865C6 /* BaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCell.swift; sourceTree = "<group>"; };
-		1854EB7E1C96998700E865C6 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		1866B52F1C97BE3A00396DA8 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		186C863A1C857AA900A5FFEA /* PlistDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlistDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		186C863C1C857AA900A5FFEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -292,14 +290,6 @@
 			name = Plist;
 			sourceTree = "<group>";
 		};
-		1854EB801C9699A400E865C6 /* Nav */ = {
-			isa = PBXGroup;
-			children = (
-				1854EB7E1C96998700E865C6 /* NavigationController.swift */,
-			);
-			name = Nav;
-			sourceTree = "<group>";
-		};
 		186C863B1C857AA900A5FFEA /* PlistDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,7 +297,6 @@
 				1854EB7A1C96895700E865C6 /* MyThemes.swift */,
 				1854EB691C96602200E865C6 /* List */,
 				1854EB6A1C96602600E865C6 /* Detail */,
-				1854EB801C9699A400E865C6 /* Nav */,
 				1854EB6B1C96605900E865C6 /* Plist */,
 				186C86401C857AA900A5FFEA /* Main.storyboard */,
 				186C86431C857AA900A5FFEA /* Assets.xcassets */,
@@ -845,7 +834,6 @@
 				1866B5301C97BE3A00396DA8 /* Helper.swift in Sources */,
 				A3D5F81B1E3C56CD00F901C1 /* ThemeActivityIndicatorViewStylePicker.swift in Sources */,
 				1854EB641C96601E00E865C6 /* ChangeThemeCell.swift in Sources */,
-				1854EB7F1C96998700E865C6 /* NavigationController.swift in Sources */,
 				A373E3971E3C34A900ED2F2B /* ThemeDictionaryPicker.swift in Sources */,
 				A373E3A11E3C34E500ED2F2B /* ThemeStatePicker.swift in Sources */,
 				1854EB671C96601E00E865C6 /* SelectThemeViewController.swift in Sources */,

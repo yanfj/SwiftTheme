@@ -30,6 +30,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBar.theme_tintColor = "Global.barTextColor"
         navigationBar.theme_barTintColor = "Global.barTintColor"
         
+        navigationBar.theme_titleTextAttributes = ThemeDictionaryPicker(keyPath: "Global.barTextColor", map: { value in
+            guard
+                let rgba = value as? String,
+                let color = try? UIColor(rgba_throws: rgba) else {
+                    return nil
+            }
+            
+            let shadow = NSShadow(); shadow.shadowOffset = CGSize.zero
+            let titleTextAttributes = [
+                NSForegroundColorAttributeName: color,
+                NSFontAttributeName: UIFont.systemFont(ofSize: 16),
+                NSShadowAttributeName: shadow
+            ]
+            
+            return titleTextAttributes
+        })
+        
         // tab bar
         
         let tabBar = UITabBar.appearance()
