@@ -127,7 +127,6 @@
 		A3D5F81F1E3C5B1F00F901C1 /* ThemeFontPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D5F81D1E3C5B1F00F901C1 /* ThemeFontPicker.swift */; };
 		A3D5F8201E3C5B1F00F901C1 /* ThemeFontPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D5F81D1E3C5B1F00F901C1 /* ThemeFontPicker.swift */; };
 		A3D5F8211E3C5B1F00F901C1 /* ThemeFontPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D5F81D1E3C5B1F00F901C1 /* ThemeFontPicker.swift */; };
-		B3405FA6AAA1F26EBDA63620 /* libPods-SwiftTheme.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9EA2683344B1FA2E7553A18 /* libPods-SwiftTheme.a */; };
 		BF7C00D046C63F5919357B2A /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F20E6BF028F63DFA7AB48C /* libPods-Demo.a */; };
 /* End PBXBuildFile section */
 
@@ -237,7 +236,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3405FA6AAA1F26EBDA63620 /* libPods-SwiftTheme.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
