@@ -12,11 +12,11 @@
 
 <p align="center">
 <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/language-swift3-f48041.svg?style=flat"></a>
-<a href="https://developer.apple.com/ios"><img src="https://img.shields.io/badge/platform-iOS%207%2B-blue.svg?style=flat"></a>
+<a href="https://developer.apple.com/ios"><img src="https://img.shields.io/badge/platform-iOS%208%2B-blue.svg?style=flat"></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
 <a href="http://cocoadocs.org/docsets/SwiftTheme"><img src="https://img.shields.io/badge/CocoaPods-compatible-4BC51D.svg?style=flat"></a>
 <a href="https://github.com/jiecao-fm/SwiftTheme/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat"></a>
-<a href="https://github.com/jiecao-fm/SwiftTheme/tree/0.3.2"><img src="https://img.shields.io/badge/release-0.3.2-blue.svg"></a>
+<a href="https://github.com/jiecao-fm/SwiftTheme/tree/0.4.0"><img src="https://img.shields.io/badge/release-0.4.0-blue.svg"></a>
 <a href="https://travis-ci.org/jiecao-fm/SwiftTheme"><img src="https://travis-ci.org/jiecao-fm/SwiftTheme.svg"></a>
 <a href="https://codebeat.co/projects/github-com-jiecao-fm-swifttheme"><img alt="codebeat badge" src="https://codebeat.co/badges/900eef02-9b88-46eb-8ce9-440c1dc31435" /></a>
 </p>
@@ -36,7 +36,7 @@
 一番思考后，我们对该任务提出了更高的要求，打造一套简单、可复用的主题框架，正如你看到的这样。
 
 ### 目标
-将`SwiftTheme`打造为一款简单、功能丰富、高性能、可扩展的主题框架（换肤框架），为iOS 平台提供一个统一的主题解决方案。
+将`SwiftTheme`打造为一款简单、功能丰富、高性能、可扩展的主题框架（换肤框架），为 iOS 平台提供一个统一的主题解决方案。
 
 ## 示例
 
@@ -163,10 +163,6 @@ lbl.theme_backgroundColor = [ThemeColorPicker pickerWithColors:@[@"#FAF9F9", @"#
 
 ## 安装
 
-> *CocoaPods、Carthage和Framework安装基于动态链接库，动态链接库最低支持iOS8。*
->
-> **如果你的项目需要支持iOS7，请手动拷贝源文件**
-
 #### CocoaPods
 ```swift
 pod 'SwiftTheme'
@@ -178,7 +174,7 @@ use_frameworks!
 github "jiecao-fm/SwiftTheme"
 ```
 
-#### 源文件（iOS7）
+#### 源文件
 拷贝`Source`文件夹下的所有文件到你的项目中
 
 ## 参考
@@ -332,6 +328,7 @@ ThemeFontPicker.pickerWithFonts([UIFont.systemFont(ofSize: 10), UIFont.systemFon
 ①
 ThemeDictionaryPicker(dicts: ["key": "value"], ["key": "value"])
 ThemeDictionaryPicker.pickerWithDicts([["key": "value"], ["key": "value"]])
+ThemeDictionaryPicker.pickerWithAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16)])
 ②
 // 暂时不支持从`plist`中读取字典
 ```

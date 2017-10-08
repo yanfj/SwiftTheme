@@ -13,7 +13,7 @@ class ListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.theme_backgroundColor = globalBackgroundColorPicker
+        tableView.theme_backgroundColor = GlobalPicker.backgroundColor
         tableView.theme_separatorColor = ["#C6C5C5", "#C6C5C5", "#C6C5C5", "#ECF0F1"]
     }
     

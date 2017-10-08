@@ -7,21 +7,22 @@
 //
 
 import Foundation
+import SwiftTheme
 
 private let lastThemeIndexKey = "lastedThemeIndex"
 private let defaults = UserDefaults.standard
 
 enum MyThemes: Int {
     
-    case Red   = 0
-    case Yello = 1
-    case Blue  = 2
-    case Night = 3
+    case red   = 0
+    case yello = 1
+    case blue  = 2
+    case night = 3
     
     // MARK: -
     
     static var current: MyThemes { return MyThemes(rawValue: ThemeManager.currentThemeIndex)! }
-    static var before = MyThemes.Red
+    static var before = MyThemes.red
     
     // MARK: - Switch Theme
     
@@ -39,11 +40,11 @@ enum MyThemes: Int {
     // MARK: - Switch Night
     
     static func switchNight(isToNight: Bool) {
-        switchTo(theme: isToNight ? .Night : before)
+        switchTo(theme: isToNight ? .night : before)
     }
     
     static func isNight() -> Bool {
-        return current == .Night
+        return current == .night
     }
     
     // MARK: - Save & Restore

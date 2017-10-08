@@ -8,7 +8,7 @@
 
 #import "ChangeThemeCell.h"
 #import "MyThemes.h"
-#import "OCDemo-Swift.h"
+#import <SwiftTheme/SwiftTheme-Swift.h>
 
 @implementation ChangeThemeCell
 

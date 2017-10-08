@@ -13,16 +13,13 @@ let cachesURL = FileManager.default.urls(for: .cachesDirectory, in: .userDomainM
 let libraryURL = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
 
 
-extension MBProgressHUD {
+extension UIViewController {
 
-    class func showHUD(_ text: String) -> MBProgressHUD {
-        let view = UIApplication.shared.windows.last
-        
+    func showHUD(_ text: String) -> MBProgressHUD {
         let HUD = MBProgressHUD.showAdded(to: view, animated: true)
-        HUD?.labelText = text
-        HUD?.removeFromSuperViewOnHide = true
-        HUD?.dimBackground = false
-        return HUD!
+        HUD.label.text = text
+        HUD.removeFromSuperViewOnHide = true
+        return HUD
     }
     
 }

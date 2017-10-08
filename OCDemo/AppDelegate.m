@@ -9,8 +9,7 @@
 #import "AppDelegate.h"
 #import "MyThemes.h"
 #import "Global.h"
-
-#import "OCDemo-Swift.h"
+#import <SwiftTheme/SwiftTheme-Swift.h>
 
 @interface AppDelegate ()
 

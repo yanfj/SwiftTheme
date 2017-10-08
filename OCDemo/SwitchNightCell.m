@@ -9,7 +9,7 @@
 #import "SwitchNightCell.h"
 #import "Global.h"
 #import "MyThemes.h"
-#import "OCDemo-Swift.h"
+#import <SwiftTheme/SwiftTheme-Swift.h>
 
 @implementation SwitchNightCell
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftTheme
 
 class SwitchNightCell: BaseCell {
     
@@ -17,7 +18,7 @@ class SwitchNightCell: BaseCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        title.theme_textColor = globalTextColorPicker
+        title.theme_textColor = GlobalPicker.textColor
         nightIcon.theme_image = ["icon_night_dark", "icon_night_dark", "icon_night_dark", "icon_night_light"]
         
         updateNightSwitch()

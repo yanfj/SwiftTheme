@@ -7,7 +7,7 @@
 //
 
 #import "MyThemes.h"
-#import "OCDemo-Swift.h"
+#import <SwiftTheme/SwiftTheme-Swift.h>
 
 #define lastThemeIndexKey @"lastedThemeIndex"
 

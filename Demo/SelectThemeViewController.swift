@@ -13,19 +13,19 @@ class SelectThemeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.theme_backgroundColor = globalBackgroundColorPicker
+        view.theme_backgroundColor = GlobalPicker.backgroundColor
     }
     
     @IBAction @objc(tapRed:) func tapRed(_ sender: AnyObject) {
-        MyThemes.switchTo(theme: .Red)
+        MyThemes.switchTo(theme: .red)
     }
     
     @IBAction @objc func tapYellow(_ sender: AnyObject) {
-        MyThemes.switchTo(theme: .Yello)
+        MyThemes.switchTo(theme: .yello)
     }
     
     @IBAction func tapBlue(_ sender: AnyObject) {
-        MyThemes.switchTo(theme: .Blue)
+        MyThemes.switchTo(theme: .blue)
     }
 
 }

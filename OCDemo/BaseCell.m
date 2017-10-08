@@ -8,7 +8,7 @@
 
 #import "BaseCell.h"
 #import "Global.h"
-#import "OCDemo-Swift.h"
+#import <SwiftTheme/SwiftTheme-Swift.h>
 
 @implementation BaseCell
 

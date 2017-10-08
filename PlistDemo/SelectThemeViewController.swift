@@ -73,12 +73,12 @@ class SelectThemeViewController: UIViewController, UIAlertViewDelegate {
     }
     
     fileprivate func downloadStart() {
-        let HUD = MBProgressHUD.showHUD("Download Theme...")
+        let HUD = navigationController!.showHUD("Download Theme...")
         
         MyThemes.downloadBlueTask() { isSuccess in
-            HUD.labelText = isSuccess ? "Successful!" : "Failure!"
+            HUD.label.text = isSuccess ? "Successful!" : "Failure!"
             HUD.mode = .text
-            HUD.hide(true, afterDelay: 1)
+            HUD.hide(animated: true, afterDelay: 1)
             
             if isSuccess {
                 MyThemes.switchTo(.blue)
