@@ -1,11 +1,5 @@
 
-platform :ios, '7.0'
-
-target 'Demo' do
-    
-  # use_frameworks!
-
-end
+platform :ios, '8.0'
 
 target 'PlistDemo' do
     
@@ -13,11 +7,5 @@ target 'PlistDemo' do
 
   pod 'SSZipArchive'
   pod 'MBProgressHUD'
-
-end
-
-target 'SwiftTheme' do
-
-  # use_frameworks!
 
 end
