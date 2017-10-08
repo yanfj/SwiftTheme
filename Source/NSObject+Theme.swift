@@ -90,7 +90,7 @@ extension NSObject {
 extension NSObject {
     
     fileprivate func _setupThemeNotification() {
-        if #available(iOS 9.0, *) {
+        if #available(iOS 9.0, tvOS 9.0, *) {
             NotificationCenter.default.addObserver(self, selector: #selector(_updateTheme), name: NSNotification.Name(rawValue: ThemeUpdateNotification), object: nil)
         } else {
             NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: ThemeUpdateNotification), object: nil, queue: nil, using: { [weak self] notification in self?._updateTheme() })
