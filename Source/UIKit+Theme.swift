@@ -211,6 +211,10 @@ import UIKit
         get { return getThemePicker(self, "setShadowColor:") as? ThemeCGColorPicker }
         set { setThemePicker(self, "setShadowColor:", newValue) }
     }
+    var theme_strokeColor: ThemeCGColorPicker? {
+        get { return getThemePicker(self, "setStrokeColor:") as? ThemeCGColorPicker }
+        set { setThemePicker(self, "setStrokeColor:", newValue) }
+    }
 }
 
 #if os(iOS)
