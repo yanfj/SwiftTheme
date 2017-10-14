@@ -178,7 +178,8 @@ import UIKit
         set { setThemePicker(self, "setActivityIndicatorViewStyle:", newValue) }
     }
 }
-@objc public extension UIPopoverPresentationController {
+@objc public extension UIPopoverPresentationController
+{
     var theme_backgroundColor: ThemeColorPicker? {
         get { return getThemePicker(self, "setBackgroundColor:") as? ThemeColorPicker }
         set { setThemePicker(self, "setBackgroundColor:", newValue) }
