@@ -178,6 +178,12 @@ import UIKit
         set { setThemePicker(self, "setActivityIndicatorViewStyle:", newValue) }
     }
 }
+@objc public extension UIPopoverPresentationController {
+    var theme_backgroundColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setBackgroundColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setBackgroundColor:", newValue) }
+    }
+}
 @objc public extension UIButton
 {
     func theme_setImage(_ picker: ThemeImagePicker?, forState state: UIControlState) {
