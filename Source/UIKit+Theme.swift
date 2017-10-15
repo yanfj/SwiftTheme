@@ -255,6 +255,13 @@ import UIKit
         set { setThemePicker(self, "setMaximumTrackTintColor:", newValue) }
     }
 }
+@objc public extension UIPopoverPresentationController
+{
+    var theme_backgroundColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setBackgroundColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setBackgroundColor:", newValue) }
+    }
+}
 #endif
 
 private func getThemePicker(
