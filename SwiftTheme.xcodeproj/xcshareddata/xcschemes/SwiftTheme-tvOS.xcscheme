@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A37F8C7A1F8A436800ABB5EC"
-               BuildableName = "SwiftTheme_tvOS.framework"
+               BuildableName = "SwiftTheme.framework"
                BlueprintName = "SwiftTheme-tvOS"
                ReferencedContainer = "container:SwiftTheme.xcodeproj">
             </BuildableReference>
@@ -48,7 +48,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A37F8C7A1F8A436800ABB5EC"
-            BuildableName = "SwiftTheme_tvOS.framework"
+            BuildableName = "SwiftTheme.framework"
             BlueprintName = "SwiftTheme-tvOS"
             ReferencedContainer = "container:SwiftTheme.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A37F8C7A1F8A436800ABB5EC"
-            BuildableName = "SwiftTheme_tvOS.framework"
+            BuildableName = "SwiftTheme.framework"
             BlueprintName = "SwiftTheme-tvOS"
             ReferencedContainer = "container:SwiftTheme.xcodeproj">
          </BuildableReference>
