@@ -74,6 +74,10 @@ import UIKit
         get { return getThemePicker(self, "setTitleTextAttributes:") as? ThemeDictionaryPicker }
         set { setThemePicker(self, "setTitleTextAttributes:", newValue) }
     }
+    var theme_largeTitleTextAttributes: ThemeDictionaryPicker? {
+        get { return getThemePicker(self, "setLargeTitleTextAttributes:") as? ThemeDictionaryPicker }
+        set { setThemePicker(self, "setLargeTitleTextAttributes:", newValue) }
+    }
 }
 @objc public extension UITabBar
 {
