@@ -219,6 +219,10 @@ import UIKit
         get { return getThemePicker(self, "setStrokeColor:") as? ThemeCGColorPicker }
         set { setThemePicker(self, "setStrokeColor:", newValue) }
     }
+    var theme_fillColor: ThemeCGColorPicker?{
+        get { return getThemePicker(self, "setFillColor:") as? ThemeCGColorPicker }
+        set { setThemePicker(self, "setFillColor:", newValue) }
+    }
 }
 
 #if os(iOS)
