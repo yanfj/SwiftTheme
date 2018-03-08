@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0AD183E6204F8B90005F5D85 /* UITextField+PlaceholderAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD183E5204F8B90005F5D85 /* UITextField+PlaceholderAttributes.swift */; };
+		0AD183E7204FA166005F5D85 /* UITextField+PlaceholderAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD183E5204F8B90005F5D85 /* UITextField+PlaceholderAttributes.swift */; };
 		1854EB631C96601E00E865C6 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB5D1C96601E00E865C6 /* AboutCell.swift */; };
 		1854EB641C96601E00E865C6 /* ChangeThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB5E1C96601E00E865C6 /* ChangeThemeCell.swift */; };
 		1854EB651C96601E00E865C6 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB5F1C96601E00E865C6 /* ListViewController.swift */; };
@@ -183,6 +185,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0AD183E5204F8B90005F5D85 /* UITextField+PlaceholderAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+PlaceholderAttributes.swift"; sourceTree = "<group>"; };
 		1854EB5D1C96601E00E865C6 /* AboutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
 		1854EB5E1C96601E00E865C6 /* ChangeThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeThemeCell.swift; sourceTree = "<group>"; };
 		1854EB5F1C96601E00E865C6 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -480,6 +483,7 @@
 				18D642E11C53638200DADEC5 /* UIColorExtension.swift */,
 				18D642E21C53638200DADEC5 /* UIKit+Theme.swift */,
 				18D642E31C53638200DADEC5 /* NSObject+Theme.swift */,
+				0AD183E5204F8B90005F5D85 /* UITextField+PlaceholderAttributes.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -943,6 +947,7 @@
 				18D642E81C53638200DADEC5 /* UIKit+Theme.swift in Sources */,
 				A373E39A1E3C34C600ED2F2B /* ThemeStatusBarStylePicker.swift in Sources */,
 				A3A389991D8E2F2800797F17 /* ThemeManager+OC.swift in Sources */,
+				0AD183E6204F8B90005F5D85 /* UITextField+PlaceholderAttributes.swift in Sources */,
 				A373E3811E3C341200ED2F2B /* ThemeColorPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1013,6 +1018,7 @@
 				A37F8C931F8A43B300ABB5EC /* UIColorExtension.swift in Sources */,
 				A37F8C941F8A43B300ABB5EC /* UIKit+Theme.swift in Sources */,
 				A37F8C951F8A43B300ABB5EC /* NSObject+Theme.swift in Sources */,
+				0AD183E7204FA166005F5D85 /* UITextField+PlaceholderAttributes.swift in Sources */,
 				A37F8C991F8A556600ABB5EC /* ThemeBarStylePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
