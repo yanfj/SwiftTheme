@@ -121,6 +121,10 @@ import UIKit
         get { return getThemePicker(self, "setTextColor:") as? ThemeColorPicker }
         set { setThemePicker(self, "setTextColor:", newValue) }
     }
+    var theme_placeholderAttributes: ThemeDictionaryPicker? {
+        get { return getThemePicker(self, "updatePlaceholderAttributes:") as? ThemeDictionaryPicker }
+        set { setThemePicker(self, "updatePlaceholderAttributes:", newValue) }
+    }
 }
 @objc public extension UITextView
 {
