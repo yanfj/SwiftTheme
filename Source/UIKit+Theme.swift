@@ -282,6 +282,13 @@ import UIKit
         set { setThemePicker(self, "setBackgroundColor:", newValue) }
     }
 }
+@objc public extension UIRefreshControl
+{
+    var theme_titleAttributes: ThemeDictionaryPicker? {
+        get { return getThemePicker(self, "updateTitleAttributes:") as? ThemeDictionaryPicker }
+        set { setThemePicker(self, "updateTitleAttributes:", newValue) }
+    }
+}
 #endif
 
 private func getThemePicker(

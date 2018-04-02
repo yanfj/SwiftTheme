@@ -257,6 +257,7 @@ NotificationCenter.default.addObserver(
 - var theme_font: ThemeFontPicker?
 - var theme_keyboardAppearance: ThemeKeyboardAppearancePicker?
 - var theme_textColor: ThemeColorPicker?
+- var theme_placeholderAttributes: ThemeDictionaryPicker?
 
 ##### UITextView
 - var theme_font: ThemeFontPicker?
@@ -303,6 +304,9 @@ NotificationCenter.default.addObserver(
 - var theme_borderWidth: ThemeCGFloatPicker?
 - var theme_borderColor: ThemeCGColorPicker?
 - var theme_shadowColor: ThemeCGColorPicker?
+
+##### UIRefreshControl
+- var theme_titleAttributes: ThemeDictionaryPicker?
 
 ### *Picker*
 ***
