@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A2210CB207090BF006BC28D /* NSAttributedString+Merge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2210CA207090BF006BC28D /* NSAttributedString+Merge.swift */; };
+		0A2210CD207095F6006BC28D /* UIRefreshControl+TitleAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2210CC207095F6006BC28D /* UIRefreshControl+TitleAttributes.swift */; };
 		0AD183E6204F8B90005F5D85 /* UITextField+PlaceholderAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD183E5204F8B90005F5D85 /* UITextField+PlaceholderAttributes.swift */; };
 		0AD183E7204FA166005F5D85 /* UITextField+PlaceholderAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD183E5204F8B90005F5D85 /* UITextField+PlaceholderAttributes.swift */; };
 		1854EB631C96601E00E865C6 /* AboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854EB5D1C96601E00E865C6 /* AboutCell.swift */; };
@@ -185,6 +187,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A2210CA207090BF006BC28D /* NSAttributedString+Merge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Merge.swift"; sourceTree = "<group>"; };
+		0A2210CC207095F6006BC28D /* UIRefreshControl+TitleAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+TitleAttributes.swift"; sourceTree = "<group>"; };
 		0AD183E5204F8B90005F5D85 /* UITextField+PlaceholderAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+PlaceholderAttributes.swift"; sourceTree = "<group>"; };
 		1854EB5D1C96601E00E865C6 /* AboutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCell.swift; sourceTree = "<group>"; };
 		1854EB5E1C96601E00E865C6 /* ChangeThemeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeThemeCell.swift; sourceTree = "<group>"; };
@@ -483,7 +487,9 @@
 				18D642E11C53638200DADEC5 /* UIColorExtension.swift */,
 				18D642E21C53638200DADEC5 /* UIKit+Theme.swift */,
 				18D642E31C53638200DADEC5 /* NSObject+Theme.swift */,
+				0A2210CA207090BF006BC28D /* NSAttributedString+Merge.swift */,
 				0AD183E5204F8B90005F5D85 /* UITextField+PlaceholderAttributes.swift */,
+				0A2210CC207095F6006BC28D /* UIRefreshControl+TitleAttributes.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -930,6 +936,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3D5F8191E3C56CD00F901C1 /* ThemeActivityIndicatorViewStylePicker.swift in Sources */,
+				0A2210CD207095F6006BC28D /* UIRefreshControl+TitleAttributes.swift in Sources */,
 				A3A3899D1D8E2FB200797F17 /* ThemeManager+Plist.swift in Sources */,
 				A373E3901E3C348B00ED2F2B /* ThemeCGColorPicker.swift in Sources */,
 				18D642EA1C53638200DADEC5 /* NSObject+Theme.swift in Sources */,
@@ -946,6 +953,7 @@
 				A3D5F8141E3C4D3900F901C1 /* ThemeBarStylePicker.swift in Sources */,
 				18D642E81C53638200DADEC5 /* UIKit+Theme.swift in Sources */,
 				A373E39A1E3C34C600ED2F2B /* ThemeStatusBarStylePicker.swift in Sources */,
+				0A2210CB207090BF006BC28D /* NSAttributedString+Merge.swift in Sources */,
 				A3A389991D8E2F2800797F17 /* ThemeManager+OC.swift in Sources */,
 				0AD183E6204F8B90005F5D85 /* UITextField+PlaceholderAttributes.swift in Sources */,
 				A373E3811E3C341200ED2F2B /* ThemeColorPicker.swift in Sources */,
