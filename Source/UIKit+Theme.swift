@@ -34,7 +34,7 @@ import UIKit
 }
 @objc public extension UIBarItem
 {
-    func theme_setTitleTextAttributes(_ picker: ThemeDictionaryPicker?, forState state: UIControlState) {
+    func theme_setTitleTextAttributes(_ picker: ThemeDictionaryPicker?, forState state: UIControl.State) {
         let statePicker = makeStatePicker(self, "setTitleTextAttributes:forState:", picker, state)
         setThemePicker(self, "setTitleTextAttributes:forState:", statePicker)
     }
@@ -203,15 +203,15 @@ import UIKit
 }
 @objc public extension UIButton
 {
-    func theme_setImage(_ picker: ThemeImagePicker?, forState state: UIControlState) {
+    func theme_setImage(_ picker: ThemeImagePicker?, forState state: UIControl.State) {
         let statePicker = makeStatePicker(self, "setImage:forState:", picker, state)
         setThemePicker(self, "setImage:forState:", statePicker)
     }
-    func theme_setBackgroundImage(_ picker: ThemeImagePicker?, forState state: UIControlState) {
+    func theme_setBackgroundImage(_ picker: ThemeImagePicker?, forState state: UIControl.State) {
         let statePicker = makeStatePicker(self, "setBackgroundImage:forState:", picker, state)
         setThemePicker(self, "setBackgroundImage:forState:", statePicker)
     }
-    func theme_setTitleColor(_ picker: ThemeColorPicker?, forState state: UIControlState) {
+    func theme_setTitleColor(_ picker: ThemeColorPicker?, forState state: UIControl.State) {
         let statePicker = makeStatePicker(self, "setTitleColor:forState:", picker, state)
         setThemePicker(self, "setTitleColor:forState:", statePicker)
     }
@@ -318,7 +318,7 @@ private func makeStatePicker(
     _ object : NSObject,
     _ selector : String,
     _ picker : ThemePicker?,
-    _ state : UIControlState
+    _ state : UIControl.State
 ) -> ThemePicker? {
     
     var picker = picker

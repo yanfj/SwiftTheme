@@ -14,7 +14,7 @@ extension NSAttributedString {
     // The specified attributes overwrite existing attributes with the
     /// same keys. All other attributes are preserved.
     convenience init(attributedString attrStr: NSAttributedString,
-                     merging newAttributes: [NSAttributedStringKey: Any]) {
+                     merging newAttributes: [NSAttributedString.Key: Any]) {
         let newString = NSMutableAttributedString(attributedString: attrStr)
         let range = NSMakeRange(0, attrStr.length)
         newString.enumerateAttributes(in: range, options: []) {

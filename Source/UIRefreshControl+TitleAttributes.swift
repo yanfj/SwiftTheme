@@ -9,7 +9,7 @@
 import Foundation
 
 extension UIRefreshControl {
-    @objc func updateTitleAttributes(_ newAttributes: [NSAttributedStringKey: Any]) {
+    @objc func updateTitleAttributes(_ newAttributes: [NSAttributedString.Key: Any]) {
         guard let title = self.attributedTitle else { return }
         let newString = NSAttributedString(attributedString: title,
                                            merging: newAttributes)
