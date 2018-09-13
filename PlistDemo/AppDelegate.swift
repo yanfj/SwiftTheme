@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // default: Red.plist
         
@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         navigationBar.theme_tintColor = "Global.barTextColor"
         navigationBar.theme_barTintColor = "Global.barTintColor"
-        navigationBar.theme_titleTextAttributes = ThemeDictionaryPicker(keyPath: "Global.barTextColor") { value -> [NSAttributedStringKey : AnyObject]? in
+        navigationBar.theme_titleTextAttributes = ThemeDictionaryPicker(keyPath: "Global.barTextColor") { value -> [NSAttributedString.Key : AnyObject]? in
             guard let rgba = value as? String else {
                 return nil
             }
@@ -38,9 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let color = UIColor(rgba: rgba)
             let shadow = NSShadow(); shadow.shadowOffset = CGSize.zero
             let titleTextAttributes = [
-                NSAttributedStringKey.foregroundColor: color,
-                NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16),
-                NSAttributedStringKey.shadow: shadow
+                NSAttributedString.Key.foregroundColor: color,
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),
+                NSAttributedString.Key.shadow: shadow
             ]
             
             return titleTextAttributes
