@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SwiftTheme"
-  s.version      = "0.4.1"
+  s.version      = "0.4.2"
   s.summary      = "Powerful theme/skin manager for iOS 8+ 主题/换肤, 夜间模式"
   s.homepage     = "https://github.com/jiecao-fm/SwiftTheme"
 
@@ -13,5 +13,5 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Source'
   
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
 end
