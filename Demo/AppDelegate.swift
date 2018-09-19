@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application:UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
+    func application(_ application:UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
         MyThemes.restoreLastTheme()
         
@@ -31,9 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let titleAttributes = GlobalPicker.barTextColors.map { hexString in
             return [
-                NSAttributedStringKey.foregroundColor: UIColor(rgba: hexString),
-                NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16),
-                NSAttributedStringKey.shadow: shadow
+                NSAttributedString.Key.foregroundColor: UIColor(rgba: hexString),
+                NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),
+                NSAttributedString.Key.shadow: shadow
             ]
         }
         
