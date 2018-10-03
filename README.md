@@ -1,5 +1,3 @@
-⚠️ DEPRECATED, NO LONGER MAINTAINED
-
 ![SwiftTheme](https://raw.githubusercontent.com/jiecao-fm/SwiftThemeResources/master/Screenshots/logo.png)
 
 <p align="center">
