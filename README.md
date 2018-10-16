@@ -16,7 +16,7 @@
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
 <a href="http://cocoadocs.org/docsets/SwiftTheme"><img src="https://img.shields.io/badge/CocoaPods-compatible-4BC51D.svg?style=flat"></a>
 <a href="https://github.com/jiecao-fm/SwiftTheme/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat"></a>
-<a href="https://github.com/jiecao-fm/SwiftTheme/tree/0.4.0"><img src="https://img.shields.io/badge/release-0.4.2-blue.svg"></a>
+<a href="https://github.com/jiecao-fm/SwiftTheme/tree/0.4.3"><img src="https://img.shields.io/badge/release-0.4.3-blue.svg"></a>
 </p>
 
 ## Screenshot
