@@ -13,6 +13,7 @@ fileprivate typealias setCGFloatValueIMP        = @convention(c) (NSObject, Sele
 fileprivate typealias setValueForStateIMP       = @convention(c) (NSObject, Selector, AnyObject, UIControl.State) -> Void
 fileprivate typealias setKeyboardValueIMP       = @convention(c) (NSObject, Selector, UIKeyboardAppearance) -> Void
 fileprivate typealias setActivityStyleValueIMP  = @convention(c) (NSObject, Selector, UIActivityIndicatorView.Style) -> Void
+fileprivate typealias setScrollStyleValueIMP    = @convention(c) (NSObject, Selector, UIScrollView.IndicatorStyle) -> Void
 #if os(iOS)
 fileprivate typealias setBarStyleValueIMP       = @convention(c) (NSObject, Selector, UIBarStyle) -> Void
 fileprivate typealias setStatusBarStyleValueIMP = @convention(c) (NSObject, Selector, UIStatusBarStyle, Bool) -> Void
@@ -71,6 +72,11 @@ extension NSObject {
         else if picker is ThemeActivityIndicatorViewStylePicker {
             let setActivityStyle = unsafeBitCast(method(for: sel), to: setActivityStyleValueIMP.self)
             setActivityStyle(self, sel, value as! UIActivityIndicatorView.Style)
+        }
+            
+        else if picker is ThemeScrollViewIndicatorStylePicker {
+            let setIndicatorStyle = unsafeBitCast(method(for: sel), to: setScrollStyleValueIMP.self)
+            setIndicatorStyle(self, sel, value as! UIScrollView.IndicatorStyle)
         }
         
         else if picker is ThemeCGFloatPicker {
