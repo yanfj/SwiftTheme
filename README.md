@@ -1,4 +1,4 @@
-![SwiftTheme](https://raw.githubusercontent.com/jiecao-fm/SwiftThemeResources/master/Screenshots/logo.png)
+![SwiftTheme](https://raw.githubusercontent.com/wxxsw/SwiftThemeResources/master/Screenshots/logo.png)
 
 <p align="center">
 <a href="#introduction">Introduction</a> -
@@ -15,20 +15,20 @@
 <a href="https://developer.apple.com/ios"><img src="https://img.shields.io/badge/platform-iOS%208%2B-blue.svg?style=flat"></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat"></a>
 <a href="http://cocoadocs.org/docsets/SwiftTheme"><img src="https://img.shields.io/badge/CocoaPods-compatible-4BC51D.svg?style=flat"></a>
-<a href="https://github.com/jiecao-fm/SwiftTheme/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat"></a>
-<a href="https://github.com/jiecao-fm/SwiftTheme/tree/0.4.3"><img src="https://img.shields.io/badge/release-0.4.3-blue.svg"></a>
+<a href="https://github.com/wxxsw/SwiftTheme/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat"></a>
+<a href="https://github.com/wxxsw/SwiftTheme/tree/0.4.3"><img src="https://img.shields.io/badge/release-0.4.3-blue.svg"></a>
 </p>
 
 ## Screenshot
 
-![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/switch.gif)
+![](https://github.com/wxxsw/SwiftThemeResources/blob/master/Screenshots/switch.gif)
 
 > Running：open `SwiftTheme.xcworkspace`, run target `PlistDemo`
 
 ## Introduction
 ### The Beginning Of The Story
 
-As part of our project requirement, we need to add night mode to our app [节操精选](http://um0.cn/5FpZs). It's not as simple as just changing brightness or alpha on the top-level view—in fact, it needs an entirely new interface: different colors, different alpha, different image cuts. More accurately, "night mode" is a theme/skinning feature that can switch between bright theme and dark themes.
+As part of our project requirement, we need to add night mode to our app. It's not as simple as just changing brightness or alpha on the top-level view—in fact, it needs an entirely new interface: different colors, different alpha, different image cuts. More accurately, "night mode" is a theme/skinning feature that can switch between bright theme and dark themes.
 
 So how do we achieve this? Maybe we can set a global variable that represents the currently selected theme, and use different background colors or image cuts based on the variable during the controller's initialization. But then how do we deal with views that have already been initialized? Yes, we could use notifications to change their colors or image cuts, but this leads to controllers unnecessarily full of notification register/unregister, if...else and UI updating code. Worse, if you forget to unregister the notifications, your app may crash.
 
@@ -121,8 +121,8 @@ ThemeManager.setTheme(plistName: "Red", path: .MainBundle)
 
 the screenshots of the plist and image files we used above:
 
-![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/1.pic.jpg)
-![](https://github.com/jiecao-fm/SwiftThemeResources/blob/master/Screenshots/2.pic.jpg)
+![](https://github.com/wxxsw/SwiftThemeResources/blob/master/Screenshots/1.pic.jpg)
+![](https://github.com/wxxsw/SwiftThemeResources/blob/master/Screenshots/2.pic.jpg)
 
 ### Objective-C
 
@@ -156,7 +156,7 @@ use_frameworks!
 
 #### Carthage
 ```swift
-github "jiecao-fm/SwiftTheme"
+github "wxxsw/SwiftTheme"
 ```
 
 #### Source files
@@ -443,7 +443,7 @@ Download this project and find more. There are two demo targets:
 ## Contribution
 
 ### Issue
-If you find a bug or need a help, you can [create a issue](https://github.com/jiecao-fm/SwiftTheme/issues/new)
+If you find a bug or need a help, you can [create a issue](https://github.com/wxxsw/SwiftTheme/issues/new)
 
 
 ### Pull Request
