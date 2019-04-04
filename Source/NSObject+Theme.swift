@@ -47,7 +47,13 @@ extension NSObject {
         
         if let statePicker = picker as? ThemeStatePicker {
             let setState = unsafeBitCast(method(for: sel), to: setValueForStateIMP.self)
-            statePicker.values.forEach { setState(self, sel, $1.value()! as AnyObject, UIControl.State(rawValue: $0)) }
+            statePicker.values.forEach {
+                guard let value = $1.value() else {
+                    print("SwiftTheme WARNING: Missing value for ThemeStatePicker! Selector: \(String(describing: sel))")
+                    return
+                }
+                setState(self, sel, value as AnyObject, UIControl.State(rawValue: $0))
+            }
         }
         
         else if let statusBarStylePicker = picker as? ThemeStatusBarStylePicker {
