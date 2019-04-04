@@ -47,6 +47,7 @@
 		18D642E61C53638200DADEC5 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E11C53638200DADEC5 /* UIColorExtension.swift */; };
 		18D642E81C53638200DADEC5 /* UIKit+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E21C53638200DADEC5 /* UIKit+Theme.swift */; };
 		18D642EA1C53638200DADEC5 /* NSObject+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E31C53638200DADEC5 /* NSObject+Theme.swift */; };
+		1C27D4702255D3A800C89FAD /* ThemeScrollViewIndicatorStylePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C3CC1D21CF8D6300DDA4C1 /* ThemeScrollViewIndicatorStylePicker.swift */; };
 		A322D88D1E665CFC0039520F /* ThemeKeyboardAppearancePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A322D88C1E665CFC0039520F /* ThemeKeyboardAppearancePicker.swift */; };
 		A34AD0521CF6A7A900B54F53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A34AD0511CF6A7A900B54F53 /* main.m */; };
 		A34AD0551CF6A7A900B54F53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A34AD0541CF6A7A900B54F53 /* AppDelegate.m */; };
@@ -1014,6 +1015,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C27D4702255D3A800C89FAD /* ThemeScrollViewIndicatorStylePicker.swift in Sources */,
 				A37F8C831F8A43B300ABB5EC /* ThemePicker.swift in Sources */,
 				A37F8C841F8A43B300ABB5EC /* ThemeDictionaryPicker.swift in Sources */,
 				A37F8C851F8A43B300ABB5EC /* ThemeCGColorPicker.swift in Sources */,
