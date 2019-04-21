@@ -450,7 +450,7 @@ If you find a bug or need a help, you can [create a issue](https://github.com/wx
 We are happy to accept pull requests :D. But please make sure it's needed by most developers and make it simple to use. If you are not sure, create an issue and we can discuss it before you get to coding.
 
 ### Contributors
-[Gesen](https://github.com/wxxsw), [Zhoujun](https://github.com/shannonchou)
+[Gesen](https://github.com/wxxsw), [Zhoujun](https://github.com/shannonchou), [Kevin Cramer](https://github.com/kcramer)
 
 
 ## Lisence
