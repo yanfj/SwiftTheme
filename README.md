@@ -306,6 +306,9 @@ NotificationCenter.default.addObserver(
 ##### UIRefreshControl
 - var theme_titleAttributes: ThemeDictionaryPicker?
 
+##### UIVisualEffectView
+- var theme_effect: ThemeVisualEffectPicker?
+
 ### *Picker*
 ***
 
@@ -421,6 +424,18 @@ ThemeActivityIndicatorViewStylePicker.pickerWithStringStyles(["whiteLarge", "whi
 // name the key you like, but the available values are "whiteLarge", "white" and "gray"
 ThemeActivityIndicatorViewStylePicker(keyPath: "someStringKeyPath")
 ThemeActivityIndicatorViewStylePicker.pickerWithKeyPath("someStringKeyPath")
+```
+
+#### ThemeVisualEffectPicker
+```swift
+①
+ThemeVisualEffectPicker(effects: UIBlurEffect(style: .light), UIBlurEffect(style: .dark))
+ThemeVisualEffectPicker.pickerWithEffects([UIBlurEffect(style: .light), UIBlurEffect(style: .dark)])
+ThemeVisualEffectPicker.pickerWithStringEffects(["light", "dark", "extralight", "prominent", "regular"])
+②
+// name the key you like, but the available values are "light", "dark", "extralight", "prominent" and "regular"
+ThemeVisualEffectPicker(keyPath: "someStringKeyPath")
+ThemeVisualEffectPicker.pickerWithKeyPath("someStringKeyPath")
 ```
 
 ### *More*
