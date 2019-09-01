@@ -236,6 +236,7 @@ NotificationCenter.default.addObserver(
 ##### UILabel
 - var theme_font: ThemeFontPicker?
 - var theme_textColor: ThemeColorPicker?
+- var theme_textAttributes: ThemeStringAttributesPicker?
 - var theme_highlightedTextColor: ThemeColorPicker?
 - var theme_shadowColor: ThemeColorPicker?
 
@@ -373,9 +374,17 @@ ThemeFontPicker.pickerWithFonts([UIFont.systemFont(ofSize: 10), UIFont.systemFon
 ①
 ThemeDictionaryPicker(dicts: ["key": "value"], ["key": "value"])
 ThemeDictionaryPicker.pickerWithDicts([["key": "value"], ["key": "value"]])
+②
+ThemeBarStylePicker(keyPath: "someStringKeyPath") { (Any?) -> [String: AnyObject]? in ... }
+```
+
+#### ThemeStringAttributesPicker
+```swift
+①
+ThemeDictionaryPicker(dicts: ["key": "value"], ["key": "value"])
 ThemeDictionaryPicker.pickerWithAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16)])
 ②
-// Reading dictionary from plist is not supported now
+ThemeBarStylePicker(keyPath: "someStringKeyPath") { (Any?) -> [NSAttributedString.Key: Any]? in ... }
 ```
 
 #### ThemeBarStylePicker
