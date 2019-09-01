@@ -93,6 +93,10 @@ import UIKit
         get { return getThemePicker(self, "setBarStyle:") as? ThemeBarStylePicker }
         set { setThemePicker(self, "setBarStyle:", newValue) }
     }
+    var theme_unselectedItemTintColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setUnselectedItemTintColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setUnselectedItemTintColor:", newValue) }
+    }
     #endif
     var theme_barTintColor: ThemeColorPicker? {
         get { return getThemePicker(self, "setBarTintColor:") as? ThemeColorPicker }
