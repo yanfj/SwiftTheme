@@ -34,7 +34,7 @@ import UIKit
 }
 @objc public extension UIBarItem
 {
-    func theme_setTitleTextAttributes(_ picker: ThemeDictionaryPicker?, forState state: UIControl.State) {
+    func theme_setTitleTextAttributes(_ picker: ThemeStringAttributesPicker?, forState state: UIControl.State) {
         let statePicker = makeStatePicker(self, "setTitleTextAttributes:forState:", picker, state)
         setThemePicker(self, "setTitleTextAttributes:forState:", statePicker)
     }
@@ -64,6 +64,10 @@ import UIKit
         get { return getThemePicker(self, "setShadowColor:") as? ThemeColorPicker }
         set { setThemePicker(self, "setShadowColor:", newValue) }
     }
+    var theme_textAttributes: ThemeStringAttributesPicker? {
+        get { return getThemePicker(self, "updateTextAttributes:") as? ThemeStringAttributesPicker }
+        set { setThemePicker(self, "updateTextAttributes:", newValue) }
+    }
 }
 @objc public extension UINavigationBar
 {
@@ -77,12 +81,12 @@ import UIKit
         get { return getThemePicker(self, "setBarTintColor:") as? ThemeColorPicker }
         set { setThemePicker(self, "setBarTintColor:", newValue) }
     }
-    var theme_titleTextAttributes: ThemeDictionaryPicker? {
-        get { return getThemePicker(self, "setTitleTextAttributes:") as? ThemeDictionaryPicker }
+    var theme_titleTextAttributes: ThemeStringAttributesPicker? {
+        get { return getThemePicker(self, "setTitleTextAttributes:") as? ThemeStringAttributesPicker }
         set { setThemePicker(self, "setTitleTextAttributes:", newValue) }
     }
-    var theme_largeTitleTextAttributes: ThemeDictionaryPicker? {
-        get { return getThemePicker(self, "setLargeTitleTextAttributes:") as? ThemeDictionaryPicker }
+    var theme_largeTitleTextAttributes: ThemeStringAttributesPicker? {
+        get { return getThemePicker(self, "setLargeTitleTextAttributes:") as? ThemeStringAttributesPicker }
         set { setThemePicker(self, "setLargeTitleTextAttributes:", newValue) }
     }
 }
@@ -132,8 +136,8 @@ import UIKit
         get { return getThemePicker(self, "setTextColor:") as? ThemeColorPicker }
         set { setThemePicker(self, "setTextColor:", newValue) }
     }
-    var theme_placeholderAttributes: ThemeDictionaryPicker? {
-        get { return getThemePicker(self, "updatePlaceholderAttributes:") as? ThemeDictionaryPicker }
+    var theme_placeholderAttributes: ThemeStringAttributesPicker? {
+        get { return getThemePicker(self, "updatePlaceholderAttributes:") as? ThemeStringAttributesPicker }
         set { setThemePicker(self, "updatePlaceholderAttributes:", newValue) }
     }
 }
@@ -302,8 +306,8 @@ import UIKit
 }
 @objc public extension UIRefreshControl
 {
-    var theme_titleAttributes: ThemeDictionaryPicker? {
-        get { return getThemePicker(self, "updateTitleAttributes:") as? ThemeDictionaryPicker }
+    var theme_titleAttributes: ThemeStringAttributesPicker? {
+        get { return getThemePicker(self, "updateTitleAttributes:") as? ThemeStringAttributesPicker }
         set { setThemePicker(self, "updateTitleAttributes:", newValue) }
     }
 }
