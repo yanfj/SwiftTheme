@@ -307,6 +307,13 @@ import UIKit
         set { setThemePicker(self, "updateTitleAttributes:", newValue) }
     }
 }
+@objc public extension UIVisualEffectView
+{
+    var theme_effect: ThemeVisualEffectPicker? {
+        get { return getThemePicker(self, "setEffect:") as? ThemeVisualEffectPicker }
+        set { setThemePicker(self, "setEffect:", newValue) }
+    }
+}
 #endif
 
 private func getThemePicker(
