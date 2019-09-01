@@ -449,10 +449,12 @@ ThemeVisualEffectPicker.pickerWithKeyPath("someStringKeyPath")
 
 ### *More*
 
-Download this project and find more. There are two demo targets:
+Download this project and find more. There are four demo targets:
 
 - `Demo` shows how to use index mode and how to save the last selection of themes and other general usages.
 - `PlistDemo` shows how to use plist mode and how to download themes that packaged in zip files.
+- `OCDemo` is `Demo`'s Objective-c version.
+- `TVOSDemo` is used to test tvos compatibility.
 
 ## FAQ
 
