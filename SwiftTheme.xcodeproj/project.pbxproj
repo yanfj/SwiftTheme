@@ -428,7 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				18D642AF1C53613400DADEC5 /* SwiftTheme */,
-				18D642DF1C53638200DADEC5 /* Source */,
+				18D642DF1C53638200DADEC5 /* Sources */,
 				18D642BD1C53615300DADEC5 /* Demo */,
 				186C863B1C857AA900A5FFEA /* PlistDemo */,
 				A34AD04F1CF6A7A900B54F53 /* OCDemo */,
@@ -486,7 +486,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		18D642DF1C53638200DADEC5 /* Source */ = {
+		18D642DF1C53638200DADEC5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				1C6079BA231B7D2200BCE899 /* ThemeAttributes */,
@@ -500,7 +500,7 @@
 				18D642E11C53638200DADEC5 /* UIColorExtension.swift */,
 				18D642E21C53638200DADEC5 /* UIKit+Theme.swift */,
 			);
-			path = Source;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		1C6079BA231B7D2200BCE899 /* ThemeAttributes */ = {
