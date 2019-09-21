@@ -159,8 +159,14 @@ use_frameworks!
 github "wxxsw/SwiftTheme"
 ```
 
+#### Swift Package Manager
+
+1. Select `Xcode -> File -> Swift Packages -> Add Package Dependency...` 
+2. Enter `https://github.com/wxxsw/SwiftTheme`.
+3. Click `Next`, then select the version, complete.
+
 #### Source files
-Copy all the files in "Source" folder into your project
+Copy all the files in "Sources" folder into your project
 
 ## Documents
 
