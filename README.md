@@ -412,11 +412,11 @@ ThemeBarStylePicker.pickerWithKeyPath("someStringKeyPath")
 #### ThemeStatusBarStylePicker
 ```swift
 ①
-ThemeStatusBarStylePicker(styles: .default, .lightContent)
-ThemeStatusBarStylePicker.pickerWithStyles([.default, .lightContent])
-ThemeStatusBarStylePicker.pickerWithStringStyles(["default", "lightContent"])
+ThemeStatusBarStylePicker(styles: .default, .lightContent, .darkContent)
+ThemeStatusBarStylePicker.pickerWithStyles([.default, .lightContent, .darkContent])
+ThemeStatusBarStylePicker.pickerWithStringStyles(["default", "lightContent", "darkContent"])
 ②
-// name the key you like, but the available values are "default" and "lightContent"
+// name the key you like, but the available values are "default", "lightContent" and "darkContent"
 ThemeStatusBarStylePicker(keyPath: "someStringKeyPath")
 ThemeStatusBarStylePicker.pickerWithKeyPath("someStringKeyPath")
 ```
