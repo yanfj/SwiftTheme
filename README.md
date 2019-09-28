@@ -273,8 +273,8 @@ NotificationCenter.default.addObserver(
 - var theme_barTintColor: ThemeColorPicker?
 
 ##### UISegmentedControl
-
 - var theme_selectedSegmentTintColor: ThemeColorPicker?
+- func theme_setTitleTextAttributes(_ picker: ThemeStringAttributesPicker?, forState state: UIControl.State)
 
 ##### UISwitch
 - var theme_onTintColor: ThemeColorPicker?
@@ -304,9 +304,9 @@ NotificationCenter.default.addObserver(
 - var theme_activityIndicatorViewStyle: ThemeActivityIndicatorViewStylePicker?
 
 ##### UIButton
-- func theme_setImage(picker: ThemeImagePicker, forState state: UIControlState)
-- func theme_setBackgroundImage(picker: ThemeImagePicker, forState state: UIControlState)
-- func theme_setTitleColor(picker: ThemeColorPicker, forState state: UIControlState)
+- func theme_setImage(picker: ThemeImagePicker?, forState state: UIControlState)
+- func theme_setBackgroundImage(picker: ThemeImagePicker?, forState state: UIControlState)
+- func theme_setTitleColor(picker: ThemeColorPicker?, forState state: UIControlState)
 
 ##### CALayer
 - var theme_backgroundColor: ThemeCGColorPicker?

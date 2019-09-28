@@ -277,6 +277,10 @@ import UIKit
         get { return getThemePicker(self, "setSelectedSegmentTintColor:") as? ThemeColorPicker }
         set { setThemePicker(self, "setSelectedSegmentTintColor:", newValue) }
     }
+    func theme_setTitleTextAttributes(_ picker: ThemeStringAttributesPicker?, forState state: UIControl.State) {
+        let statePicker = makeStatePicker(self, "setTitleTextAttributes:forState:", picker, state)
+        setThemePicker(self, "setTitleTextAttributes:forState:", statePicker)
+    }
 }
 @objc public extension UISwitch
 {
