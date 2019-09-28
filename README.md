@@ -272,6 +272,10 @@ NotificationCenter.default.addObserver(
 - var theme_barStyle: ThemeBarStylePicker?
 - var theme_barTintColor: ThemeColorPicker?
 
+##### UISegmentedControl
+
+- var theme_selectedSegmentTintColor: ThemeColorPicker?
+
 ##### UISwitch
 - var theme_onTintColor: ThemeColorPicker?
 - var theme_thumbTintColor: ThemeColorPicker?
