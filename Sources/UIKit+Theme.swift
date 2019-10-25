@@ -208,6 +208,10 @@ import UIKit
 }
 @objc public extension UIActivityIndicatorView
 {
+    var theme_color: ThemeColorPicker? {
+        get { return getThemePicker(self, "setColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setColor:", newValue) }
+    }
     var theme_activityIndicatorViewStyle: ThemeActivityIndicatorViewStylePicker? {
         get { return getThemePicker(self, "setActivityIndicatorViewStyle:") as? ThemeActivityIndicatorViewStylePicker }
         set { setThemePicker(self, "setActivityIndicatorViewStyle:", newValue) }
