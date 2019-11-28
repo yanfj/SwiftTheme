@@ -34,6 +34,10 @@ import UIKit
 }
 @objc public extension UIBarItem
 {
+    var theme_image: ThemeImagePicker? {
+        get { return getThemePicker(self, "setImage:") as? ThemeImagePicker }
+        set { setThemePicker(self, "setImage:", newValue) }
+    }
     func theme_setTitleTextAttributes(_ picker: ThemeStringAttributesPicker?, forState state: UIControl.State) {
         let statePicker = makeStatePicker(self, "setTitleTextAttributes:forState:", picker, state)
         setThemePicker(self, "setTitleTextAttributes:forState:", statePicker)
@@ -105,6 +109,17 @@ import UIKit
     var theme_barTintColor: ThemeColorPicker? {
         get { return getThemePicker(self, "setBarTintColor:") as? ThemeColorPicker }
         set { setThemePicker(self, "setBarTintColor:", newValue) }
+    }
+}
+@objc public extension UITabBarItem
+{
+    func theme_setImage(_ picker: ThemeImagePicker?, forState state: UIControl.State) {
+        let statePicker = makeStatePicker(self, "setImage:forState:", picker, state)
+        setThemePicker(self, "setImage:forState:", statePicker)
+    }
+    var theme_selectedImage: ThemeImagePicker? {
+        get { return getThemePicker(self, "setSelectedImage:") as? ThemeImagePicker }
+        set { setThemePicker(self, "setSelectedImage:", newValue) }
     }
 }
 @objc public extension UITableView
@@ -204,6 +219,10 @@ import UIKit
 }
 @objc public extension UIActivityIndicatorView
 {
+    var theme_color: ThemeColorPicker? {
+        get { return getThemePicker(self, "setColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setColor:", newValue) }
+    }
     var theme_activityIndicatorViewStyle: ThemeActivityIndicatorViewStylePicker? {
         get { return getThemePicker(self, "setActivityIndicatorViewStyle:") as? ThemeActivityIndicatorViewStylePicker }
         set { setThemePicker(self, "setActivityIndicatorViewStyle:", newValue) }
