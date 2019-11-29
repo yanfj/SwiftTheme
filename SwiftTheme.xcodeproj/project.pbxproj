@@ -48,6 +48,7 @@
 		18D642E81C53638200DADEC5 /* UIKit+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E21C53638200DADEC5 /* UIKit+Theme.swift */; };
 		18D642EA1C53638200DADEC5 /* NSObject+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D642E31C53638200DADEC5 /* NSObject+Theme.swift */; };
 		1C27D4702255D3A800C89FAD /* ThemeScrollViewIndicatorStylePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C3CC1D21CF8D6300DDA4C1 /* ThemeScrollViewIndicatorStylePicker.swift */; };
+		1C56FE882390BA6A006AFEED /* ThemeStringAttributesPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6079BD231B7E9E00BCE899 /* ThemeStringAttributesPicker.swift */; };
 		1C6079B7231B72F100BCE899 /* ThemeVisualEffectPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6079B6231B72F100BCE899 /* ThemeVisualEffectPicker.swift */; };
 		1C6079BC231B7D6A00BCE899 /* UILabel+TextAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6079BB231B7D6A00BCE899 /* UILabel+TextAttributes.swift */; };
 		1C6079BE231B7E9E00BCE899 /* ThemeStringAttributesPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6079BD231B7E9E00BCE899 /* ThemeStringAttributesPicker.swift */; };
@@ -1035,6 +1036,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C56FE882390BA6A006AFEED /* ThemeStringAttributesPicker.swift in Sources */,
 				1C27D4702255D3A800C89FAD /* ThemeScrollViewIndicatorStylePicker.swift in Sources */,
 				A37F8C831F8A43B300ABB5EC /* ThemePicker.swift in Sources */,
 				A37F8C841F8A43B300ABB5EC /* ThemeDictionaryPicker.swift in Sources */,

@@ -101,11 +101,11 @@ import UIKit
         get { return getThemePicker(self, "setBarStyle:") as? ThemeBarStylePicker }
         set { setThemePicker(self, "setBarStyle:", newValue) }
     }
+    #endif
     var theme_unselectedItemTintColor: ThemeColorPicker? {
         get { return getThemePicker(self, "setUnselectedItemTintColor:") as? ThemeColorPicker }
         set { setThemePicker(self, "setUnselectedItemTintColor:", newValue) }
     }
-    #endif
     var theme_barTintColor: ThemeColorPicker? {
         get { return getThemePicker(self, "setBarTintColor:") as? ThemeColorPicker }
         set { setThemePicker(self, "setBarTintColor:", newValue) }
@@ -113,10 +113,6 @@ import UIKit
 }
 @objc public extension UITabBarItem
 {
-    func theme_setImage(_ picker: ThemeImagePicker?, forState state: UIControl.State) {
-        let statePicker = makeStatePicker(self, "setImage:forState:", picker, state)
-        setThemePicker(self, "setImage:forState:", statePicker)
-    }
     var theme_selectedImage: ThemeImagePicker? {
         get { return getThemePicker(self, "setSelectedImage:") as? ThemeImagePicker }
         set { setThemePicker(self, "setSelectedImage:", newValue) }
