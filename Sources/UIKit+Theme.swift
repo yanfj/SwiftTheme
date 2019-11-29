@@ -111,6 +111,17 @@ import UIKit
         set { setThemePicker(self, "setBarTintColor:", newValue) }
     }
 }
+@objc public extension UITabBarItem
+{
+    func theme_setImage(_ picker: ThemeImagePicker?, forState state: UIControl.State) {
+        let statePicker = makeStatePicker(self, "setImage:forState:", picker, state)
+        setThemePicker(self, "setImage:forState:", statePicker)
+    }
+    var theme_selectedImage: ThemeImagePicker? {
+        get { return getThemePicker(self, "setSelectedImage:") as? ThemeImagePicker }
+        set { setThemePicker(self, "setSelectedImage:", newValue) }
+    }
+}
 @objc public extension UITableView
 {
     var theme_separatorColor: ThemeColorPicker? {
