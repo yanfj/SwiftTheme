@@ -93,17 +93,17 @@ import UIKit
         get { return getThemePicker(self, "setLargeTitleTextAttributes:") as? ThemeStringAttributesPicker }
         set { setThemePicker(self, "setLargeTitleTextAttributes:", newValue) }
     }
-    @available(iOS 13.0, *)
+    @available(iOS 13.0, tvOS 13.0, *)
     var theme_standardAppearance: ThemeNavigationBarAppearancePicker? {
         get { return getThemePicker(self, "setStandardAppearance:") as? ThemeNavigationBarAppearancePicker }
         set { setThemePicker(self, "setStandardAppearance:", newValue) }
     }
-    @available(iOS 13.0, *)
+    @available(iOS 13.0, tvOS 13.0, *)
     var theme_compactAppearance: ThemeNavigationBarAppearancePicker? {
         get { return getThemePicker(self, "setCompactAppearance:") as? ThemeNavigationBarAppearancePicker }
         set { setThemePicker(self, "setCompactAppearance:", newValue) }
     }
-    @available(iOS 13.0, *)
+    @available(iOS 13.0, tvOS 13.0, *)
     var theme_scrollEdgeAppearance: ThemeNavigationBarAppearancePicker? {
         get { return getThemePicker(self, "setScrollEdgeAppearance:") as? ThemeNavigationBarAppearancePicker }
         set { setThemePicker(self, "setScrollEdgeAppearance:", newValue) }
