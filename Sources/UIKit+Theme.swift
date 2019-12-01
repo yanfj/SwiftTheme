@@ -93,6 +93,21 @@ import UIKit
         get { return getThemePicker(self, "setLargeTitleTextAttributes:") as? ThemeStringAttributesPicker }
         set { setThemePicker(self, "setLargeTitleTextAttributes:", newValue) }
     }
+    @available(iOS 13.0, *)
+    var theme_standardAppearance: ThemeNavigationBarAppearancePicker? {
+        get { return getThemePicker(self, "setStandardAppearance:") as? ThemeNavigationBarAppearancePicker }
+        set { setThemePicker(self, "setStandardAppearance:", newValue) }
+    }
+    @available(iOS 13.0, *)
+    var theme_compactAppearance: ThemeNavigationBarAppearancePicker? {
+        get { return getThemePicker(self, "setCompactAppearance:") as? ThemeNavigationBarAppearancePicker }
+        set { setThemePicker(self, "setCompactAppearance:", newValue) }
+    }
+    @available(iOS 13.0, *)
+    var theme_scrollEdgeAppearance: ThemeNavigationBarAppearancePicker? {
+        get { return getThemePicker(self, "setScrollEdgeAppearance:") as? ThemeNavigationBarAppearancePicker }
+        set { setThemePicker(self, "setScrollEdgeAppearance:", newValue) }
+    }
 }
 @objc public extension UITabBar
 {
@@ -342,6 +357,46 @@ import UIKit
     var theme_effect: ThemeVisualEffectPicker? {
         get { return getThemePicker(self, "setEffect:") as? ThemeVisualEffectPicker }
         set { setThemePicker(self, "setEffect:", newValue) }
+    }
+}
+@available(iOS 13.0, *)
+public extension UINavigationBarAppearance
+{
+    var theme_titleTextAttributes: ThemeStringAttributesPicker? {
+        get { return getThemePicker(self, "setTitleTextAttributes:") as? ThemeStringAttributesPicker }
+        set { setThemePicker(self, "setTitleTextAttributes:", newValue) }
+    }
+    var theme_largeTitleTextAttributes: ThemeStringAttributesPicker? {
+        get { return getThemePicker(self, "setLargeTitleTextAttributes:") as? ThemeStringAttributesPicker }
+        set { setThemePicker(self, "setLargeTitleTextAttributes:", newValue) }
+    }
+    var theme_backIndicatorImage: ThemeImagePicker? {
+        get { return getThemePicker(self, "setBackIndicatorImage:") as? ThemeImagePicker }
+        set { setThemePicker(self, "setBackIndicatorImage:", newValue) }
+    }
+}
+@available(iOS 13.0, *)
+@objc public extension UIBarAppearance
+{
+    var theme_backgroundColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setBackgroundColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setBackgroundColor:", newValue) }
+    }
+    var theme_backgroundImage: ThemeImagePicker? {
+        get { return getThemePicker(self, "setBackgroundImage:") as? ThemeImagePicker }
+        set { setThemePicker(self, "setBackgroundImage:", newValue) }
+    }
+    var theme_backgroundEffect: ThemeBlurEffectPicker? {
+        get { return getThemePicker(self, "setBackgroundEffect:") as? ThemeBlurEffectPicker }
+        set { setThemePicker(self, "setBackgroundEffect:", newValue) }
+    }
+    var theme_shadowColor: ThemeColorPicker? {
+        get { return getThemePicker(self, "setShadowColor:") as? ThemeColorPicker }
+        set { setThemePicker(self, "setShadowColor:", newValue) }
+    }
+    var theme_shadowImage: ThemeImagePicker? {
+        get { return getThemePicker(self, "setShadowImage:") as? ThemeImagePicker }
+        set { setThemePicker(self, "setShadowImage:", newValue) }
     }
 }
 #endif
