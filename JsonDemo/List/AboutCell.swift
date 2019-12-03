@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftTheme
 
 class AboutCell: BaseCell {
 
@@ -14,7 +15,7 @@ class AboutCell: BaseCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        content.theme_font = "Global.textFont"
         content.theme_textColor = "Global.textColor"
     }
 
