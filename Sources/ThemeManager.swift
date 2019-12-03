@@ -32,6 +32,17 @@ public enum ThemePath {
             return url.path
         }
     }
+    
+    public func jsonPath(name: String) -> String? {
+        switch self {
+        case .mainBundle:
+            return Bundle.main.path(forResource: name, ofType: "json")
+        case .sandbox(let path):
+            let name = name.hasSuffix(".json") ? name : name + ".json"
+            let url = path.appendingPathComponent(name)
+            return url.path
+        }
+    }
 }
 
 @objc public final class ThemeManager: NSObject {
@@ -62,6 +73,18 @@ public extension ThemeManager {
             return
         }
         self.setTheme(dict: plistDict, path: path)
+    }
+    
+    class func setTheme(jsonName: String, path: ThemePath) {
+        guard let jsonPath = path.jsonPath(name: jsonName)         else {
+            print("SwiftTheme WARNING: Can't find plist '\(jsonName)' at: \(path)")
+            return
+        }
+        guard let data = try? Data.init(contentsOf: URL.init(fileURLWithPath: jsonPath)), let jsonDict = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.fragmentsAllowed) as? NSDictionary else {
+            print("SwiftTheme WARNING: Can't read plist '\(jsonName)' at: \(jsonPath)")
+            return
+        }
+        self.setTheme(dict: jsonDict, path: path)
     }
     
     class func setTheme(dict: NSDictionary, path: ThemePath) {
