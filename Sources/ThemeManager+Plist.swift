@@ -76,7 +76,7 @@ import UIKit
         }
         
         if let fontSize = Float(string), fontSize > 0 {
-            return UIFont.boldSystemFont(ofSize: CGFloat(fontSize))
+            return UIFont.systemFont(ofSize: CGFloat(fontSize))
         }
         
         let value = "UICTFontTextStyle" + string.capitalized
