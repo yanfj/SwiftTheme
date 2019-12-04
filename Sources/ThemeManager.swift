@@ -78,7 +78,7 @@ public extension ThemeManager {
             return
         }
         guard let data = try? Data.init(contentsOf: URL.init(fileURLWithPath: jsonPath)), let jsonDict = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.fragmentsAllowed) as? NSDictionary else {
-            print("SwiftTheme WARNING: Can't read plist '\(jsonName)' at: \(jsonPath)")
+            print("SwiftTheme WARNING: Can't read json '\(jsonName)' at: \(jsonPath)")
             return
         }
         self.setTheme(dict: jsonDict, path: path)
