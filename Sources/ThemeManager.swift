@@ -61,7 +61,7 @@ public extension ThemeManager {
     }
     
     class func setTheme(plistName: String, path: ThemePath) {
-        guard let plistPath = path.plistPath(name: plistName)         else {
+        guard let plistPath = path.plistPath(name: plistName) else {
             print("SwiftTheme WARNING: Can't find plist '\(plistName)' at: \(path)")
             return
         }
@@ -73,11 +73,14 @@ public extension ThemeManager {
     }
     
     class func setTheme(jsonName: String, path: ThemePath) {
-        guard let jsonPath = path.jsonPath(name: jsonName)         else {
+        guard let jsonPath = path.jsonPath(name: jsonName) else {
             print("SwiftTheme WARNING: Can't find json '\(jsonName)' at: \(path)")
             return
         }
-        guard let data = try? Data.init(contentsOf: URL.init(fileURLWithPath: jsonPath)), let jsonDict = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.fragmentsAllowed) as? NSDictionary else {
+        guard
+            let data = try? Data(contentsOf: URL(fileURLWithPath: jsonPath)),
+            let json = try? JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed),
+            let jsonDict = json as? NSDictionary else {
             print("SwiftTheme WARNING: Can't read json '\(jsonName)' at: \(jsonPath)")
             return
         }
