@@ -196,6 +196,7 @@ github "wxxsw/SwiftTheme"
 ##### UILabel
 - var theme_font: ThemeFontPicker?
 - var theme_textColor: ThemeColorPicker?
+- var theme_textAttributes: ThemeStringAttributesPicker?
 - var theme_highlightedTextColor: ThemeColorPicker?
 - var theme_shadowColor: ThemeColorPicker?
 
@@ -215,6 +216,7 @@ github "wxxsw/SwiftTheme"
 - var theme_font: ThemeFontPicker?
 - var theme_keyboardAppearance: ThemeKeyboardAppearancePicker?
 - var theme_textColor: ThemeColorPicker?
+- var theme_placeholderAttributes: ThemeDictionaryPicker?
 
 ##### UITextView
 - var theme_font: ThemeFontPicker?
@@ -223,6 +225,10 @@ github "wxxsw/SwiftTheme"
 ##### UIToolbar
 - var theme_barStyle: ThemeBarStylePicker?
 - var theme_barTintColor: ThemeColorPicker?
+
+##### UISegmentedControl
+- var theme_selectedSegmentTintColor: ThemeColorPicker?
+- func theme_setTitleTextAttributes(_ picker: ThemeStringAttributesPicker?, forState state: UIControl.State)
 
 ##### UISwitch
 - var theme_onTintColor: ThemeColorPicker?
@@ -252,15 +258,21 @@ github "wxxsw/SwiftTheme"
 - var theme_activityIndicatorViewStyle: ThemeActivityIndicatorViewStylePicker?
 
 ##### UIButton
-- func theme_setImage(picker: ThemeImagePicker, forState state: UIControlState)
-- func theme_setBackgroundImage(picker: ThemeImagePicker, forState state: UIControlState)
-- func theme_setTitleColor(picker: ThemeColorPicker, forState state: UIControlState)
+- func theme_setImage(picker: ThemeImagePicker?, forState state: UIControlState)
+- func theme_setBackgroundImage(picker: ThemeImagePicker?, forState state: UIControlState)
+- func theme_setTitleColor(picker: ThemeColorPicker?, forState state: UIControlState)
 
 ##### CALayer
 - var theme_backgroundColor: ThemeCGColorPicker?
 - var theme_borderWidth: ThemeCGFloatPicker?
 - var theme_borderColor: ThemeCGColorPicker?
 - var theme_shadowColor: ThemeCGColorPicker?
+
+##### UIRefreshControl
+- var theme_titleAttributes: ThemeDictionaryPicker?
+
+##### UIVisualEffectView
+- var theme_effect: ThemeVisualEffectPicker?
 
 ### *Picker*
 ***
@@ -273,6 +285,8 @@ github "wxxsw/SwiftTheme"
 // "#FFF"			RGB十六进制缩写
 // "#013E"			+alpha
 ①
+ThemeColorPicker(colors: "#FFFFFF", "#000")
+ThemeColorPicker(colors: UIColor.red, UIColor.blue)
 ThemeColorPicker(colors: "#FFFFFF", "#000")
 ThemeColorPicker.pickerWithColors(["#FFFFFF", "#000"])
 ②
@@ -306,6 +320,9 @@ ThemeCGFloatPicker.pickerWithKeyPath("someNumberKeyPath")
 ```swift
 ①
 ThemeCGColorPicker(colors: "#FFFFFF", "#000")
+ThemeCGColorPicker(colors: UIColor.red, UIColor.blue)
+ThemeCGColorPicker(colors: UIColor.red.cgColor, UIColor.blue.cgColor)
+ThemeCGColorPicker(colors: "#FFFFFF", "#000")
 ThemeCGColorPicker.pickerWithColors(["#FFFFFF", "#000"])
 ②
 ThemeCGColorPicker(keyPath: "someStringKeyPath")
@@ -318,7 +335,9 @@ ThemeCGColorPicker.pickerWithKeyPath("someStringKeyPath")
 ThemeFontPicker(fonts: UIFont.systemFont(ofSize: 10), UIFont.systemFont(ofSize: 11))
 ThemeFontPicker.pickerWithFonts([UIFont.systemFont(ofSize: 10), UIFont.systemFont(ofSize: 11)])
 ②
-// 暂时不支持从`plist`中读取字体
+// 格式示例 "PingFangSC-Regular,16"
+ThemeFontPicker(keyPath: "someStringKeyPath")
+ThemeFontPicker.pickerWithKeyPath("someStringKeyPath")
 ```
 
 #### ThemeDictionaryPicker
@@ -328,7 +347,16 @@ ThemeDictionaryPicker(dicts: ["key": "value"], ["key": "value"])
 ThemeDictionaryPicker.pickerWithDicts([["key": "value"], ["key": "value"]])
 ThemeDictionaryPicker.pickerWithAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16)])
 ②
-// 暂时不支持从`plist`中读取字典
+ThemeBarStylePicker(keyPath: "someStringKeyPath") { (Any?) -> [String: AnyObject]? in ... }
+```
+
+#### ThemeStringAttributesPicker
+```swift
+①
+ThemeDictionaryPicker(dicts: ["key": "value"], ["key": "value"])
+ThemeDictionaryPicker.pickerWithAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16)])
+②
+ThemeBarStylePicker(keyPath: "someStringKeyPath") { (Any?) -> [NSAttributedString.Key: Any]? in ... }
 ```
 
 #### ThemeBarStylePicker
@@ -383,12 +411,28 @@ ThemeActivityIndicatorViewStylePicker(keyPath: "someStringKeyPath")
 ThemeActivityIndicatorViewStylePicker.pickerWithKeyPath("someStringKeyPath")
 ```
 
+#### ThemeVisualEffectPicker
+```swift
+①
+ThemeVisualEffectPicker(effects: UIBlurEffect(style: .light), UIBlurEffect(style: .dark))
+ThemeVisualEffectPicker.pickerWithEffects([UIBlurEffect(style: .light), UIBlurEffect(style: .dark)])
+ThemeVisualEffectPicker.pickerWithStringEffects(["light", "dark", "extralight", "prominent", "regular"])
+②
+// 在自定的`Key`中设置指定的`Value`，匹配字符串即可生效
+// 可选的值有："light"、"dark"、"prominent" 和 "regular"
+ThemeVisualEffectPicker(keyPath: "someStringKeyPath")
+ThemeVisualEffectPicker.pickerWithKeyPath("someStringKeyPath")
+```
+
 ### *更多*
 
-下载`SwiftTheme`项目，了解如何在项目中使用，其中包含两个Demo Target：
+下载`SwiftTheme`项目，了解如何在项目中使用，其中包含四个Demo Target：
 
 - `Demo`演示了如何使用索引进行管理，退出时保存上次使用的主题等常见需求
 - `PlistDemo`演示了如何使用`plist`进行管理，并包含下载保存主题Zip包等功能
+- `JsonDemo` 类似 `PlistDemo`, 但是使用 `json`.
+- `OCDemo` 是 `Demo` 的 Objective-C 版本.
+- `TVOSDemo` 用来测试 tvOS 的兼容性.
 
 ## 常见问题
 

@@ -332,7 +332,9 @@ NotificationCenter.default.addObserver(
 // "#013E"			RGBA in short
 ①
 ThemeColorPicker(colors: "#FFFFFF", "#000")
+ThemeColorPicker(colors: UIColor.red, UIColor.blue)
 ThemeColorPicker.pickerWithColors(["#FFFFFF", "#000"])
+ThemeColorPicker.pickerWithUIColors([UIColor.red, UIColor.blue])
 ②
 ThemeColorPicker(keyPath: "someStringKeyPath")
 ThemeColorPicker.pickerWithKeyPath("someStringKeyPath")
@@ -364,7 +366,10 @@ ThemeCGFloatPicker.pickerWithKeyPath("someNumberKeyPath")
 ```swift
 ①
 ThemeCGColorPicker(colors: "#FFFFFF", "#000")
+ThemeCGColorPicker(colors: UIColor.red, UIColor.blue)
+ThemeCGColorPicker(colors: UIColor.red.cgColor, UIColor.blue.cgColor)
 ThemeCGColorPicker.pickerWithColors(["#FFFFFF", "#000"])
+ThemeCGColorPicker.pickerWithUIColors([UIColor.blue, UIColor.red])
 ②
 ThemeCGColorPicker(keyPath: "someStringKeyPath")
 ThemeCGColorPicker.pickerWithKeyPath("someStringKeyPath")
@@ -466,7 +471,7 @@ Download this project and find more. There are four demo targets:
 - `Demo` shows how to use index mode and how to save the last selection of themes and other general usages.
 - `PlistDemo` shows how to use plist mode and how to download themes that packaged in zip files.
 - `JsonDemo` is like `PlistDemo`, but use `json`.
-- `OCDemo` is `Demo`'s Objective-c version.
+- `OCDemo` is `Demo`'s Objective-C version.
 - `TVOSDemo` is used to test tvos compatibility.
 
 ## FAQ
