@@ -8,6 +8,7 @@
 
 import UIKit
 
+#if os(iOS)
 @objc public final class ThemeVisualEffectPicker: ThemePicker {
     
     public convenience init(keyPath: String) {
@@ -89,4 +90,4 @@ public extension ThemeVisualEffectPicker {
 
 extension ThemeVisualEffectPicker: ExpressibleByArrayLiteral {}
 extension ThemeVisualEffectPicker: ExpressibleByStringLiteral {}
-
+#endif
