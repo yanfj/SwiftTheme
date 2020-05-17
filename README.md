@@ -48,7 +48,7 @@ Vary background color of UIView according to the theme setting:
 view.theme_backgroundColor = ["#FFF", "#000"]
 ```
 
-Vary text color of UILable and UIButton:
+Vary text color of UILabel and UIButton:
 
 ```swift
 label.theme_textColor = ["#000", "#FFF"]
@@ -98,7 +98,7 @@ view.theme_backgroundColor = colorPickers
 
 
 
-### Plist Mode
+### Plist/JSON Mode
 You may want to make your app download and install an indefinite number of themes. To fulfill this requirement, we provide plist mode. Simply put, you write configuration info such as colors, image cuts and so on, in a plist file. Then, you can use their keys in the logic code. So, the plist file and the resource files are used to constitute a theme package.
 
 Usage demo of plist mode.
@@ -113,7 +113,7 @@ imageView.theme_image = "SelectedThemeCell.iconImage"
 The plist file name is the first paramter of the switching method. In this example, the plist file and other resource files are in the application bundle. It's also ok if they are in sandbox.
 
 ```swift
-ThemeManager.setTheme(plistName: "Red", path: .MainBundle)
+ThemeManager.setTheme(plistName: "Red", path: .mainBundle)
 ```
 
 > plist mode allow you install more themes without modifying logic code. So, you can add the feature that, downloading and installing themes for your app.
@@ -199,12 +199,12 @@ ThemeManager.setTheme(index: 1) // ThemePickers will use the second parameter, e
 ②
 // use "day.plist" in the appllication bundle as the theme configuration file. 
 // In this mode, SwiftTheme will find the resource files in the appllication bundle.
-ThemeManager.setTheme(plistName: "day", path: .MainBundle)
+ThemeManager.setTheme(plistName: "day", path: .mainBundle)
 // use "night.plist" in the sandbox as the theme configuration file, "someURL" is its file path. 
 // In this mode, SwiftTheme will find the resource files in the same path.
-ThemeManager.setTheme(plistName: "night", path: .Sandbox(someURL))
+ThemeManager.setTheme(plistName: "night", path: .sandbox(someURL))
 // use a dictionary as the theme configuration, but find resource files in the sandbox.(Not recommend)
-ThemeManager.setTheme(dict: dict, path: .Sandbox(someURL))
+ThemeManager.setTheme(dict: dict, path: .sandbox(someURL))
 ```
 
 #### Custom Behaviors
@@ -391,16 +391,16 @@ ThemeFontPicker.pickerWithKeyPath("someStringKeyPath")
 ThemeDictionaryPicker(dicts: ["key": "value"], ["key": "value"])
 ThemeDictionaryPicker.pickerWithDicts([["key": "value"], ["key": "value"]])
 ②
-ThemeBarStylePicker(keyPath: "someStringKeyPath") { (Any?) -> [String: AnyObject]? in ... }
+ThemeDictionaryPicker(keyPath: "someStringKeyPath") { (Any?) -> [String: AnyObject]? in ... }
 ```
 
 #### ThemeStringAttributesPicker
 ```swift
 ①
-ThemeDictionaryPicker(dicts: ["key": "value"], ["key": "value"])
-ThemeDictionaryPicker.pickerWithAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16)])
+ThemeStringAttributesPicker(dicts: ["key": "value"], ["key": "value"])
+ThemeStringAttributesPicker.pickerWithAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16)])
 ②
-ThemeBarStylePicker(keyPath: "someStringKeyPath") { (Any?) -> [NSAttributedString.Key: Any]? in ... }
+ThemeStringAttributesPicker(keyPath: "someStringKeyPath") { (Any?) -> [NSAttributedString.Key: Any]? in ... }
 ```
 
 #### ThemeBarStylePicker
