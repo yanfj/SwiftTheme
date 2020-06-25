@@ -131,8 +131,6 @@ Fully compatible with Objective-C, usage demo:
 lbl.theme_backgroundColor = [ThemeColorPicker pickerWithColors:@[@"#FAF9F9", @"#E2E2E2"]];
 ```
 
-[![Ads](https://images.gitads.io/SwiftTheme)](https://tracking.gitads.io/?repo=SwiftTheme)
-
 ### Features
 - [x] Written in Swift
 - [x] Fully compatible with Objective-C
@@ -168,6 +166,10 @@ github "wxxsw/SwiftTheme"
 
 #### Source files
 Copy all the files in "Sources" folder into your project
+
+## Sponsorship
+
+[![Ads](https://images.gitads.io/SwiftTheme)](https://tracking.gitads.io/?repo=SwiftTheme)
 
 ## Documents
 
