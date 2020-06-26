@@ -169,7 +169,7 @@ Copy all the files in "Sources" folder into your project
 
 ## Sponsorship
 
-<a href="https://tracking.gitads.io/?repo=SwiftTheme" target="_blank"><img src="https://images.gitads.io/SwiftTheme" /></a>
+[![Ads](https://images.gitads.io/SwiftTheme)](https://tracking.gitads.io/?repo=SwiftTheme)
 
 ## Documents
 
