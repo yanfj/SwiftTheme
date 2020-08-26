@@ -312,6 +312,7 @@ NotificationCenter.default.addObserver(
 - func theme_setImage(picker: ThemeImagePicker?, forState state: UIControlState)
 - func theme_setBackgroundImage(picker: ThemeImagePicker?, forState state: UIControlState)
 - func theme_setTitleColor(picker: ThemeColorPicker?, forState state: UIControlState)
+- func theme_setAttributedTitle(picker: ThemeAttributedStringPicker?, forState state: UIControlState)
 
 ##### CALayer
 - var theme_backgroundColor: ThemeCGColorPicker?
@@ -403,10 +404,19 @@ ThemeDictionaryPicker(keyPath: "someStringKeyPath") { (Any?) -> [String: AnyObje
 #### ThemeStringAttributesPicker
 ```swift
 ①
-ThemeStringAttributesPicker(dicts: ["key": "value"], ["key": "value"])
+ThemeStringAttributesPicker(["key": "value"], ["key": "value"])
 ThemeStringAttributesPicker.pickerWithAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16)])
 ②
 ThemeStringAttributesPicker(keyPath: "someStringKeyPath") { (Any?) -> [NSAttributedString.Key: Any]? in ... }
+```
+
+#### ThemeAttributedStringPicker
+```swift
+①
+ThemeAttributedStringPicker(NSAttributedString(...), NSAttributedString(...))
+ThemeAttributedStringPicker.pickerWithAttributedStrings([NSAttributedString(...)])
+②
+ThemeAttributedStringPicker(keyPath: "someStringKeyPath") { (Any?) -> NSAttributedString? in ... }
 ```
 
 #### ThemeBarStylePicker

@@ -260,6 +260,10 @@ import UIKit
         let statePicker = makeStatePicker(self, "setTitleColor:forState:", picker, state)
         setThemePicker(self, "setTitleColor:forState:", statePicker)
     }
+    func theme_setAttributedTitle(_ picker: ThemeAttributedStringPicker?, forState state: UIControl.State) {
+        let statePicker = makeStatePicker(self, "setAttributedTitle:forState:", picker, state)
+        setThemePicker(self, "setAttributedTitle:forState:", statePicker)
+    }
 }
 @objc public extension CALayer
 {

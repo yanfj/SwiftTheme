@@ -260,6 +260,7 @@ github "wxxsw/SwiftTheme"
 - func theme_setImage(picker: ThemeImagePicker?, forState state: UIControlState)
 - func theme_setBackgroundImage(picker: ThemeImagePicker?, forState state: UIControlState)
 - func theme_setTitleColor(picker: ThemeColorPicker?, forState state: UIControlState)
+- func theme_setAttributedTitle(picker: ThemeAttributedStringPicker?, forState state: UIControlState)
 
 ##### CALayer
 - var theme_backgroundColor: ThemeCGColorPicker?
@@ -352,10 +353,19 @@ ThemeBarStylePicker(keyPath: "someStringKeyPath") { (Any?) -> [String: AnyObject
 #### ThemeStringAttributesPicker
 ```swift
 ①
-ThemeDictionaryPicker(dicts: ["key": "value"], ["key": "value"])
-ThemeDictionaryPicker.pickerWithAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16)])
+ThemeStringAttributesPicker(["key": "value"], ["key": "value"])
+ThemeStringAttributesPicker.pickerWithAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16)])
 ②
-ThemeBarStylePicker(keyPath: "someStringKeyPath") { (Any?) -> [NSAttributedString.Key: Any]? in ... }
+ThemeStringAttributesPicker(keyPath: "someStringKeyPath") { (Any?) -> [NSAttributedString.Key: Any]? in ... }
+```
+
+#### ThemeAttributedStringPicker
+```swift
+①
+ThemeAttributedStringPicker(NSAttributedString(...), NSAttributedString(...))
+ThemeAttributedStringPicker.pickerWithAttributedStrings([NSAttributedString(...)])
+②
+ThemeAttributedStringPicker(keyPath: "someStringKeyPath") { (Any?) -> NSAttributedString? in ... }
 ```
 
 #### ThemeBarStylePicker
