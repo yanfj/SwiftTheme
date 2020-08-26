@@ -268,6 +268,9 @@ github "wxxsw/SwiftTheme"
 - var theme_borderColor: ThemeCGColorPicker?
 - var theme_shadowColor: ThemeCGColorPicker?
 
+##### CAGradientLayer
+- var theme_colors: ThemeAnyPicker?
+
 ##### UIRefreshControl
 - var theme_titleAttributes: ThemeDictionaryPicker?
 
@@ -431,6 +434,16 @@ ThemeVisualEffectPicker.pickerWithStringEffects(["light", "dark", "extralight", 
 // 可选的值有："light"、"dark"、"prominent" 和 "regular"
 ThemeVisualEffectPicker(keyPath: "someStringKeyPath")
 ThemeVisualEffectPicker.pickerWithKeyPath("someStringKeyPath")
+```
+
+#### ThemeAnyPicker
+```swift
+①
+ThemeAnyPicker(anys: 0, "123", UIColor.red)
+ThemeAnyPicker.pickerWithAnys([0, "123", UIColor.red])
+②
+ThemeAnyPicker(keyPath: "someStringKeyPath")
+ThemeAnyPicker.pickerWithKeyPath("someStringKeyPath")
 ```
 
 ### *更多*

@@ -292,6 +292,13 @@ import UIKit
         set { setThemePicker(self, "setFillColor:", newValue) }
     }
 }
+@objc public extension CAGradientLayer
+{
+    var theme_colors: ThemeAnyPicker? {
+        get { return getThemePicker(self, "setColors:") as? ThemeAnyPicker }
+        set { setThemePicker(self, "setColors:", newValue) }
+    }
+}
 
 #if os(iOS)
 @objc public extension UIToolbar

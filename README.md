@@ -320,6 +320,9 @@ NotificationCenter.default.addObserver(
 - var theme_borderColor: ThemeCGColorPicker?
 - var theme_shadowColor: ThemeCGColorPicker?
 
+##### CAGradientLayer
+- var theme_colors: ThemeAnyPicker?
+
 ##### UIRefreshControl
 - var theme_titleAttributes: ThemeDictionaryPicker?
 
@@ -477,6 +480,16 @@ ThemeVisualEffectPicker.pickerWithStringEffects(["light", "dark", "extralight", 
 // name the key you like, but the available values are "light", "dark", "extralight", "prominent" and "regular"
 ThemeVisualEffectPicker(keyPath: "someStringKeyPath")
 ThemeVisualEffectPicker.pickerWithKeyPath("someStringKeyPath")
+```
+
+#### ThemeAnyPicker
+```swift
+①
+ThemeAnyPicker(anys: 0, "123", UIColor.red)
+ThemeAnyPicker.pickerWithAnys([0, "123", UIColor.red])
+②
+ThemeAnyPicker(keyPath: "someStringKeyPath")
+ThemeAnyPicker.pickerWithKeyPath("someStringKeyPath")
 ```
 
 ### *More*
