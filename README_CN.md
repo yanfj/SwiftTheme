@@ -269,6 +269,9 @@ github "wxxsw/SwiftTheme"
 - var theme_shadowColor: ThemeCGColorPicker?
 
 ##### CAGradientLayer
+- var theme_foregroundColor: ThemeCGColorPicker?
+
+##### CAGradientLayer
 - var theme_colors: ThemeAnyPicker?
 
 ##### UIRefreshControl
