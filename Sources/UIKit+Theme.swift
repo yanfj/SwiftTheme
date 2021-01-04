@@ -72,7 +72,7 @@ import UIKit
         get { return getThemePicker(self, "updateTextAttributes:") as? ThemeStringAttributesPicker }
         set { setThemePicker(self, "updateTextAttributes:", newValue) }
     }
-    var theme_attributesTexts: ThemeAttributedStringPicker? {
+    var theme_attributesText: ThemeAttributedStringPicker? {
         get { return getThemePicker(self, "setAttributedText:") as? ThemeAttributedStringPicker }
         set { setThemePicker(self, "setAttributedText:", newValue) }
     }
