@@ -8,8 +8,7 @@ Pod::Spec.new do |s|
   s.author       = { "Gesen" => "i@gesen.me" }
   s.source       = { :git => "https://github.com/yanfj/SwiftTheme.git", :tag => s.version.to_s }
 
-  s.ios.deployment_target = "9.0"
-  s.tvos.deployment_target = "9.0"
+  s.ios.deployment_target = "11.0"
   s.requires_arc = true
 
   s.source_files = 'Sources'
