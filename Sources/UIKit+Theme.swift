@@ -186,6 +186,11 @@ import UIKit
         get { return getThemePicker(self, "updatePlaceholderAttributes:") as? ThemeStringAttributesPicker }
         set { setThemePicker(self, "updatePlaceholderAttributes:", newValue) }
     }
+    /// 新增设置背景
+    var theme_background: ThemeImagePicker? {
+        get { return getThemePicker(self, "setBackground:") as? ThemeImagePicker }
+        set {setThemePicker(self, "setBackground:", newValue)}
+    }
 }
 @objc public extension UITextView
 {

@@ -10,9 +10,16 @@ import UIKit
 
 extension UITextField {
     @objc func updatePlaceholderAttributes(_ newAttributes: [NSAttributedString.Key: Any]) {
-        guard let placeholder = self.attributedPlaceholder else { return }
-        let newString = NSAttributedString(attributedString: placeholder,
+        var attributedPlaceholder: NSAttributedString?
+        if (self.attributedPlaceholder != nil) {
+            attributedPlaceholder = self.attributedPlaceholder
+        } else if (self.placeholder != nil) {
+            attributedPlaceholder = NSAttributedString(string: self.placeholder!)
+        }
+        guard (attributedPlaceholder != nil) else { return }
+        let newString = NSAttributedString(attributedString: attributedPlaceholder!,
                                            merging: newAttributes)
         self.attributedPlaceholder = newString
+        return
     }
 }
